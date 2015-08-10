@@ -266,18 +266,6 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 	[playlistLoader addURL:[NSURL fileURLWithPath:[filename stringByExpandingTildeInPath]]];
 	[[playlistController undoManager] enableUndoRegistration];
 
-    // Restore playlist position
-    int peIdx = [[NSUserDefaults standardUserDefaults] integerForKey:@"lastPlayedPlaylistEntry"];
-    NSUInteger playlistSize = [[playlistController arrangedObjects] count];
-    if ( 0 < peIdx && peIdx < playlistSize) {
-        PlaylistEntry *pe = [playlistController entryAtIndex:peIdx];
-        DLog(@"Restoring playlist entry: %@", [pe description]);
-        [playlistController setCurrentEntry:pe];
-        [playlistView selectRow:peIdx byExtendingSelection:NO];
-    } else {
-        DLog(@"Invalid playlist position to restore (pos=%d, playlist size=%d)", peIdx, playlistSize);
-    }
-
     // Restore mini mode
     [self setMiniMode:[[NSUserDefaults standardUserDefaults] boolForKey:@"miniMode"]];
 
@@ -285,13 +273,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
-    // Save playlist position
-    PlaylistEntry *pe = [playlistController currentEntry];
-    int peIdx = [pe index];
-    DLog(@"Saving playlist position: idx = %d, %@", peIdx, [pe description]);
-    [[NSUserDefaults standardUserDefaults] setInteger:peIdx forKey:@"lastPlayedPlaylistEntry"];
-
-	[playbackController stop:self];
+    [playbackController stop:self];
 
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *folder = @"~/Library/Application Support/Cog/";
