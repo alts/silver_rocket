@@ -264,6 +264,7 @@
 				GCC_PREFIX_HEADER = "NDHotKey/NDHotKey-Prefix.pch";
 				INFOPLIST_FILE = "NDHotKey/NDHotKey-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -278,6 +279,7 @@
 				GCC_PREFIX_HEADER = "NDHotKey/NDHotKey-Prefix.pch";
 				INFOPLIST_FILE = "NDHotKey/NDHotKey-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -301,6 +303,7 @@
 				32F1616D14E6BB3B00D6AB2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -205,6 +205,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Pls;
+				SDKROOT = macosx10.9;
 				SYMROOT = ../../build;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
@@ -221,6 +222,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Pls;
+				SDKROOT = macosx10.9;
 				SYMROOT = ../../build;
 				WRAPPER_EXTENSION = bundle;
 			};

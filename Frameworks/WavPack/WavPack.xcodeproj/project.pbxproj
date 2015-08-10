@@ -285,6 +285,7 @@
 				);
 				OTHER_CFLAGS_QUOTED_1 = "-DPACKAGE_STRING=\\\"wavpack\\ 4.2\\\"";
 				PRODUCT_NAME = WavPack;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
 			};
@@ -318,6 +319,7 @@
 				);
 				OTHER_CFLAGS_QUOTED_1 = "-DPACKAGE_STRING=\\\"wavpack\\ 4.2\\\"";
 				PRODUCT_NAME = WavPack;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

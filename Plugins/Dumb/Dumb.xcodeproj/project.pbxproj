@@ -285,6 +285,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OBJROOT = ../../build;
 				PRODUCT_NAME = Dumb;
+				SDKROOT = macosx10.9;
 				SYMROOT = ../../build;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
@@ -302,6 +303,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OBJROOT = ../../build;
 				PRODUCT_NAME = Dumb;
+				SDKROOT = macosx10.9;
 				SYMROOT = ../../build;
 				WRAPPER_EXTENSION = bundle;
 			};

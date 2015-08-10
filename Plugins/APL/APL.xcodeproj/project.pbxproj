@@ -237,6 +237,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = APL;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
@@ -259,6 +260,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = APL;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};

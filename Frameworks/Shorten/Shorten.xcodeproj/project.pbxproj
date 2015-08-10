@@ -247,6 +247,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				PRODUCT_NAME = Shorten;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
 			};
@@ -268,6 +269,7 @@
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				OTHER_CFLAGS = "-DHAVE_CONFIG_H";
 				PRODUCT_NAME = Shorten;
+				SDKROOT = macosx10.9;
 				SHARED_PRECOMPS_DIR = "$(CACHE_ROOT)/SharedPrecompiledHeaders";
 				USER_HEADER_SEARCH_PATHS = Files/shorten/include;
 				WRAPPER_EXTENSION = framework;

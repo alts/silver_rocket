@@ -551,6 +551,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				PRODUCT_NAME = AudioOverload;
+				SDKROOT = macosx10.9;
 				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -580,6 +581,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				PRODUCT_NAME = AudioOverload;
+				SDKROOT = macosx10.9;
 				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = framework;
 			};

@@ -283,6 +283,7 @@
 					"-DFPM_64BIT",
 				);
 				PRODUCT_NAME = MAD;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
@@ -315,6 +316,7 @@
 					"-DFPM_64BIT",
 				);
 				PRODUCT_NAME = MAD;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;

@@ -495,6 +495,7 @@
 					Ogg,
 				);
 				PRODUCT_NAME = Vorbis;
+				SDKROOT = macosx10.9;
 				USER_HEADER_SEARCH_PATHS = "Files/lib/ Files/include/";
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
@@ -527,6 +528,7 @@
 					Ogg,
 				);
 				PRODUCT_NAME = Vorbis;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

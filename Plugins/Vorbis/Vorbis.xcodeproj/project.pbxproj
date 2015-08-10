@@ -273,6 +273,7 @@
 					ogg,
 				);
 				PRODUCT_NAME = Vorbis;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
@@ -300,6 +301,7 @@
 					ogg,
 				);
 				PRODUCT_NAME = Vorbis;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;

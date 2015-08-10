@@ -1693,7 +1693,7 @@
 			name = CogTests;
 			productName = CogTests;
 			productReference = 3299F131166FA3DC0056C7BA /* CogTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		8D1107260486CEB800E47090 /* Cog */ = {
 			isa = PBXNativeTarget;
@@ -2530,6 +2530,7 @@
 					"\"$(SRCROOT)/build/Release/WMA.framework\"",
 					"\"$(SRCROOT)/ID3/libid3\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = (
 					"-D__MACOSX__",
 					"-DHAVE_CONFIG_H",
@@ -2540,6 +2541,7 @@
 					CogAudio,
 				);
 				PRODUCT_NAME = Cog;
+				SDKROOT = macosx10.9;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Audio\"/**";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -2563,6 +2565,7 @@
 					"\"$(SRCROOT)/build/Release/WMA.framework\"",
 					"\"$(SRCROOT)/ID3/libid3\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = (
 					"-D__MACOSX__",
 					"-DHAVE_CONFIG_H",
@@ -2572,6 +2575,7 @@
 					CogAudio,
 				);
 				PRODUCT_NAME = Cog;
+				SDKROOT = macosx10.9;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Audio\"/**";
 				WRAPPER_EXTENSION = app;
 			};
