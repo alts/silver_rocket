@@ -1,9 +1,26 @@
+NEW README
+==========
+
+Silver Rocket will eventually be a simple music player that does very little
+beside play music. I used to use Vox version 0.26 beta. After getting a new
+laptop with OSX Yosemite, it turned out old versions of Vox didn't work, and the
+new ones were full of garbage I didn't want.
+
+Silver Rocket will be tailored around my specific, and probably stupid, wishes
+for a music player. Epecially its absense of features I don't ever want to manage
+a local music library again. I don't want to see my music. If I want to listen
+to something I'll specifically select it. I don't want to browse. No playlists.
+No preferences. Don't even show me the player if it can be helped.
+
+OLD README
+==========
+
 Cog is authored by Vincent Spader. It is released under the GPL. See COPYING for details.
 
 The libraries folder contains various decoding and tagging libraries, which i have created Xcode projects for, and possibly modified to make compile on OS X. The various libraries are under each of their own licenses/copyrights.
 
 All Cog code is copyrighted by me, and is licensed under the GPL. Cog contains bits of other code from third parties that are under their own licenses/copyright.
-    
+
 If you would like the photoshop sources for the various icons and graphics, please send me an email, and I will be happy to get them to you.
 
 Share and enjoy.
