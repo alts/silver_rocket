@@ -22,8 +22,8 @@
 	NSValueTransformer *stringToURLTransformer = [[[StringToURLTransformer alloc] init]autorelease];
     [NSValueTransformer setValueTransformer:stringToURLTransformer
                                     forName:@"StringToURLTransformer"];
-                                
-    NSValueTransformer *fontSizetoLineHeightTransformer = 
+
+    NSValueTransformer *fontSizetoLineHeightTransformer =
         [[[FontSizetoLineHeightTransformer alloc] init]autorelease];
     [NSValueTransformer setValueTransformer:fontSizetoLineHeightTransformer
                                     forName:@"FontSizetoLineHeightTransformer"];
@@ -40,14 +40,14 @@
 	if (self)
 	{
 		[self initDefaults];
-				
+
 		remote = [[AppleRemote alloc] init];
 		[remote setDelegate: self];
-		
+
         queue = [[NSOperationQueue alloc]init];
 	}
-    
-	return self; 
+
+	return self;
 }
 
 - (void)dealloc
@@ -72,15 +72,15 @@
 
 /* Helper method for the remote control interface in order to trigger forward/backward and volume
 increase/decrease as long as the user holds the left/right, plus/minus button */
-- (void) executeHoldActionForRemoteButton: (NSNumber*) buttonIdentifierNumber 
+- (void) executeHoldActionForRemoteButton: (NSNumber*) buttonIdentifierNumber
 {
 	static int incrementalSearch = 1;
-	
-    if (remoteButtonHeld) 
+
+    if (remoteButtonHeld)
     {
-        switch([buttonIdentifierNumber intValue]) 
+        switch([buttonIdentifierNumber intValue])
         {
-            case kRemoteButtonRight_Hold:       
+            case kRemoteButtonRight_Hold:
 				[playbackController seekForward:incrementalSearch];
 				break;
             case kRemoteButtonLeft_Hold:
@@ -93,9 +93,9 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
             case kRemoteButtonVolume_Minus_Hold:
                 //Volume Down
 				[playbackController volumeDown:self];
-				break;              
+				break;
         }
-        if (remoteButtonHeld) 
+        if (remoteButtonHeld)
         {
 			/* there should perhaps be a max amount that incrementalSearch can
 			   be, so as to not start skipping ahead unreasonable amounts, even
@@ -106,9 +106,9 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 				incrementalSearch++;
 
             /* trigger event */
-            [self performSelector:@selector(executeHoldActionForRemoteButton:) 
+            [self performSelector:@selector(executeHoldActionForRemoteButton:)
 					   withObject:buttonIdentifierNumber
-					   afterDelay:0.25];         
+					   afterDelay:0.25];
         }
     }
 	else
@@ -118,9 +118,9 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 }
 
 /* Apple Remote callback */
-- (void) appleRemoteButton: (AppleRemoteEventIdentifier)buttonIdentifier 
-               pressedDown: (BOOL) pressedDown 
-                clickCount: (unsigned int) count 
+- (void) appleRemoteButton: (AppleRemoteEventIdentifier)buttonIdentifier
+               pressedDown: (BOOL) pressedDown
+                clickCount: (unsigned int) count
 {
     switch( buttonIdentifier )
     {
@@ -148,9 +148,9 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
             /* simulate an event as long as the user holds the button */
             remoteButtonHeld = pressedDown;
             if( pressedDown )
-            {                
-                NSNumber* buttonIdentifierNumber = [NSNumber numberWithInt: buttonIdentifier];  
-                [self performSelector:@selector(executeHoldActionForRemoteButton:) 
+            {
+                NSNumber* buttonIdentifierNumber = [NSNumber numberWithInt: buttonIdentifier];
+                [self performSelector:@selector(executeHoldActionForRemoteButton:)
                            withObject:buttonIdentifierNumber];
             }
 				break;
@@ -170,12 +170,12 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 - (IBAction)openFiles:(id)sender
 {
 	NSOpenPanel *p;
-	
+
 	p = [NSOpenPanel openPanel];
-	
+
 	[p setCanChooseDirectories:YES];
 	[p setAllowsMultipleSelection:YES];
-	
+
 	[p beginSheetForDirectory:nil file:nil types:[playlistLoader acceptableFileTypes] modalForWindow:mainWindow modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
@@ -185,15 +185,16 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 	{
 		[playlistLoader willInsertURLs:[panel URLs] origin:URLOriginInternal];
 		[playlistLoader didInsertURLs:[playlistLoader addURLs:[panel URLs] sort:YES] origin:URLOriginInternal];
+		[playbackController play:self];
 	}
 }
 
 - (IBAction)savePlaylist:(id)sender
 {
 	NSSavePanel *p;
-	
+
 	p = [NSSavePanel savePanel];
-	
+
 	[p setAllowedFileTypes:[playlistLoader acceptablePlaylistTypes]];
 	[p beginSheetForDirectory:nil file:nil modalForWindow:mainWindow modalDelegate:self didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
@@ -209,7 +210,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 - (IBAction)openURL:(id)sender
 {
 	OpenURLPanel *p;
-	
+
 	p = [OpenURLPanel openURLPanel];
 
 	[p beginSheetWithWindow:mainWindow delegate:self didEndSelector:@selector(openURLPanelDidEnd:returnCode:contextInfo:) contextInfo:nil];
@@ -242,7 +243,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 - (void)awakeFromNib
 {
 	[[totalTimeField cell] setBackgroundStyle:NSBackgroundStyleRaised];
-	
+
 	[[playbackButtons cell] setToolTip:NSLocalizedString(@"PlayButtonTooltip", @"") forSegment: 1];
 	[[playbackButtons cell] setToolTip:NSLocalizedString(@"PrevButtonTooltip", @"") forSegment: 0];
 	[[playbackButtons cell] setToolTip:NSLocalizedString(@"NextButtonTooltip", @"") forSegment: 2];
@@ -250,16 +251,16 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 	[shuffleButton setToolTip:NSLocalizedString(@"ShuffleButtonTooltip", @"")];
 	[repeatButton setToolTip:NSLocalizedString(@"RepeatButtonTooltip", @"")];
 	[fileButton setToolTip:NSLocalizedString(@"FileButtonTooltip", @"")];
-	
+
 	[self registerHotKeys];
-	
+
     [spotlightWindowController init];
-	
+
 	//Init Remote
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"remoteEnabled"] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"remoteOnlyOnActive"]) {
 		[remote startListening:self];
 	}
-	
+
 	[[playlistController undoManager] disableUndoRegistration];
 	NSString *filename = @"~/Library/Application Support/Cog/Default.m3u";
 	[playlistLoader addURL:[NSURL fileURLWithPath:[filename stringByExpandingTildeInPath]]];
@@ -289,23 +290,23 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
     int peIdx = [pe index];
     DLog(@"Saving playlist position: idx = %d, %@", peIdx, [pe description]);
     [[NSUserDefaults standardUserDefaults] setInteger:peIdx forKey:@"lastPlayedPlaylistEntry"];
-    
+
 	[playbackController stop:self];
-	
+
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *folder = @"~/Library/Application Support/Cog/";
-	
+
 	folder = [folder stringByExpandingTildeInPath];
-	
+
 	if ([fileManager fileExistsAtPath: folder] == NO)
 	{
 		[fileManager createDirectoryAtPath: folder attributes: nil];
 	}
-	
+
 	NSString *fileName = @"Default.m3u";
-	
+
 	[playlistLoader saveM3u:[folder stringByAppendingPathComponent: fileName]];
-    
+
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -314,7 +315,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
     BOOL miniaturized = [mainWindow isMiniaturized];
 	if (flag == NO || miniaturized == YES)
 		[mainWindow makeKeyAndOrderFront:self];
-	
+
 	return NO;
 }
 
@@ -330,7 +331,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 {
 	//Need to convert to urls
 	NSMutableArray *urls = [NSMutableArray array];
-	
+
 	for (NSString *filename in filenames)
 	{
 		[urls addObject:[NSURL fileURLWithPath:filename]];
@@ -343,7 +344,7 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 - (IBAction)toggleInfoDrawer:(id)sender
 {
 	[mainWindow makeKeyAndOrderFront:self];
-	
+
 	[infoDrawer toggle:self];
 }
 
@@ -369,18 +370,18 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 - (void)initDefaults
 {
 	NSMutableDictionary *userDefaultsValuesDict = [NSMutableDictionary dictionary];
-	
+
     // Font defaults
     float fFontSize = [NSFont systemFontSizeForControlSize:NSSmallControlSize];
     NSNumber *fontSize = [NSNumber numberWithFloat:fFontSize];
     [userDefaultsValuesDict setObject:fontSize forKey:@"fontSize"];
-	
+
 	[userDefaultsValuesDict setObject:[NSNumber numberWithInt:35] forKey:@"hotKeyPlayKeyCode"];
 	[userDefaultsValuesDict setObject:[NSNumber numberWithInt:(NSControlKeyMask|NSCommandKeyMask)] forKey:@"hotKeyPlayModifiers"];
-	
+
 	[userDefaultsValuesDict setObject:[NSNumber numberWithInt:45] forKey:@"hotKeyNextKeyCode"];
 	[userDefaultsValuesDict setObject:[NSNumber numberWithInt:(NSControlKeyMask|NSCommandKeyMask)] forKey:@"hotKeyNextModifiers"];
-	
+
 	[userDefaultsValuesDict setObject:[NSNumber numberWithInt:15] forKey:@"hotKeyPreviousKeyCode"];
 	[userDefaultsValuesDict setObject:[NSNumber numberWithInt:(NSControlKeyMask|NSCommandKeyMask)] forKey:@"hotKeyPreviousModifiers"];
 
@@ -392,11 +393,11 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 
 	[userDefaultsValuesDict setObject:@"clearAndPlay" forKey:@"openingFilesBehavior"];
 	[userDefaultsValuesDict setObject:@"enqueue" forKey:@"openingFilesAlteredBehavior"];
-	
+
 	//Register and sync defaults
 	[[NSUserDefaults standardUserDefaults] registerDefaults:userDefaultsValuesDict];
 	[[NSUserDefaults standardUserDefaults] synchronize];
-	
+
 	//Add observers
 	[[NSUserDefaultsController sharedUserDefaultsController] addObserver:self forKeyPath:@"values.hotKeyPlayKeyCode"		options:0 context:nil];
 	[[NSUserDefaultsController sharedUserDefaultsController] addObserver:self forKeyPath:@"values.hotKeyPreviousKeyCode"	options:0 context:nil];
@@ -427,11 +428,11 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 				[remote startListening: self];
 			}
 			if (onlyOnActive && ![NSApp isActive]) { //Setting a preference without being active? *shrugs*
-				[remote stopListening: self]; 
+				[remote stopListening: self];
 			}
 		}
 		else {
-			[remote stopListening: self]; 
+			[remote stopListening: self];
 		}
 	}
 }
@@ -443,28 +444,28 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 		initWithKeyCode: [[[[NSUserDefaultsController sharedUserDefaultsController] defaults] objectForKey:@"hotKeyPlayKeyCode"] intValue]
 		  modifierFlags: [[[[NSUserDefaultsController sharedUserDefaultsController] defaults] objectForKey:@"hotKeyPlayModifiers"] intValue]
 		];
-	
+
 	[prevHotKey release];
 	prevHotKey = [[NDHotKeyEvent alloc]
 		  initWithKeyCode: [[NSUserDefaults standardUserDefaults] integerForKey:@"hotKeyPreviousKeyCode"]
 			modifierFlags: [[NSUserDefaults standardUserDefaults] integerForKey:@"hotKeyPreviousModifiers"]
 		];
-	
+
 	[nextHotKey release];
 	nextHotKey = [[NDHotKeyEvent alloc]
 		initWithKeyCode: [[NSUserDefaults standardUserDefaults] integerForKey:@"hotKeyNextKeyCode"]
 			modifierFlags: [[NSUserDefaults standardUserDefaults] integerForKey:@"hotKeyNextModifiers"]
 		];
-	
+
 	[playHotKey setTarget:self selector:@selector(clickPlay)];
 	[prevHotKey setTarget:self selector:@selector(clickPrev)];
 	[nextHotKey setTarget:self selector:@selector(clickNext)];
-	
-	[playHotKey setEnabled:YES];	
+
+	[playHotKey setEnabled:YES];
 	[prevHotKey setEnabled:YES];
 	[nextHotKey setEnabled:YES];
 }
-     
+
 - (void)windowDidEnterFullScreen:(NSNotification *)notification
 {
     DLog(@"Entering fullscreen");
@@ -472,18 +473,18 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
     {
         nowPlaying = [[NowPlayingBarController alloc] init];
         [nowPlaying retain];
-        
+
         NSView *contentView = [mainWindow contentView];
         NSRect contentRect = [contentView frame];
         const NSSize windowSize = [contentView convertSize:[mainWindow frame].size fromView: nil];
-        
+
         NSRect nowPlayingFrame = [[nowPlaying view] frame];
         nowPlayingFrame.size.width = windowSize.width;
         [[nowPlaying view] setFrame: nowPlayingFrame];
-        
+
         [contentView addSubview: [nowPlaying view]];
         [[nowPlaying view] setFrameOrigin: NSMakePoint(0.0, NSMaxY(contentRect) - nowPlayingFrame.size.height)];
-        
+
         NSRect mainViewFrame = [mainView frame];
         mainViewFrame.size.height -= nowPlayingFrame.size.height;
         [mainView setFrame:mainViewFrame];
@@ -495,20 +496,20 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 - (void)windowDidExitFullScreen:(NSNotification *)notification
 {
     DLog(@"Exiting fullscreen");
-    if (nowPlaying) 
+    if (nowPlaying)
     {
         NSRect nowPlayingFrame = [[nowPlaying view] frame];
         NSRect mainViewFrame = [mainView frame];
         mainViewFrame.size.height += nowPlayingFrame.size.height;
         [mainView setFrame:mainViewFrame];
 //        [mainView setFrameOrigin:NSMakePoint(0.0, 0.0)];
-        
+
         [[nowPlaying view] removeFromSuperview];
         [nowPlaying release];
         nowPlaying = nil;
     }
 }
-     
+
 - (void)clickPlay
 {
 	[playbackController playPauseResume:self];
