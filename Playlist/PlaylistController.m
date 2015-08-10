@@ -46,16 +46,16 @@
 	NSValueTransformer *repeatModeImageTransformer = [[[RepeatModeImageTransformer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:repeatModeImageTransformer
                                     forName:@"RepeatModeImageTransformer"];
-	
+
 
 	NSValueTransformer *shuffleOffTransformer = [[[ShuffleModeTransformer alloc] initWithMode:ShuffleOff] autorelease];
     [NSValueTransformer setValueTransformer:shuffleOffTransformer
                                     forName:@"ShuffleOffTransformer"];
-	
+
 	NSValueTransformer *shuffleAlbumsTransformer = [[[ShuffleModeTransformer alloc] initWithMode:ShuffleAlbums] autorelease];
     [NSValueTransformer setValueTransformer:shuffleAlbumsTransformer
                                     forName:@"ShuffleAlbumsTransformer"];
-	
+
 	NSValueTransformer *shuffleAllTransformer = [[[ShuffleModeTransformer alloc] initWithMode:ShuffleAll] autorelease];
     [NSValueTransformer setValueTransformer:shuffleAllTransformer
                                     forName:@"ShuffleAllTransformer"];
@@ -63,13 +63,13 @@
 	NSValueTransformer *shuffleImageTransformer = [[[ShuffleImageTransformer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:shuffleImageTransformer
                                     forName:@"ShuffleImageTransformer"];
-	
-	
-	
+
+
+
 	NSValueTransformer *statusImageTransformer = [[[StatusImageTransformer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:statusImageTransformer
                                     forName:@"StatusImageTransformer"];
-									
+
 	NSValueTransformer *toggleQueueTitleTransformer = [[[ToggleQueueTitleTransformer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:toggleQueueTitleTransformer
                                     forName:@"ToggleQueueTitleTransformer"];
@@ -82,7 +82,7 @@
 										[NSNumber numberWithInteger:RepeatNone], @"repeat",
 										[NSNumber numberWithInteger:ShuffleOff],  @"shuffle",
 										nil];
-	
+
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultsDictionary];
 }
 
@@ -90,7 +90,7 @@
 - (id)initWithCoder:(NSCoder *)decoder
 {
 	self = [super initWithCoder:decoder];
-	
+
 	if (self)
 	{
 		shuffleList = [[NSMutableArray alloc] init];
@@ -102,7 +102,7 @@
 
 		[self initDefaults];
 	}
-	
+
 	return self;
 }
 
@@ -126,7 +126,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-	if ([keyPath isEqualToString:@"arrangedObjects"])	
+	if ([keyPath isEqualToString:@"arrangedObjects"])
 	{
 		[self updatePlaylistIndexes];
 		[self updateTotalTime];
@@ -149,15 +149,15 @@
 {
 	double tt = 0;
 	ldiv_t hoursAndMinutes;
-	
+
 	for (PlaylistEntry *pe in [self arrangedObjects]) {
         if (!isnan([pe.length doubleValue]))
             tt += [pe.length doubleValue];
 	}
-	
+
 	int sec = (int)(tt);
 	hoursAndMinutes = ldiv(sec/60, 60);
-	
+
 	[self setTotalTime:[NSString stringWithFormat:@"%ld hours %ld minutes %d seconds", hoursAndMinutes.quot, hoursAndMinutes.rem, sec%60]];
 }
 
@@ -181,14 +181,14 @@
 
 	NSUInteger lowerIndex = insertIndex;
 	NSUInteger index = insertIndex;
-	
+
 	while (NSNotFound != lowerIndex) {
 		lowerIndex = [indexSet indexLessThanIndex:lowerIndex];
-		
+
 		if (lowerIndex != NSNotFound)
 			index = lowerIndex;
 	}
-	
+
 	[playbackController playlistDidChange:self];
 }
 
@@ -208,7 +208,7 @@
 
 	[pboard addTypes:[NSArray arrayWithObject:NSFilenamesPboardType] owner:self];
     [pboard setPropertyList:filenames forType:NSFilenamesPboardType];
-	
+
 	return YES;
 }
 
@@ -223,15 +223,15 @@
 
 	if (row < 0)
 		row = 0;
-	
-			
+
+
 	// Determine the type of object that was dropped
 	NSArray *supportedTypes = [NSArray arrayWithObjects:CogUrlsPboardType, NSFilenamesPboardType, iTunesDropType, nil];
 	NSPasteboard *pboard = [info draggingPasteboard];
 	NSString *bestType = [pboard availableTypeFromArray:supportedTypes];
 
 	NSMutableArray *acceptedURLs = [[NSMutableArray alloc] init];
-	
+
 	// Get files from an file drawer drop
 	if ([bestType isEqualToString:CogUrlsPboardType]) {
 		NSArray *urls = [NSUnarchiver unarchiveObjectWithData:[[info draggingPasteboard] dataForType:CogUrlsPboardType]];
@@ -239,7 +239,7 @@
 		//[playlistLoader insertURLs: urls atIndex:row sort:YES];
 		[acceptedURLs addObjectsFromArray:urls];
 	}
-	
+
 	// Get files from a normal file drop (such as from Finder)
 	if ([bestType isEqualToString:NSFilenamesPboardType]) {
 		NSMutableArray *urls = [[NSMutableArray alloc] init];
@@ -248,12 +248,12 @@
 		{
 			[urls addObject:[NSURL fileURLWithPath:file]];
 		}
-		
+
 		//[playlistLoader insertURLs:urls atIndex:row sort:YES];
 		[acceptedURLs addObjectsFromArray:urls];
 		[urls release];
 	}
-	
+
 	// Get files from an iTunes drop
 	if ([bestType isEqualToString:iTunesDropType]) {
 		NSDictionary *iTunesDict = [pboard propertyListForType:iTunesDropType];
@@ -265,29 +265,29 @@
 		for (NSDictionary *trackInfo in [tracks allValues]) {
 			[urls addObject:[NSURL URLWithString:[trackInfo valueForKey:@"Location"]]];
 		}
-		
+
 		//[playlistLoader insertURLs:urls atIndex:row sort:YES];
 		[acceptedURLs addObjectsFromArray:urls];
 		[urls release];
 	}
-	
+
 	if ([acceptedURLs count])
 	{
 		[self willInsertURLs:acceptedURLs origin:URLOriginInternal];
-		
+
 		if (![[self content] count]) {
 			row = 0;
 		}
-		
+
 		NSArray* entries = [playlistLoader insertURLs:acceptedURLs atIndex:row sort:YES];
 		[self didInsertURLs:entries origin:URLOriginInternal];
 	}
-	
+
 	[acceptedURLs release];
-	
+
 	if ([self shuffle] != ShuffleOff)
 		[self resetShuffleList];
-	
+
 	return YES;
 }
 
@@ -358,7 +358,7 @@
 		//Remove the sort descriptors
 		[super setSortDescriptors:nil];
 		[self rearrangeObjects];
-		
+
 		return;
 	}
 
@@ -392,7 +392,7 @@
 - (IBAction)toggleShuffle:(id)sender
 {
 	ShuffleMode shuffle = [self shuffle];
-	
+
 	if (shuffle == ShuffleOff) {
 		[self setShuffle: ShuffleAlbums];
 	}
@@ -407,7 +407,7 @@
 - (IBAction)toggleRepeat:(id)sender
 {
 	RepeatMode repeat = [self repeat];
-	
+
 	if (repeat == RepeatNone) {
 		[self setRepeat: RepeatOne];
 	}
@@ -425,7 +425,7 @@
 - (PlaylistEntry *)entryAtIndex:(int)i
 {
 	RepeatMode repeat = [self repeat];
-	
+
 	if (i < 0)
 	{
 		if (repeat != RepeatNone)
@@ -440,7 +440,7 @@
 		else
 			return nil;
 	}
-	
+
 	return [[self arrangedObjects] objectAtIndex:i];
 }
 
@@ -462,7 +462,7 @@
 - (PlaylistEntry *)shuffledEntryAtIndex:(int)i
 {
 	RepeatMode repeat = [self repeat];
-	
+
 	while (i < 0)
 	{
 		if (repeat == RepeatAll)
@@ -487,7 +487,7 @@
 			return nil;
 		}
 	}
-	
+
 	return [shuffleList objectAtIndex:i];
 }
 
@@ -496,25 +496,25 @@
 	if ([self repeat] == RepeatOne) {
 		return pe;
 	}
-	
+
 	if ([queueList count] > 0)
 	{
-		
+
 		pe = [queueList objectAtIndex:0];
 		[queueList removeObjectAtIndex:0];
 		pe.queued = NO;
 		[pe setQueuePosition:-1];
-		
+
 		int i;
 		for (i = 0; i < [queueList count]; i++)
 		{
 			PlaylistEntry *queueItem = [queueList objectAtIndex:i];
 			[queueItem setQueuePosition: i];
 		}
-		
+
 		return pe;
 	}
-	
+
 	if ([self shuffle] != ShuffleOff)
 	{
 		return [self shuffledEntryAtIndex:(pe.shuffleIndex + 1)];
@@ -530,11 +530,11 @@
 		{
 			i = pe.index + 1;
 		}
-		
+
 		if ([self repeat] == RepeatAlbum)
 		{
 			PlaylistEntry *next = [self entryAtIndex:i];
-			
+
 			if ((i > [[self arrangedObjects] count]-1) || ([[next album] caseInsensitiveCompare:[pe album]]) || ([next album] == nil))
 			{
 				NSArray *filtered = [self filterPlaylistOnAlbum:[pe album]];
@@ -543,7 +543,7 @@
 				else
 					i = [[filtered objectAtIndex:0] index];
 			}
-			
+
 		}
 
 		return [self entryAtIndex:i];
@@ -553,7 +553,7 @@
 - (NSArray *)filterPlaylistOnAlbum:(NSString *)album
 {
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"album like %@",
-							  album];		
+							  album];
 	return [[self arrangedObjects] filteredArrayUsingPredicate:predicate];
 }
 
@@ -562,7 +562,7 @@
 	if ([self repeat] == RepeatOne) {
 		return pe;
 	}
-	
+
 	if ([self shuffle] != ShuffleOff)
 	{
 		return [self shuffledEntryAtIndex:(pe.shuffleIndex - 1)];
@@ -578,7 +578,7 @@
 		{
 			i = pe.index - 1;
 		}
-		
+
 		return [self entryAtIndex:i];
 	}
 }
@@ -586,27 +586,27 @@
 - (BOOL)next
 {
 	PlaylistEntry *pe;
-	
+
 	pe = [self getNextEntry:[self currentEntry]];
-	
+
 	if (pe == nil)
 		return NO;
-	
+
 	[self setCurrentEntry:pe];
-	
+
 	return YES;
 }
 
 - (BOOL)prev
 {
 	PlaylistEntry *pe;
-	
+
 	pe = [self getPrevEntry:[self currentEntry]];
 	if (pe == nil)
 		return NO;
-	
+
 	[self setCurrentEntry:pe];
-	
+
 	return YES;
 }
 
@@ -614,9 +614,9 @@
 {
 	NSArray *newList = [Shuffle shuffleList:[self arrangedObjects]];
 	NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [newList count])];
-	
+
 	[shuffleList insertObjects:newList atIndexes:indexSet];
-	
+
 	int i;
 	for (i = 0; i < [shuffleList count]; i++)
 	{
@@ -648,7 +648,7 @@
 	{
 		[shuffleList insertObject:currentEntry atIndex:0];
 		[currentEntry setShuffleIndex:0];
-		
+
 		//Need to rejigger so the current entry is at the start now...
 		int i;
 		BOOL found = NO;
@@ -668,7 +668,7 @@
 
 - (void)setCurrentEntry:(PlaylistEntry *)pe
 {
-    
+
     if (![pe metadataLoaded]) {
         // Force loading metadata if it isn't loaded,
         // will hopefully prevent wrong Growl notifications,
@@ -677,27 +677,27 @@
         NSDictionary *metadata = [playlistLoader readEntryInfo:pe];
         [pe setMetadata:metadata];
     }
-    
+
 	currentEntry.current = NO;
 	currentEntry.stopAfter = NO;
-	
+
 	pe.current = YES;
-	
+
 	if (pe != nil)
 		[tableView scrollRowToVisible:pe.index];
-	
+
 	[pe retain];
 	[currentEntry release];
-	
+
 	currentEntry = pe;
-}	
+}
 
 - (void)setShuffle:(ShuffleMode)s
 {
 	[[NSUserDefaults standardUserDefaults] setInteger:s forKey:@"shuffle"];
 	if (s != ShuffleOff)
 		[self resetShuffleList];
-	
+
 	[playbackController playlistDidChange:self];
 }
 - (ShuffleMode)shuffle
@@ -717,7 +717,7 @@
 - (IBAction)clear:(id)sender
 {
 	[self setFilterPredicate:nil];
-	
+
 	[self removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [[self arrangedObjects] count])]];
 }
 
@@ -736,7 +736,7 @@
 	NSWorkspace* ws = [NSWorkspace sharedWorkspace];
 	if (NSNotFound == [self selectionIndex])
 		return;
-	
+
 	NSURL *url = [[[self selectedObjects] objectAtIndex:0] URL];
 	if ([url isFileURL])
 		[ws selectFile:[url path] inFileViewerRootedAtPath:[url path]];
@@ -747,11 +747,11 @@
 // call the editor & pass the url
 	if ([self selectionIndex] < 0)
 		return;
-	
+
 	NSURL *url = [[[self selectedObjects] objectAtIndex:0] URL];
 	if ([url isFileURL])
 		[TagEditorController openTagEditor:url sender:sender];
-	
+
 }
 */
 - (IBAction)searchByArtist:(id)sender;
@@ -797,10 +797,10 @@
 		{
 			queueItem.queued = YES;
 			queueItem.queuePosition = [queueList count];
-			
+
 			[queueList addObject:queueItem];
 		}
-		
+
 		DLog(@"TOGGLE QUEUED: %i", queueItem.queued);
 	}
 
@@ -819,7 +819,7 @@
 -(BOOL)validateMenuItem:(NSMenuItem*)menuItem
 {
 	SEL action = [menuItem action];
-	
+
 	if (action == @selector(removeFromQueue:))
 	{
 		for (PlaylistEntry *q in [self selectedObjects])
@@ -831,17 +831,17 @@
 
 	if (action == @selector(emptyQueueList:) && ([queueList count] < 1))
 		return NO;
-	
+
 	if (action == @selector(stopAfterCurrent:) && currentEntry.stopAfter)
 		return NO;
-	
+
 	// if nothing is selected, gray out these
 	if ([[self selectedObjects] count] < 1)
 	{
-		
+
 		if (action == @selector(remove:))
 			return NO;
-	
+
 		if (action == @selector(addToQueue:))
 			return NO;
 
@@ -851,7 +851,7 @@
 		if (action == @selector(searchByAlbum:))
 			return NO;
 	}
-	
+
 	return YES;
 }
 
@@ -861,54 +861,16 @@
 	if (![urls count])
 		return;
 
-	CGEventRef event = CGEventCreate(NULL /*default event source*/);
-	CGEventFlags mods = CGEventGetFlags(event);
-	CFRelease(event);
-	
-	BOOL modifierPressed =  ((mods & kCGEventFlagMaskCommand)!=0)&((mods & kCGEventFlagMaskControl)!=0);
-	modifierPressed |= ((mods & kCGEventFlagMaskShift)!=0);
-
-	NSString *behavior = [[NSUserDefaults standardUserDefaults] valueForKey:@"openingFilesBehavior"];
-	if (modifierPressed) {
-		behavior =  [[NSUserDefaults standardUserDefaults] valueForKey:@"openingFilesAlteredBehavior"];
-	}
-	
-	
-	BOOL shouldClear = modifierPressed; // By default, internal sources should not clear the playlist
-	if (origin == URLOriginExternal) { // For external insertions, we look at the preference
-		//possible settings are "clearAndPlay", "enqueue", "enqueueAndPlay"
-		shouldClear = [behavior isEqualToString:@"clearAndPlay"];
-	}
-	
-	if (shouldClear) {
-		[self clear:self];
-	}
+	[self clear:self];
 }
 
 - (void)didInsertURLs:(NSArray*)urls origin:(URLOrigin)origin
 {
 	if (![urls count])
 		return;
-	
-	CGEventRef event = CGEventCreate(NULL);
-	CGEventFlags mods = CGEventGetFlags(event);
-	CFRelease(event);
-	
-	BOOL modifierPressed =  ((mods & kCGEventFlagMaskCommand)!=0)&((mods & kCGEventFlagMaskControl)!=0);
-	modifierPressed |= ((mods & kCGEventFlagMaskShift)!=0);
-	
-	NSString *behavior = [[NSUserDefaults standardUserDefaults] valueForKey:@"openingFilesBehavior"];
-	if (modifierPressed) {
-		behavior =  [[NSUserDefaults standardUserDefaults] valueForKey:@"openingFilesAlteredBehavior"];
-	}
-		
-	BOOL shouldPlay = modifierPressed; // The default is NO for internal insertions
-	if (origin == URLOriginExternal) { // For external insertions, we look at the preference
-		shouldPlay = [behavior isEqualToString:@"clearAndPlay"] || [behavior isEqualToString:@"enqueueAndPlay"];;
-	}
 
 	//Auto start playback
-	if (shouldPlay	&& [[self content] count] > 0) {
+	if ([[self content] count] > 0) {
 		[playbackController playEntry: [urls objectAtIndex:0]];
 	}
 }

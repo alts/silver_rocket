@@ -185,7 +185,6 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 	{
 		[playlistLoader willInsertURLs:[panel URLs] origin:URLOriginInternal];
 		[playlistLoader didInsertURLs:[playlistLoader addURLs:[panel URLs] sort:YES] origin:URLOriginInternal];
-		[playbackController play:self];
 	}
 }
 
