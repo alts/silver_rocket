@@ -27,7 +27,7 @@ typedef enum {
 	ShuffleAlbums,
 	ShuffleAll
 } ShuffleMode;
-	
+
 
 typedef enum {
 	URLOriginInternal = 0,
@@ -38,22 +38,18 @@ typedef enum {
 	IBOutlet PlaylistLoader *playlistLoader;
 	IBOutlet SpotlightWindowController *spotlightWindowController;
 	IBOutlet PlaybackController *playbackController;
-	
+
 	NSMutableArray *shuffleList;
 	NSMutableArray *queueList;
-	
-	NSString *totalTime;
-	
+
 	PlaylistEntry *currentEntry;
 
     NSUndoManager *undoManager;
 }
 
 @property(retain) PlaylistEntry *currentEntry;
-@property(retain) NSString *totalTime;
 
 //Private Methods
-- (void)updateTotalTime;
 - (void)updatePlaylistIndexes;
 - (IBAction)stopAfterCurrent:(id)sender;
 

@@ -241,8 +241,6 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 
 - (void)awakeFromNib
 {
-	[[totalTimeField cell] setBackgroundStyle:NSBackgroundStyleRaised];
-
 	[[playbackButtons cell] setToolTip:NSLocalizedString(@"PlayButtonTooltip", @"") forSegment: 1];
 	[[playbackButtons cell] setToolTip:NSLocalizedString(@"PrevButtonTooltip", @"") forSegment: 0];
 	[[playbackButtons cell] setToolTip:NSLocalizedString(@"NextButtonTooltip", @"") forSegment: 2];

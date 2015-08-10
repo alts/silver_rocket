@@ -24,7 +24,6 @@
 @implementation PlaylistController
 
 @synthesize currentEntry;
-@synthesize totalTime;
 
 + (void)initialize {
 	NSValueTransformer *repeatNoneTransformer = [[[RepeatModeTransformer alloc] initWithMode:RepeatNone] autorelease];
@@ -129,7 +128,6 @@
 	if ([keyPath isEqualToString:@"arrangedObjects"])
 	{
 		[self updatePlaylistIndexes];
-		[self updateTotalTime];
 	}
 }
 
@@ -143,22 +141,6 @@
 		if (pe.index != i) //Make sure we don't get into some kind of crazy observing loop...
 			pe.index = i;
 	}
-}
-
-- (void)updateTotalTime
-{
-	double tt = 0;
-	ldiv_t hoursAndMinutes;
-
-	for (PlaylistEntry *pe in [self arrangedObjects]) {
-        if (!isnan([pe.length doubleValue]))
-            tt += [pe.length doubleValue];
-	}
-
-	int sec = (int)(tt);
-	hoursAndMinutes = ldiv(sec/60, 60);
-
-	[self setTotalTime:[NSString stringWithFormat:@"%ld hours %ld minutes %d seconds", hoursAndMinutes.quot, hoursAndMinutes.rem, sec%60]];
 }
 
 - (void)tableView:(NSTableView *)tableView

@@ -29,8 +29,6 @@
 	IBOutlet NSButton *shuffleButton;
 	IBOutlet NSButton *repeatButton;
 
-	IBOutlet NSTextField *totalTimeField;
-
 	IBOutlet NSDrawer *infoDrawer;
 
 	IBOutlet PlaylistView *playlistView;

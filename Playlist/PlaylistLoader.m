@@ -29,12 +29,12 @@
 	if (self)
 	{
 		[self initDefaults];
-		
+
 		queue = [[NSOperationQueue alloc] init];
 		[queue setMaxConcurrentOperationCount:1];
 	}
-	
-	return self; 
+
+	return self;
 }
 
 - (void)initDefaults
@@ -42,14 +42,14 @@
 	NSDictionary *defaultsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
 										[NSNumber numberWithBool:YES], @"readCueSheetsInFolders",
 										nil];
-	
+
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultsDictionary];
 }
 
 - (void)dealloc
 {
 	[queue release];
-	
+
 	[super dealloc];
 }
 
@@ -64,7 +64,7 @@
 	{
 		return [self save:filename asType:kPlaylistM3u];
 	}
-}	
+}
 
 - (BOOL)save:(NSString *)filename asType:(PlaylistType)type
 {
@@ -95,7 +95,7 @@
 			[entryPath appendString:[entryURL fragment]];
 		}
 
-		return entryPath;		
+		return entryPath;
 	}
 	else {
 		//Write [entryURL absoluteString] to file
@@ -111,7 +111,7 @@
 		return NO;
 	}
 	[fileHandle truncateFileAtOffset:0];
-	
+
 	for (PlaylistEntry *pe in [playlistController content])
 	{
 		NSString *path = [self relativePathFrom:filename toURL:[pe URL]];
@@ -152,15 +152,15 @@
 - (NSArray *)fileURLsAtPath:(NSString *)path
 {
 	NSFileManager *manager = [NSFileManager defaultManager];
-	
+
 	NSMutableArray *urls = [NSMutableArray array];
-		
+
 	NSArray *subpaths = [manager subpathsAtPath:path];
 
 	for (NSString *subpath in subpaths)
 	{
 		NSString *absoluteSubpath = [NSString pathWithComponents:[NSArray arrayWithObjects:path,subpath,nil]];
-		
+
 		BOOL isDir;
 		if ( [manager fileExistsAtPath:absoluteSubpath isDirectory:&isDir] && isDir == NO)
 		{
@@ -171,22 +171,22 @@
 			}
 		}
 	}
-	
+
 	return urls;
 }
 
 - (NSArray*)insertURLs:(NSArray *)urls atIndex:(int)index sort:(BOOL)sort
 {
 	NSMutableSet *uniqueURLs = [NSMutableSet set];
-	
+
 	NSMutableArray *expandedURLs = [NSMutableArray array];
 	NSMutableArray *containedURLs = [NSMutableArray array];
 	NSMutableArray *fileURLs = [NSMutableArray array];
 	NSMutableArray *validURLs = [NSMutableArray array];
-	
+
 	if (!urls)
 		return [NSArray array];
-	
+
 	if (index < 0)
 		index = 0;
 
@@ -214,7 +214,7 @@
 			[expandedURLs addObject:url];
 		}
 	}
-	
+
 	DLog(@"Expanded urls: %@", expandedURLs);
 
 	NSArray *sortedURLs;
@@ -255,15 +255,15 @@
 		//Need a better way to determine acceptable file types than basing it on extensions.
 		if ([url isFileURL] && ![[AudioPlayer fileTypes] containsObject:[[[url path] pathExtension] lowercaseString]])
 			continue;
-		
+
 		if (![uniqueURLs containsObject:url])
 		{
 			[validURLs addObject:url];
-			
+
 			[uniqueURLs addObject:url];
 		}
 	}
-	
+
 	DLog(@"Valid urls: %@", validURLs);
 
 	for (url in containedURLs)
@@ -277,16 +277,16 @@
 
 		[validURLs addObject:url];
 	}
-	
+
 	//Create actual entries
 	int i;
 	NSMutableArray *entries = [NSMutableArray arrayWithCapacity:[validURLs count]];
 	for (i = 0; i < [validURLs count]; i++)
 	{
 		NSURL *url = [validURLs objectAtIndex:i];
-		
+
 		PlaylistEntry *pe;
-		if ([url isFileURL]) 
+		if ([url isFileURL])
 			pe = [[FilePlaylistEntry alloc] init];
 		else
 			pe = [[PlaylistEntry alloc] init];
@@ -299,11 +299,11 @@
 
 		[pe release];
 	}
-	
+
 	NSIndexSet *is = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(index, [entries count])];
-	
+
 	[playlistController insertObjects:entries atArrangedObjectIndexes:is];
-	
+
 	//Select the first entry in the group that was just added
 	[playlistController setSelectionIndex:index];
 	[self performSelectorInBackground:@selector(loadInfoForEntries:) withObject:entries];
@@ -334,8 +334,6 @@
     }
 
 	[queue waitUntilAllOperationsAreFinished];
-
-	[playlistController performSelectorOnMainThread:@selector(updateTotalTime) withObject:nil waitUntilDone:NO];
 }
 
 - (NSDictionary *)readEntryInfo:(PlaylistEntry *)pe
@@ -348,7 +346,7 @@
         entryProperties = [AudioPropertiesReader propertiesForURL:pe.URL];
         if (entryProperties == nil)
             return nil;
-        
+
         [entryInfo addEntriesFromDictionary:entryProperties];
         [entryInfo addEntriesFromDictionary:[AudioMetadataReader metadataForURL:pe.URL]];
         return entryInfo;
@@ -369,8 +367,8 @@
 		// get the playlist entry that the operation read for
 		PlaylistEntry *pe = nil;
 		[[object invocation] getArgument:&pe atIndex:2];
-        [pe performSelectorOnMainThread:@selector(setMetadata:) withObject:[object result] waitUntilDone:NO];  
-		
+        [pe performSelectorOnMainThread:@selector(setMetadata:) withObject:[object result] waitUntilDone:NO];
+
     }
     else
     {
