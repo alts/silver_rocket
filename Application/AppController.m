@@ -9,7 +9,6 @@
 #import "SpotlightWindowController.h"
 #import "StringToURLTransformer.h"
 #import "FontSizetoLineHeightTransformer.h"
-#import "PathNode.h"
 
 #import "Logging.h"
 #import "MiniModeMenuTitleTransformer.h"
@@ -54,7 +53,6 @@
 - (void)dealloc
 {
     [queue release];
-    [expandedNodes release];
     [super dealloc];
 }
 
@@ -282,68 +280,6 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
     // Restore mini mode
     [self setMiniMode:[[NSUserDefaults standardUserDefaults] boolForKey:@"miniMode"]];
 
-    // Restore file tree state
-    
-    // We need file tree view to restore its state here
-    // so attempt to access file tree view controller's root view
-    // to force it to read nib and create file tree view for us
-    //
-    // TODO: there probably is a more elegant way to do all this
-    //       but i'm too stupid/tired to figure it out now
-    [fileTreeViewController view];
-    
-    FileTreeOutlineView* outlineView = [fileTreeViewController outlineView];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nodeExpanded:) name:NSOutlineViewItemDidExpandNotification object:outlineView];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nodeCollapsed:) name:NSOutlineViewItemDidCollapseNotification object:outlineView];
-    
-    NSArray *expandedNodesArray = [[NSUserDefaults standardUserDefaults] valueForKey:@"fileTreeViewExpandedNodes"];
-    
-    if (expandedNodesArray)
-    {
-        expandedNodes = [[NSMutableSet alloc] initWithArray:expandedNodesArray];
-    }
-    else
-    {
-        expandedNodes = [[NSMutableSet alloc] init];
-    }
-    
-    DLog(@"Nodes to expand: %@", [expandedNodes description]);
-    
-    DLog(@"Num of rows: %ld", [outlineView numberOfRows]);
-    
-    if (!outlineView) 
-    {
-        DLog(@"outlineView is NULL!");
-    }
-    
-    [outlineView reloadData];
-    
-    for (NSInteger i=0; i<[outlineView numberOfRows]; i++)
-    {
-        PathNode *pn = [outlineView itemAtRow:i];
-        NSString *str = [[pn URL] absoluteString];
-        
-        if ([expandedNodes containsObject:str])
-        {
-            [outlineView expandItem:pn];
-        }
-    }
-}
-
-- (void)nodeExpanded:(NSNotification*)notification
-{
-    PathNode* node = [[notification userInfo] objectForKey:@"NSObject"];
-    NSString* url = [[node URL] absoluteString];
-
-    [expandedNodes addObject:url];
-}
-
-- (void)nodeCollapsed:(NSNotification*)notification
-{
-    PathNode* node = [[notification userInfo] objectForKey:@"NSObject"];
-    NSString* url = [[node URL] absoluteString];
-
-    [expandedNodes removeObject:url];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
@@ -369,11 +305,6 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 	NSString *fileName = @"Default.m3u";
 	
 	[playlistLoader saveM3u:[folder stringByAppendingPathComponent: fileName]];
-    
-    //
-    DLog(@"Saving expanded nodes: %@", [expandedNodes description]);
-    
-    [[NSUserDefaults standardUserDefaults] setValue:[expandedNodes allObjects] forKey:@"fileTreeViewExpandedNodes"];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
