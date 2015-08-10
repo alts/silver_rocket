@@ -73,7 +73,7 @@
 					<nil key="NSToolbarDelegate"/>
 					<bool key="NSToolbarPrefersToBeShown">YES</bool>
 					<bool key="NSToolbarShowsBaselineSeparator">YES</bool>
-					<bool key="NSToolbarAllowsUserCustomization">YES</bool>
+					<bool key="NSToolbarAllowsUserCustomization">NO</bool>
 					<bool key="NSToolbarAutosavesConfiguration">YES</bool>
 					<int key="NSToolbarDisplayMode">2</int>
 					<int key="NSToolbarSizeMode">1</int>
@@ -727,7 +727,7 @@
 							</object>
 						</object>
 					</dictionary>
-					<array class="NSMutableArray" key="NSToolbarIBAllowedItems">
+					<array key="NSToolbarIBAllowedItems">
 						<reference ref="496758104"/>
 						<reference ref="547771878"/>
 						<reference ref="438186009"/>
@@ -774,17 +774,17 @@
 										<object class="NSTableView" id="1062907150">
 											<reference key="NSNextResponder" ref="561123847"/>
 											<int key="NSvFlags">4370</int>
-											<string key="NSFrameSize">{480, 283}</string>
+											<string key="NSFrameSize">{568.5, 283}</string>
 											<reference key="NSSuperview" ref="561123847"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView"/>
+											<reference key="NSNextKeyView" ref="864291680"/>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											<bool key="NSControlAllowsExpansionToolTips">YES</bool>
 											<object class="NSTableHeaderView" key="NSHeaderView" id="367534576">
 												<reference key="NSNextResponder" ref="729711146"/>
 												<int key="NSvFlags">256</int>
-												<string key="NSFrameSize">{480, 17}</string>
+												<string key="NSFrameSize">{568.5, 17}</string>
 												<reference key="NSSuperview" ref="729711146"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="689304715"/>
@@ -1363,6 +1363,7 @@ AAAAAAAAA</bytes>
 									<reference key="NSSuperview" ref="381323260"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="729711146"/>
+									<bool key="NSEnabled">YES</bool>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<string key="NSControlAction">_doScroller:</string>
 									<reference key="NSControlTarget" ref="381323260"/>
@@ -1375,9 +1376,8 @@ AAAAAAAAA</bytes>
 							<string key="NSFrameSize">{480, 300}</string>
 							<reference key="NSSuperview" ref="955312553"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="864291680"/>
-							<bool key="NSDoNotTranslateAutoresizingMask">YES</bool>
-							<int key="NSsFlags">133648</int>
+							<reference key="NSNextKeyView" ref="561123847"/>
+							<int key="NSsFlags">133776</int>
 							<reference key="NSVScroller" ref="689304715"/>
 							<reference key="NSHScroller" ref="864291680"/>
 							<reference key="NSContentView" ref="561123847"/>
@@ -1414,7 +1414,7 @@ AAAAAAAAA</bytes>
 					<nil key="NSToolbarDelegate"/>
 					<bool key="NSToolbarPrefersToBeShown">YES</bool>
 					<bool key="NSToolbarShowsBaselineSeparator">YES</bool>
-					<bool key="NSToolbarAllowsUserCustomization">YES</bool>
+					<bool key="NSToolbarAllowsUserCustomization">NO</bool>
 					<bool key="NSToolbarAutosavesConfiguration">YES</bool>
 					<int key="NSToolbarDisplayMode">2</int>
 					<int key="NSToolbarSizeMode">1</int>
@@ -1682,13 +1682,12 @@ AAAAAAAAA</bytes>
 							<object class="NSSlider" key="NSToolbarItemView" id="163997941">
 								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">270</int>
-								<string key="NSFrame">{{0, 14}, {96, 15}}</string>
+								<string key="NSFrame">{{0, 14}, {100, 20}}</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSliderCell" key="NSCell" id="503443845">
 									<int key="NSCellFlags">603979776</int>
-									<int key="NSCellFlags2">131072</int>
+									<int key="NSCellFlags2">0</int>
 									<string key="NSContents"/>
-									<reference key="NSSupport" ref="26"/>
 									<reference key="NSControlView" ref="163997941"/>
 									<double key="NSMaxValue">10000</double>
 									<double key="NSMinValue">0.0</double>
@@ -1705,7 +1704,7 @@ AAAAAAAAA</bytes>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
 							<string key="NSToolbarItemMinSize">{96, 15}</string>
-							<string key="NSToolbarItemMaxSize">{2048, 15}</string>
+							<string key="NSToolbarItemMaxSize">{2048, 20}</string>
 							<bool key="NSToolbarItemEnabled">NO</bool>
 							<bool key="NSToolbarItemAutovalidates">YES</bool>
 							<int key="NSToolbarItemTag">0</int>
@@ -1885,7 +1884,6 @@ AAAAAAAAA</bytes>
 					<string key="NSFrameSize">{480, 0}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 877}}</string>
@@ -3359,7 +3357,6 @@ AAAAAAAAA</bytes>
 						<string key="NSFrame">{{6, 19}, {15, 129}}</string>
 						<reference key="NSSuperview" ref="109024969"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSliderCell" key="NSCell" id="744949030">
 							<int key="NSCellFlags">67371264</int>
@@ -7729,6 +7726,7 @@ AAAAAAAAA</bytes>
 				<string key="2229.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="2234.IBNSWindowAutoPositionCentersHorizontal"/>
 				<boolean value="YES" key="2234.IBNSWindowAutoPositionCentersVertical"/>
+				<string key="2234.IBPersistedLastKnownCanvasPosition">{-127, 111}</string>
 				<string key="2234.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2234.IBWindowTemplateEditedContentRect">{{398, 631}, {481, 0}}</string>
 				<boolean value="NO" key="2234.NSWindowTemplate.visibleAtLaunch"/>

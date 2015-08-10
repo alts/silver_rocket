@@ -540,6 +540,12 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
     NSWindow *windowToShow = miniMode ? miniWindow : mainWindow;
     NSWindow *windowToHide = miniMode ? mainWindow : miniWindow;
 
+    NSRect fromFrame = [windowToHide frame];
+    NSRect toFrame = [windowToShow frame];
+    fromFrame.origin.y -= toFrame.size.height - fromFrame.size.height;
+    fromFrame.size.height = toFrame.size.height;
+
+    [windowToShow setFrame:fromFrame display:YES animate:YES];
     [windowToHide close];
     [windowToShow makeKeyAndOrderFront:self];
 }
