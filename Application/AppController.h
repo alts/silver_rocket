@@ -25,7 +25,6 @@
 
 	IBOutlet NSSegmentedControl *playbackButtons;
 	IBOutlet NSButton *infoButton;
-	IBOutlet NSButton *fileButton;
 	IBOutlet NSButton *shuffleButton;
 	IBOutlet NSButton *repeatButton;
 

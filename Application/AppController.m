@@ -244,7 +244,6 @@ increase/decrease as long as the user holds the left/right, plus/minus button */
 	[infoButton setToolTip:NSLocalizedString(@"InfoButtonTooltip", @"")];
 	[shuffleButton setToolTip:NSLocalizedString(@"ShuffleButtonTooltip", @"")];
 	[repeatButton setToolTip:NSLocalizedString(@"RepeatButtonTooltip", @"")];
-	[fileButton setToolTip:NSLocalizedString(@"FileButtonTooltip", @"")];
 
 	[self registerHotKeys];
 

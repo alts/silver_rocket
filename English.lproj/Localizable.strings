@@ -16,7 +16,6 @@
 "InfoButtonTooltip" = "Information on the selected file";
 "ShuffleButtonTooltip" = "Shuffle mode";
 "RepeatButtonTooltip" = "Repeat mode";
-"FileButtonTooltip" = "File drawer";
 
 "InvalidURLShort" = "Invalid URL";
 "InvalidURLLong" = "The URL is not valid.";
