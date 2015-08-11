@@ -460,9 +460,5 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>MediaKeysApplication</string>
-	<key>SUFeedURL</key>
-	<string>http://mamburu.net/cog/stable.xml</string>
-	<key>SUPublicDSAKeyFile</key>
-	<string>cog_public.pem</string>
 </dict>
 </plist>

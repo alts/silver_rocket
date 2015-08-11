@@ -676,7 +676,7 @@
 						<reference ref="915079356"/>
 						<reference ref="337243427"/>
 					</array>
-					<array class="NSMutableArray" key="NSToolbarIBDefaultItems">
+					<array key="NSToolbarIBDefaultItems">
 						<reference ref="339983163"/>
 						<reference ref="547771878"/>
 						<reference ref="371334406"/>
@@ -1653,15 +1653,6 @@ AAAAAAAAA</bytes>
 									<reference key="NSMenu" ref="801427619"/>
 									<string key="NSTitle">About Cog</string>
 									<string key="NSKeyEquiv"/>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="996133839">
-									<reference key="NSMenu" ref="801427619"/>
-									<string key="NSTitle">Check for Updates...</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
@@ -2946,9 +2937,6 @@ AAAAAAAAA</bytes>
 			</object>
 			<object class="NSCustomObject" id="487788341">
 				<string key="NSClassName">PreferencesController</string>
-			</object>
-			<object class="NSCustomObject" id="475164296">
-				<string key="NSClassName">SUUpdater</string>
 			</object>
 			<object class="NSCustomObject" id="362908833">
 				<string key="NSClassName">PlaylistLoader</string>
@@ -4235,14 +4223,6 @@ AAAAAAAAA</bytes>
 					<int key="connectionID">2437</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">checkForUpdates:</string>
-						<reference key="source" ref="475164296"/>
-						<reference key="destination" ref="996133839"/>
-					</object>
-					<int key="connectionID">1304</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">playlistController</string>
 						<reference key="source" ref="362908833"/>
@@ -5312,7 +5292,6 @@ AAAAAAAAA</bytes>
 							<reference ref="430949252"/>
 							<reference ref="828994390"/>
 							<reference ref="40238458"/>
-							<reference ref="996133839"/>
 							<reference ref="296921596"/>
 							<reference ref="196189114"/>
 							<reference ref="231835451"/>
@@ -5380,11 +5359,6 @@ AAAAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">196</int>
 						<reference key="object" ref="40238458"/>
-						<reference key="parent" ref="801427619"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">302</int>
-						<reference key="object" ref="996133839"/>
 						<reference key="parent" ref="801427619"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -5780,12 +5754,6 @@ AAAAAAAAA</bytes>
 						<reference key="object" ref="487788341"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">PreferencesController</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1303</int>
-						<reference key="object" ref="475164296"/>
-						<reference key="parent" ref="0"/>
-						<string key="objectName">SUUpdater</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1319</int>
@@ -6799,7 +6767,6 @@ AAAAAAAAA</bytes>
 				<string key="1217.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="129.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="130.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1303.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="131.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1319.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1324.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -7015,7 +6982,6 @@ AAAAAAAAA</bytes>
 				<string key="2534.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2545.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="302.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="303.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="391.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="418.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -8547,36 +8513,6 @@ AAAAAAAAA</bytes>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">AppKit.framework/Headers/NSWindowController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SUUpdater</string>
-					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">checkForUpdates:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">checkForUpdates:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">checkForUpdates:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">delegate</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">delegate</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">delegate</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">Sparkle.framework/Headers/SUUpdater.h</string>
 					</object>
 				</object>
 			</array>

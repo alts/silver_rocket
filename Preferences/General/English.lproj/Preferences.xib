@@ -193,7 +193,6 @@
 						<string key="NSFrame">{{91, 20}, {82, 19}}</string>
 						<reference key="NSSuperview" ref="935554649"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="956769949">
 							<int key="NSCellFlags">-2075131840</int>
@@ -228,7 +227,6 @@
 						<string key="NSFrame">{{18, 18}, {281, 18}}</string>
 						<reference key="NSSuperview" ref="917028670"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="511398414">
 							<int key="NSCellFlags">67108864</int>
@@ -297,7 +295,6 @@
 						<string key="NSFrame">{{18, 18}, {329, 18}}</string>
 						<reference key="NSSuperview" ref="220291964"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="536089800">
 							<int key="NSCellFlags">67108864</int>
@@ -361,7 +358,6 @@
 						<string key="NSFrame">{{111, 16}, {207, 26}}</string>
 						<reference key="NSSuperview" ref="548976102"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSPopUpButtonCell" key="NSCell" id="948829894">
 							<int key="NSCellFlags">-2076180416</int>
@@ -481,7 +477,6 @@
 						<string key="NSFrame">{{122, 16}, {252, 26}}</string>
 						<reference key="NSSuperview" ref="162973285"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSPopUpButtonCell" key="NSCell" id="673648351">
 							<int key="NSCellFlags">-2076180416</int>
@@ -785,7 +780,6 @@
 						<string key="NSFrame">{{18, 18}, {395, 18}}</string>
 						<reference key="NSSuperview" ref="215894919"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="816544512">
 							<int key="NSCellFlags">-2080374784</int>
@@ -964,22 +958,6 @@
 					<int key="connectionID">98</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.SUCheckAtStartup</string>
-						<reference key="source" ref="532103279"/>
-						<reference key="destination" ref="288214272"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="532103279"/>
-							<reference key="NSDestination" ref="288214272"/>
-							<string key="NSLabel">value: values.SUCheckAtStartup</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.SUCheckAtStartup</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">53</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">view</string>
 						<reference key="source" ref="732449007"/>
@@ -1068,73 +1046,6 @@
 						</object>
 					</object>
 					<int key="connectionID">97</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">content: arrangedObjects</string>
-						<reference key="source" ref="750817470"/>
-						<reference key="destination" ref="25555930"/>
-						<object class="NSNibBindingConnector" key="connector" id="771851347">
-							<reference key="NSSource" ref="750817470"/>
-							<reference key="NSDestination" ref="25555930"/>
-							<string key="NSLabel">content: arrangedObjects</string>
-							<string key="NSBinding">content</string>
-							<string key="NSKeyPath">arrangedObjects</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">135</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentObjects: arrangedObjects.url</string>
-						<reference key="source" ref="750817470"/>
-						<reference key="destination" ref="25555930"/>
-						<object class="NSNibBindingConnector" key="connector" id="508235151">
-							<reference key="NSSource" ref="750817470"/>
-							<reference key="NSDestination" ref="25555930"/>
-							<string key="NSLabel">contentObjects: arrangedObjects.url</string>
-							<string key="NSBinding">contentObjects</string>
-							<string key="NSKeyPath">arrangedObjects.url</string>
-							<reference key="NSPreviousConnector" ref="771851347"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">144</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentValues: arrangedObjects.name</string>
-						<reference key="source" ref="750817470"/>
-						<reference key="destination" ref="25555930"/>
-						<object class="NSNibBindingConnector" key="connector" id="262004207">
-							<reference key="NSSource" ref="750817470"/>
-							<reference key="NSDestination" ref="25555930"/>
-							<string key="NSLabel">contentValues: arrangedObjects.name</string>
-							<string key="NSBinding">contentValues</string>
-							<string key="NSKeyPath">arrangedObjects.name</string>
-							<reference key="NSPreviousConnector" ref="508235151"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">145</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">selectedObject: values.SUFeedURL</string>
-						<reference key="source" ref="750817470"/>
-						<reference key="destination" ref="288214272"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="750817470"/>
-							<reference key="NSDestination" ref="288214272"/>
-							<string key="NSLabel">selectedObject: values.SUFeedURL</string>
-							<string key="NSBinding">selectedObject</string>
-							<string key="NSKeyPath">values.SUFeedURL</string>
-							<reference key="NSPreviousConnector" ref="262004207"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">147</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1874,18 +1785,10 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">357</int>
+			<int key="maxID">360</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">AppcastArrayController</string>
-					<string key="superclassName">NSArrayController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">../Preferences/General/AppcastArrayController.h</string>
-					</object>
-				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">GeneralPreferencePane</string>
 					<string key="superclassName">NSObject</string>
@@ -2114,25 +2017,6 @@
 				</object>
 			</array>
 			<array class="NSMutableArray" key="referencedPartialClassDescriptionsV3.2+">
-				<object class="IBPartialClassDescription">
-					<string key="className">NDHotKeyControl</string>
-					<string key="superclassName">NSTextField</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">readyForHotKeyEventChanged:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">readyForHotKeyEventChanged:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">readyForHotKeyEventChanged:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">NDHotKey.framework/Headers/NDHotKeyControl.h</string>
-					</object>
-				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSActionCell</string>
 					<string key="superclassName">NSCell</string>

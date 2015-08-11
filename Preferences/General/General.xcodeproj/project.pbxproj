@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		170744AD0BFF3938002475C9 /* AppcastArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 170744AC0BFF3938002475C9 /* AppcastArrayController.m */; };
 		172D72AD0B8926CA00D095BB /* apple_remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 172D72AC0B8926CA00D095BB /* apple_remote.png */; };
 		1766C7A80B912A71004A7AE4 /* lastfm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1766C7A70B912A71004A7AE4 /* lastfm.png */; };
 		178E386E0C3DA64500EE6711 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 178E386D0C3DA64500EE6711 /* InfoPlist.strings */; };
@@ -54,8 +53,6 @@
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		170744AB0BFF3938002475C9 /* AppcastArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppcastArrayController.h; sourceTree = "<group>"; };
-		170744AC0BFF3938002475C9 /* AppcastArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppcastArrayController.m; sourceTree = "<group>"; };
 		172D72AC0B8926CA00D095BB /* apple_remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple_remote.png; path = Icons/apple_remote.png; sourceTree = "<group>"; };
 		1766C7A70B912A71004A7AE4 /* lastfm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lastfm.png; path = Icons/lastfm.png; sourceTree = "<group>"; };
 		17C643360B8A77CC00C53518 /* OutputsArrayController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = OutputsArrayController.m; sourceTree = "<group>"; };
@@ -185,8 +182,6 @@
 		17D503410ABDB1660022D1E8 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				170744AB0BFF3938002475C9 /* AppcastArrayController.h */,
-				170744AC0BFF3938002475C9 /* AppcastArrayController.m */,
 				8E6C139E0AACBAB500819171 /* HotKeyControl.h */,
 				8E6C139F0AACBAB500819171 /* HotKeyControl.m */,
 				17C643370B8A77CC00C53518 /* OutputsArrayController.h */,
@@ -337,7 +332,6 @@
 				8E6C13A00AACBAB500819171 /* HotKeyControl.m in Sources */,
 				17C643380B8A77CC00C53518 /* OutputsArrayController.m in Sources */,
 				17C6433F0B8A783F00C53518 /* OutputPane.m in Sources */,
-				170744AD0BFF3938002475C9 /* AppcastArrayController.m in Sources */,
 				99F1813F0DE01D7A00FD5FFB /* PlaylistBehaviorArrayController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
