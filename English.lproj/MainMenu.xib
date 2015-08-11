@@ -2295,26 +2295,6 @@ AAAAAAAAA</bytes>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
-								<object class="NSMenuItem" id="540406405">
-									<reference key="NSMenu" ref="130084864"/>
-									<string key="NSTitle">Customize Toolbar...</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="453870370">
-									<reference key="NSMenu" ref="130084864"/>
-									<bool key="NSIsDisabled">YES</bool>
-									<bool key="NSIsSeparator">YES</bool>
-									<string key="NSTitle"/>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
 								<object class="NSMenuItem" id="799423223">
 									<reference key="NSMenu" ref="130084864"/>
 									<string key="NSTitle">Increase Font Size</string>
@@ -3536,14 +3516,6 @@ AAAAAAAAA</bytes>
 						<reference key="destination" ref="1056421901"/>
 					</object>
 					<int key="connectionID">1682</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">runToolbarCustomizationPalette:</string>
-						<reference key="source" ref="368854021"/>
-						<reference key="destination" ref="540406405"/>
-					</object>
-					<int key="connectionID">1873</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -6532,10 +6504,8 @@ AAAAAAAAA</bytes>
 						<int key="objectID">1849</int>
 						<reference key="object" ref="130084864"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="453870370"/>
 							<reference ref="799423223"/>
 							<reference ref="157940034"/>
-							<reference ref="540406405"/>
 							<reference ref="1070603681"/>
 							<reference ref="775965595"/>
 							<reference ref="593372690"/>
@@ -6543,16 +6513,6 @@ AAAAAAAAA</bytes>
 							<reference ref="448227362"/>
 						</array>
 						<reference key="parent" ref="313099820"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1856</int>
-						<reference key="object" ref="540406405"/>
-						<reference key="parent" ref="130084864"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1857</int>
-						<reference key="object" ref="453870370"/>
-						<reference key="parent" ref="130084864"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1858</int>
@@ -7652,8 +7612,6 @@ AAAAAAAAA</bytes>
 				<string key="1848.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1849.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1853.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1856.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1857.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1858.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1859.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1860.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
