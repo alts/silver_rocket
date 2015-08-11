@@ -332,43 +332,7 @@
 
 - (void)setSortDescriptors:(NSArray *)sortDescriptors
 {
-	DLog(@"Current: %@, setting: %@", [self sortDescriptors], sortDescriptors);
 
-	//Cheap hack so the index column isn't sorted
-	if (([sortDescriptors count] != 0) && [[[sortDescriptors objectAtIndex:0] key] caseInsensitiveCompare:@"index"] == NSOrderedSame)
-	{
-		//Remove the sort descriptors
-		[super setSortDescriptors:nil];
-		[self rearrangeObjects];
-
-		return;
-	}
-
-	[super setSortDescriptors:sortDescriptors];
-	[self rearrangeObjects];
-
-	[playbackController playlistDidChange:self];
-}
-
-- (IBAction)randomizeList:(id)sender
-{
-	[self setSortDescriptors:nil];
-
-    NSArray *unrandomized = [self content];
-    [[[self undoManager] prepareWithInvocationTarget:self] unrandomizeList:unrandomized];
-
-    [self setContent:[Shuffle shuffleList:[self content]]];
-
-    if ([self shuffle] != ShuffleOff)
-		[self resetShuffleList];
-
-    [[self undoManager] setActionName:@"Playlist Randomization"];
-}
-
-- (void)unrandomizeList:(NSArray *)entries
-{
-    [[[self undoManager] prepareWithInvocationTarget:self] randomizeList:self];
-    [self setContent:entries];
 }
 
 - (IBAction)toggleShuffle:(id)sender
