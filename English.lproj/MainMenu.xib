@@ -60,7 +60,7 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSWindowTemplate" id="459383411">
-				<int key="NSWindowStyleMask">4111</int>
+				<int key="NSWindowStyleMask">4103</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{331, 367}, {480, 300}}</string>
 				<int key="NSWTFlags">1614284800</int>
@@ -1401,7 +1401,7 @@ AAAAAAAAA</bytes>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSWindowTemplate" id="276041541">
-				<int key="NSWindowStyleMask">4367</int>
+				<int key="NSWindowStyleMask">4359</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{192, 547}, {480, 0}}</string>
 				<int key="NSWTFlags">1685587968</int>
@@ -2309,26 +2309,6 @@ AAAAAAAAA</bytes>
 									<string key="NSTitle">Decrease Font Size</string>
 									<string key="NSKeyEquiv">-</string>
 									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="698396283">
-									<reference key="NSMenu" ref="130084864"/>
-									<bool key="NSIsDisabled">YES</bool>
-									<bool key="NSIsSeparator">YES</bool>
-									<string key="NSTitle"/>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="448227362">
-									<reference key="NSMenu" ref="130084864"/>
-									<string key="NSTitle">Enter Full Screen</string>
-									<string key="NSKeyEquiv">f</string>
-									<int key="NSKeyEquivModMask">1310720</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
@@ -3548,14 +3528,6 @@ AAAAAAAAA</bytes>
 						<reference key="destination" ref="876592416"/>
 					</object>
 					<int key="connectionID">1884</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">toggleFullScreen:</string>
-						<reference key="source" ref="368854021"/>
-						<reference key="destination" ref="448227362"/>
-					</object>
-					<int key="connectionID">2457</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -6509,8 +6481,6 @@ AAAAAAAAA</bytes>
 							<reference ref="1070603681"/>
 							<reference ref="775965595"/>
 							<reference ref="593372690"/>
-							<reference ref="698396283"/>
-							<reference ref="448227362"/>
 						</array>
 						<reference key="parent" ref="313099820"/>
 					</object>
@@ -6940,16 +6910,6 @@ AAAAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">2453</int>
 						<reference key="object" ref="593372690"/>
-						<reference key="parent" ref="130084864"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">2455</int>
-						<reference key="object" ref="698396283"/>
-						<reference key="parent" ref="130084864"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">2456</int>
-						<reference key="object" ref="448227362"/>
 						<reference key="parent" ref="130084864"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -7708,8 +7668,6 @@ AAAAAAAAA</bytes>
 				<string key="2442.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2443.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2453.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="2455.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="2456.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2466.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2467.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2468.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
