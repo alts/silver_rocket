@@ -16,12 +16,11 @@
 @interface GeneralPreferencesPlugin : NSObject <PreferencePanePlugin> {
 	IBOutlet HotKeyPane *hotKeyPane;
 	IBOutlet OutputPane *outputPane;
-	
+
 	IBOutlet NSView *playlistView;
 	IBOutlet NSView *scrobblerView;
 	IBOutlet NSView *remoteView;
 	IBOutlet NSView *updatesView;
-    IBOutlet NSView *growlView;
     IBOutlet NSView *appearanceView;
 }
 
@@ -32,7 +31,6 @@
 - (GeneralPreferencePane *)updatesPane;
 - (GeneralPreferencePane *)scrobblerPane;
 - (GeneralPreferencePane *)playlistPane;
-- (GeneralPreferencePane *)growlPane;
 - (GeneralPreferencePane *)appearancePane;
 
 @end

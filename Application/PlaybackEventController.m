@@ -21,7 +21,7 @@
 										[NSNumber numberWithBool:YES], @"enableAudioScrobbler",
 										[NSNumber numberWithBool:NO],  @"automaticallyLaunchLastFM",
 										nil];
-	
+
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultsDictionary];
 }
 
@@ -31,21 +31,20 @@
 	if (self)
 	{
 		[self initDefaults];
-		
+
 		queue = [[NSOperationQueue alloc] init];
 		[queue setMaxConcurrentOperationCount:1];
-		
+
 		scrobbler = [[AudioScrobbler alloc] init];
-		[GrowlApplicationBridge setGrowlDelegate:self];
 	}
-	
+
 	return self;
 }
 
 - (void)dealloc
 {
 	[queue release];
-	
+
 	[super dealloc];
 }
 
@@ -55,20 +54,11 @@
 	if ([pe metadataLoaded] != YES) {
 		[pe performSelectorOnMainThread:@selector(setMetadata:) withObject:[playlistLoader readEntryInfo:pe] waitUntilDone:YES];
 	}
-	
+
 	if (NO == [pe error]) {
 		if([[NSUserDefaults standardUserDefaults] boolForKey:@"enableAudioScrobbler"]) {
 			[scrobbler start:pe];
 		}
-		
-		// Note: We don't want to send a growl notification on resume.
-		[GrowlApplicationBridge notifyWithTitle:[pe title]
-									description:[pe artist]
-							   notificationName:@"Stream Changed"
-									   iconData:[[pe albumArt] TIFFRepresentation]
-									   priority:0 
-									   isSticky:NO 
-								   clickContext:nil];
 	}
 }
 
@@ -100,28 +90,8 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackDidPause:) name:CogPlaybackDidPauseNotficiation object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackDidResume:) name:CogPlaybackDidResumeNotficiation object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackDidStop:)  name:CogPlaybackDidStopNotficiation object:nil];
-    
-
-    [[NSUserDefaultsController sharedUserDefaultsController] addObserver:self forKeyPath:@"values.enableGrowlMist"		options:0 context:nil];
-    
-    [self toggleGrowlMist];
 }
 
-- (void) toggleGrowlMist
-{
-    BOOL enableMist = [[NSUserDefaults standardUserDefaults] boolForKey:@"enableGrowlMist"];
-    [GrowlApplicationBridge setShouldUseBuiltInNotifications:enableMist];
-}
-
-- (void) observeValueForKeyPath:(NSString *)keyPath
-					   ofObject:(id)object
-						 change:(NSDictionary *)change
-                        context:(void *)context
-{
-	if ([keyPath isEqualToString:@"values.enableGrowlMist"]) {
-        [self toggleGrowlMist];
-	}
-}
 
 - (void)playbackDidBegin:(NSNotification *)notification
 {
@@ -149,17 +119,6 @@
 	NSOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(performPlaybackDidStopActions) object:nil];
 	[queue addOperation:op];
 	[op release];
-}
-
-- (NSDictionary *) registrationDictionaryForGrowl
-{
-	NSArray *notifications = [NSArray arrayWithObjects:@"Stream Changed", nil];
-	
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-			@"Cog", GROWL_APP_NAME,  
-			notifications, GROWL_NOTIFICATIONS_ALL, 
-			notifications, GROWL_NOTIFICATIONS_DEFAULT,
-			nil];
 }
 
 @end

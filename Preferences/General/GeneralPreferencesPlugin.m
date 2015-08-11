@@ -14,18 +14,17 @@
 {
 	GeneralPreferencesPlugin *plugin = [[[GeneralPreferencesPlugin alloc] init] autorelease];
 	[NSBundle loadNibNamed:@"Preferences" owner:plugin];
-	
-	return [NSArray arrayWithObjects: 
+
+	return [NSArray arrayWithObjects:
 			[plugin playlistPane],
 			[plugin hotKeyPane],
 			[plugin remotePane],
 			[plugin updatesPane],
 			[plugin outputPane],
 			[plugin scrobblerPane],
-            [plugin growlPane],
             [plugin appearancePane],
 			nil];
-}	
+}
 
 - (HotKeyPane *)hotKeyPane
 {
@@ -55,11 +54,6 @@
 - (GeneralPreferencePane *)playlistPane
 {
 	return [GeneralPreferencePane preferencePaneWithView:playlistView title:NSLocalizedStringFromTableInBundle(@"Playlist", nil, [NSBundle bundleForClass:[self class]], @"")  iconNamed:@"playlist"];
-}
-
-- (GeneralPreferencePane *)growlPane
-{
-	return [GeneralPreferencePane preferencePaneWithView:growlView title:NSLocalizedStringFromTableInBundle(@"Growl", nil, [NSBundle bundleForClass:[self class]], @"")  iconNamed:@"growl"];
 }
 
 - (GeneralPreferencePane *)appearancePane
