@@ -4,7 +4,7 @@
 
 #import "CogAudio/AudioPlayer.h"
 #import "TrackingSlider.h"
-#import "AudioScrobbler.h"
+#import "PlaylistEntry.h"
 
 #define DEFAULT_VOLUME_DOWN 5
 #define DEFAULT_VOLUME_UP DEFAULT_VOLUME_DOWN
@@ -22,15 +22,15 @@ extern NSString *CogPlaybackDidStopNotficiation;
 {
     IBOutlet PlaylistController *playlistController;
 	IBOutlet PlaylistView *playlistView;
-	
+
 	IBOutlet NSSlider *volumeSlider;
-	
+
 	IBOutlet NSArrayController *outputDevices;
-	
+
 	NSTimer *positionTimer;
-		
+
 	AudioPlayer *audioPlayer;
-	
+
 	int playbackStatus;
 	double position;
 	BOOL seekable;

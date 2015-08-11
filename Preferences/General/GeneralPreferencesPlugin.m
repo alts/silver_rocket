@@ -21,7 +21,6 @@
 			[plugin remotePane],
 			[plugin updatesPane],
 			[plugin outputPane],
-			[plugin scrobblerPane],
             [plugin appearancePane],
 			nil];
 }
@@ -44,11 +43,6 @@
 - (GeneralPreferencePane *)updatesPane
 {
 	return [GeneralPreferencePane preferencePaneWithView:updatesView title:NSLocalizedStringFromTableInBundle(@"Updates", nil, [NSBundle bundleForClass:[self class]], @"")  iconNamed:@"updates"];
-}
-
-- (GeneralPreferencePane *)scrobblerPane
-{
-	return [GeneralPreferencePane preferencePaneWithView:scrobblerView title:NSLocalizedStringFromTableInBundle(@"Last.fm", nil, [NSBundle bundleForClass:[self class]], @"")  iconNamed:@"lastfm"];
 }
 
 - (GeneralPreferencePane *)playlistPane

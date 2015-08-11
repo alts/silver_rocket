@@ -18,7 +18,6 @@
 	IBOutlet OutputPane *outputPane;
 
 	IBOutlet NSView *playlistView;
-	IBOutlet NSView *scrobblerView;
 	IBOutlet NSView *remoteView;
 	IBOutlet NSView *updatesView;
     IBOutlet NSView *appearanceView;
@@ -29,7 +28,6 @@
 
 - (GeneralPreferencePane *)remotePane;
 - (GeneralPreferencePane *)updatesPane;
-- (GeneralPreferencePane *)scrobblerPane;
 - (GeneralPreferencePane *)playlistPane;
 - (GeneralPreferencePane *)appearancePane;
 

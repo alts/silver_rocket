@@ -9,11 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 @class PlaylistLoader;
-@class AudioScrobbler;
 @interface PlaybackEventController : NSObject {
 	NSOperationQueue *queue;
-	
-	AudioScrobbler *scrobbler;
+
 	IBOutlet PlaylistLoader *playlistLoader;
 }
 

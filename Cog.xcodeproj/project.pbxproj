@@ -27,8 +27,6 @@
 		1745CBA50F661DBB00E513F7 /* shuffle_albums.png in Resources */ = {isa = PBXBuildFile; fileRef = 1745CBA40F661DBB00E513F7 /* shuffle_albums.png */; };
 		1752C36C0F59E00100F85F28 /* PlaybackButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1752C36B0F59E00100F85F28 /* PlaybackButtons.m */; };
 		1755E1F90BA0D2B600CA3560 /* PlaylistLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1755E1F70BA0D2B600CA3560 /* PlaylistLoader.m */; };
-		1766C6930B911DF1004A7AE4 /* AudioScrobbler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1766C68F0B911DF1004A7AE4 /* AudioScrobbler.m */; };
-		1766C6950B911DF1004A7AE4 /* AudioScrobblerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1766C6910B911DF1004A7AE4 /* AudioScrobblerClient.m */; };
 		1766C8920B912FB4004A7AE4 /* files_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1766C88A0B912FB4004A7AE4 /* files_off.png */; };
 		1766C8930B912FB4004A7AE4 /* files_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 1766C88B0B912FB4004A7AE4 /* files_on.png */; };
 		1766C8940B912FB4004A7AE4 /* info_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1766C88C0B912FB4004A7AE4 /* info_off.png */; };
@@ -597,10 +595,6 @@
 		1752C36B0F59E00100F85F28 /* PlaybackButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaybackButtons.m; path = Window/PlaybackButtons.m; sourceTree = "<group>"; };
 		1755E1F60BA0D2B600CA3560 /* PlaylistLoader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PlaylistLoader.h; path = ../Playlist/PlaylistLoader.h; sourceTree = "<group>"; };
 		1755E1F70BA0D2B600CA3560 /* PlaylistLoader.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = PlaylistLoader.m; path = ../Playlist/PlaylistLoader.m; sourceTree = "<group>"; };
-		1766C68E0B911DF1004A7AE4 /* AudioScrobbler.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AudioScrobbler.h; sourceTree = "<group>"; };
-		1766C68F0B911DF1004A7AE4 /* AudioScrobbler.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AudioScrobbler.m; sourceTree = "<group>"; };
-		1766C6900B911DF1004A7AE4 /* AudioScrobblerClient.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AudioScrobblerClient.h; sourceTree = "<group>"; };
-		1766C6910B911DF1004A7AE4 /* AudioScrobblerClient.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AudioScrobblerClient.m; sourceTree = "<group>"; };
 		1766C88A0B912FB4004A7AE4 /* files_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = files_off.png; path = Images/files_off.png; sourceTree = "<group>"; };
 		1766C88B0B912FB4004A7AE4 /* files_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = files_on.png; path = Images/files_on.png; sourceTree = "<group>"; };
 		1766C88C0B912FB4004A7AE4 /* info_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info_off.png; path = Images/info_off.png; sourceTree = "<group>"; };
@@ -872,7 +866,6 @@
 				17D1B0FE0F63252900694C57 /* InfoInspector */,
 				8E75752309F31D5A0080F1EE /* Feedback */,
 				569C52C50D5F2BD500BDBDC9 /* Spotlight */,
-				1766C68D0B911DF1004A7AE4 /* AudioScrobbler */,
 				17E0D5F60F520F42005B6FED /* Transformers */,
 				177EC0110B8BC2CF0000BC8C /* Utils */,
 				177EBF770B8BC2A70000BC8C /* ThirdParty */,
@@ -916,17 +909,6 @@
 				173A43A00F3FD26500676A7B /* ToolTipWindow.m */,
 			);
 			name = ToolTip;
-			sourceTree = "<group>";
-		};
-		1766C68D0B911DF1004A7AE4 /* AudioScrobbler */ = {
-			isa = PBXGroup;
-			children = (
-				1766C68E0B911DF1004A7AE4 /* AudioScrobbler.h */,
-				1766C68F0B911DF1004A7AE4 /* AudioScrobbler.m */,
-				1766C6900B911DF1004A7AE4 /* AudioScrobblerClient.h */,
-				1766C6910B911DF1004A7AE4 /* AudioScrobblerClient.m */,
-			);
-			path = AudioScrobbler;
 			sourceTree = "<group>";
 		};
 		177042960B8BC53600B86321 /* Application */ = {
@@ -2112,8 +2094,6 @@
 				177EC0290B8BC2CF0000BC8C /* TrackingSlider.m in Sources */,
 				1770429C0B8BC53600B86321 /* AppController.m in Sources */,
 				1770429E0B8BC53600B86321 /* PlaybackController.m in Sources */,
-				1766C6930B911DF1004A7AE4 /* AudioScrobbler.m in Sources */,
-				1766C6950B911DF1004A7AE4 /* AudioScrobblerClient.m in Sources */,
 				1755E1F90BA0D2B600CA3560 /* PlaylistLoader.m in Sources */,
 				8E9A30160BA792DC0091081B /* NSFileHandle+CreateFile.m in Sources */,
 				179790E10C087AB7001D6996 /* OpenURLPanel.m in Sources */,
