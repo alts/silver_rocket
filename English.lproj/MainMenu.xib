@@ -757,8 +757,8 @@
 					<array key="NSToolbarIBSelectableItems" id="0"/>
 				</object>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{600, 300}</string>
-				<string key="NSWindowContentMinSize">{400, 100}</string>
+				<string key="NSWindowContentMaxSize">{480, 300}</string>
+				<string key="NSWindowContentMinSize">{480, 300}</string>
 				<object class="NSView" key="NSWindowView" id="955312553">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -777,7 +777,7 @@
 											<string key="NSFrameSize">{568.5, 283}</string>
 											<reference key="NSSuperview" ref="561123847"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="864291680"/>
+											<reference key="NSNextKeyView" ref="689304715"/>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											<bool key="NSControlAllowsExpansionToolTips">YES</bool>
@@ -787,7 +787,7 @@
 												<string key="NSFrameSize">{568.5, 17}</string>
 												<reference key="NSSuperview" ref="729711146"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView" ref="689304715"/>
+												<reference key="NSNextKeyView" ref="561123847"/>
 												<reference key="NSTableView" ref="1062907150"/>
 											</object>
 											<object class="_NSCornerView" key="NSCornerView">
@@ -1348,7 +1348,7 @@ AAAAAAAAA</bytes>
 									<string key="NSFrame">{{42, 17}, {16, 23}}</string>
 									<reference key="NSSuperview" ref="381323260"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView" ref="561123847"/>
+									<reference key="NSNextKeyView"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<string key="NSControlAction">_doScroller:</string>
 									<reference key="NSControlTarget" ref="381323260"/>
@@ -1376,7 +1376,7 @@ AAAAAAAAA</bytes>
 							<string key="NSFrameSize">{480, 300}</string>
 							<reference key="NSSuperview" ref="955312553"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="561123847"/>
+							<reference key="NSNextKeyView" ref="864291680"/>
 							<int key="NSsFlags">133776</int>
 							<reference key="NSVScroller" ref="689304715"/>
 							<reference key="NSHScroller" ref="864291680"/>
@@ -1876,14 +1876,15 @@ AAAAAAAAA</bytes>
 					<reference key="NSToolbarIBSelectableItems" ref="0"/>
 				</object>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{600, 1}</string>
-				<string key="NSWindowContentMinSize">{400, 1}</string>
+				<string key="NSWindowContentMaxSize">{480, 1}</string>
+				<string key="NSWindowContentMinSize">{480, 1}</string>
 				<object class="NSView" key="NSWindowView" id="292934259">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">-2147483392</int>
 					<string key="NSFrameSize">{480, 0}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
+					<reference key="NSNextKeyView"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 877}}</string>
@@ -2890,15 +2891,6 @@ AAAAAAAAA</bytes>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
-								<object class="NSMenuItem" id="834055716">
-									<reference key="NSMenu" ref="725798088"/>
-									<string key="NSTitle">Zoom</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
 								<object class="NSMenuItem" id="286449986">
 									<reference key="NSMenu" ref="725798088"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -3357,6 +3349,7 @@ AAAAAAAAA</bytes>
 						<string key="NSFrame">{{6, 19}, {15, 129}}</string>
 						<reference key="NSSuperview" ref="109024969"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSliderCell" key="NSCell" id="744949030">
 							<int key="NSCellFlags">67371264</int>
@@ -3527,14 +3520,6 @@ AAAAAAAAA</bytes>
 						<reference key="destination" ref="1024951444"/>
 					</object>
 					<int key="connectionID">193</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">performZoom:</string>
-						<reference key="source" ref="368854021"/>
-						<reference key="destination" ref="834055716"/>
-					</object>
-					<int key="connectionID">198</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -5850,7 +5835,6 @@ AAAAAAAAA</bytes>
 							<reference ref="132386305"/>
 							<reference ref="994091352"/>
 							<reference ref="764376524"/>
-							<reference ref="834055716"/>
 							<reference ref="775538935"/>
 							<reference ref="292413265"/>
 							<reference ref="107386588"/>
@@ -5871,11 +5855,6 @@ AAAAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">92</int>
 						<reference key="object" ref="764376524"/>
-						<reference key="parent" ref="725798088"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">197</int>
-						<reference key="object" ref="834055716"/>
 						<reference key="parent" ref="725798088"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -7695,7 +7674,6 @@ AAAAAAAAA</bytes>
 				<string key="1897.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="196.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="197.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<reference key="2.IBNSViewMetadataGestureRecognizers" ref="0"/>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2020.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
