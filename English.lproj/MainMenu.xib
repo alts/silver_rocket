@@ -64,7 +64,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{331, 367}, {480, 300}}</string>
 				<int key="NSWTFlags">1614284800</int>
-				<string key="NSWindowTitle">Cog</string>
+				<string key="NSWindowTitle">SilverRocket</string>
 				<string key="NSWindowClass">MainWindow</string>
 				<object class="NSToolbar" key="NSViewClass" id="420567122">
 					<object class="NSMutableString" key="NSToolbarIdentifier">
@@ -86,11 +86,9 @@
 							<string key="NSToolbarItemPaletteLabel">Search</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSearchField" key="NSToolbarItemView" id="753327466">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {96, 22}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSViewIsLayerTreeHost">YES</bool>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="284278117">
@@ -181,11 +179,9 @@
 							<string key="NSToolbarItemPaletteLabel">Position</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSlider" key="NSToolbarItemView" id="505703107">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">270</int>
 								<string key="NSFrame">{{0, 14}, {96, 21}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSliderCell" key="NSCell" id="543888159">
 									<int key="NSCellFlags">603979776</int>
@@ -222,11 +218,9 @@
 							<string key="NSToolbarItemPaletteLabel">Info Inspector</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="593720571">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{27, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="1048031545">
 									<int key="NSCellFlags">67108864</int>
@@ -266,11 +260,9 @@
 							<string key="NSToolbarItemPaletteLabel">Shuffle</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="865953109">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{8, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="141286620">
 									<int key="NSCellFlags">67108864</int>
@@ -310,11 +302,9 @@
 							<string key="NSToolbarItemPaletteLabel">Volume</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="805617126">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{9, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="980041866">
 									<int key="NSCellFlags">67108864</int>
@@ -354,11 +344,9 @@
 							<string key="NSToolbarItemPaletteLabel">Playback Control</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSegmentedControl" key="NSToolbarItemView" id="40234197">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{3, 14}, {92, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSegmentedCell" key="NSCell" id="477857375">
 									<int key="NSCellFlags">-2071986176</int>
@@ -422,11 +410,9 @@
 							<string key="NSToolbarItemPaletteLabel">Current Time</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSTextField" key="NSToolbarItemView" id="362320150">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{15, 14}, {46, 15}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSTextFieldCell" key="NSCell" id="511447813">
 									<int key="NSCellFlags">72351808</int>
@@ -473,11 +459,9 @@
 							<string key="NSToolbarItemPaletteLabel">Repeat</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="557152416">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{9, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="758905654">
 									<int key="NSCellFlags">67108864</int>
@@ -517,11 +501,9 @@
 							<string key="NSToolbarItemPaletteLabel">Mini Mode</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="1060302774">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{18, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="266967496">
 									<int key="NSCellFlags">67108864</int>
@@ -1137,7 +1119,7 @@ AAAAAAAAA</bytes>
 				<string key="NSScreenRect">{{0, 0}, {1440, 877}}</string>
 				<string key="NSMinSize">{400, 455}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
-				<string key="NSFrameAutosaveName">Cog</string>
+				<string key="NSFrameAutosaveName">SilverRocket</string>
 				<int key="NSWindowCollectionBehavior">128</int>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -1146,7 +1128,7 @@ AAAAAAAAA</bytes>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{192, 547}, {480, 0}}</string>
 				<int key="NSWTFlags">1685587968</int>
-				<string key="NSWindowTitle">Cog</string>
+				<string key="NSWindowTitle">SilverRocket</string>
 				<string key="NSWindowClass">MiniWindow</string>
 				<object class="NSToolbar" key="NSViewClass" id="387608983">
 					<object class="NSMutableString" key="NSToolbarIdentifier">
@@ -1638,7 +1620,7 @@ AAAAAAAAA</bytes>
 				<array class="NSMutableArray" key="NSMenuItems">
 					<object class="NSMenuItem" id="92000235">
 						<reference key="NSMenu" ref="106317326"/>
-						<string key="NSTitle">Cog</string>
+						<string key="NSTitle">SilverRocket</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSKeyEquivModMask">1048576</int>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -1647,11 +1629,11 @@ AAAAAAAAA</bytes>
 						<string key="NSAction">submenuAction:</string>
 						<reference key="NSTarget" ref="801427619"/>
 						<object class="NSMenu" key="NSSubmenu" id="801427619">
-							<string key="NSTitle">Cog</string>
+							<string key="NSTitle">SilverRocket</string>
 							<array class="NSMutableArray" key="NSMenuItems">
 								<object class="NSMenuItem" id="40988480">
 									<reference key="NSMenu" ref="801427619"/>
-									<string key="NSTitle">About Cog</string>
+									<string key="NSTitle">About SilverRocket</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
@@ -1670,7 +1652,7 @@ AAAAAAAAA</bytes>
 								</object>
 								<object class="NSMenuItem" id="196189114">
 									<reference key="NSMenu" ref="801427619"/>
-									<string key="NSTitle">Support Cog...</string>
+									<string key="NSTitle">Support SilverRocket...</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -1748,7 +1730,7 @@ AAAAAAAAA</bytes>
 								</object>
 								<object class="NSMenuItem" id="150024302">
 									<reference key="NSMenu" ref="801427619"/>
-									<string key="NSTitle">Hide Cog</string>
+									<string key="NSTitle">Hide SilverRocket</string>
 									<string key="NSKeyEquiv">h</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -1786,7 +1768,7 @@ AAAAAAAAA</bytes>
 								</object>
 								<object class="NSMenuItem" id="429397624">
 									<reference key="NSMenu" ref="801427619"/>
-									<string key="NSTitle">Quit Cog</string>
+									<string key="NSTitle">Quit SilverRocket</string>
 									<string key="NSKeyEquiv">q</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -2615,7 +2597,7 @@ AAAAAAAAA</bytes>
 								</object>
 								<object class="NSMenuItem" id="775538935">
 									<reference key="NSMenu" ref="725798088"/>
-									<string key="NSTitle">Cog</string>
+									<string key="NSTitle">SilverRocket</string>
 									<string key="NSKeyEquiv">1</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -2661,7 +2643,7 @@ AAAAAAAAA</bytes>
 							<array class="NSMutableArray" key="NSMenuItems">
 								<object class="NSMenuItem" id="550882119">
 									<reference key="NSMenu" ref="118881603"/>
-									<string key="NSTitle">Cog Help</string>
+									<string key="NSTitle">SilverRocket Help</string>
 									<string key="NSKeyEquiv">?</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -3284,9 +3266,9 @@ AAAAAAAAA</bytes>
 							<string key="NSBinding">title</string>
 							<string key="NSKeyPath">content.display</string>
 							<dictionary key="NSOptions">
-								<string key="NSNoSelectionPlaceholder">Cog</string>
-								<string key="NSNotApplicablePlaceholder">Cog</string>
-								<string key="NSNullPlaceholder">Cog</string>
+								<string key="NSNoSelectionPlaceholder">SilverRocket</string>
+								<string key="NSNotApplicablePlaceholder">SilverRocket</string>
+								<string key="NSNullPlaceholder">SilverRocket</string>
 							</dictionary>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
@@ -4892,9 +4874,9 @@ AAAAAAAAA</bytes>
 							<string key="NSBinding">title</string>
 							<string key="NSKeyPath">content.display</string>
 							<dictionary key="NSOptions">
-								<string key="NSNoSelectionPlaceholder">Cog</string>
-								<string key="NSNotApplicablePlaceholder">Cog</string>
-								<string key="NSNullPlaceholder">Cog</string>
+								<string key="NSNoSelectionPlaceholder">SilverRocket</string>
+								<string key="NSNotApplicablePlaceholder">SilverRocket</string>
+								<string key="NSNullPlaceholder">SilverRocket</string>
 							</dictionary>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>

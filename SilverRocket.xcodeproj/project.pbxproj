@@ -597,7 +597,7 @@
 		1766C88D0B912FB4004A7AE4 /* info_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info_on.png; path = Images/info_on.png; sourceTree = "<group>"; };
 		1766C8900B912FB4004A7AE4 /* shuffle_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuffle_off.png; path = Images/shuffle_off.png; sourceTree = "<group>"; };
 		1766C8910B912FB4004A7AE4 /* shuffle_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuffle_on.png; path = Images/shuffle_on.png; sourceTree = "<group>"; };
-		1770424E0B8BC41800B86321 /* Cog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1770424E0B8BC41800B86321 /* SilverRocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilverRocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		177042970B8BC53600B86321 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		177042980B8BC53600B86321 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		177042990B8BC53600B86321 /* PlaybackController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PlaybackController.h; sourceTree = "<group>"; };
@@ -726,7 +726,7 @@
 		3257BD6F15CE959000A5FE05 /* stopDockBadgeColorful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stopDockBadgeColorful.png; path = Images/stopDockBadgeColorful.png; sourceTree = "<group>"; };
 		3259FD1C1672AEB9008FC4D0 /* miniModeOffTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = miniModeOffTemplate.pdf; path = Images/miniModeOffTemplate.pdf; sourceTree = "<group>"; };
 		3259FD1D1672AEB9008FC4D0 /* miniModeOnTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = miniModeOnTemplate.pdf; path = Images/miniModeOnTemplate.pdf; sourceTree = "<group>"; };
-		3299F131166FA3DC0056C7BA /* CogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3299F131166FA3DC0056C7BA /* SilverRocketTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SilverRocketTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3299F132166FA3DC0056C7BA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3299F136166FA3DC0056C7BA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3299F139166FA3DC0056C7BA /* CogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CogTests-Info.plist"; sourceTree = "<group>"; };
@@ -1272,8 +1272,8 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1770424E0B8BC41800B86321 /* Cog.app */,
-				3299F131166FA3DC0056C7BA /* CogTests.octest */,
+				1770424E0B8BC41800B86321 /* SilverRocket.app */,
+				3299F131166FA3DC0056C7BA /* SilverRocketTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1576,9 +1576,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3299F130166FA3DC0056C7BA /* CogTests */ = {
+		3299F130166FA3DC0056C7BA /* SilverRocketTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3299F141166FA3DC0056C7BA /* Build configuration list for PBXNativeTarget "CogTests" */;
+			buildConfigurationList = 3299F141166FA3DC0056C7BA /* Build configuration list for PBXNativeTarget "SilverRocketTests" */;
 			buildPhases = (
 				3299F12C166FA3DC0056C7BA /* Sources */,
 				3299F12D166FA3DC0056C7BA /* Frameworks */,
@@ -1589,14 +1589,14 @@
 			);
 			dependencies = (
 			);
-			name = CogTests;
+			name = SilverRocketTests;
 			productName = CogTests;
-			productReference = 3299F131166FA3DC0056C7BA /* CogTests.octest */;
+			productReference = 3299F131166FA3DC0056C7BA /* SilverRocketTests.octest */;
 			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
-		8D1107260486CEB800E47090 /* Cog */ = {
+		8D1107260486CEB800E47090 /* SilverRocket */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Cog" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "SilverRocket" */;
 			buildPhases = (
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
@@ -1630,10 +1630,10 @@
 				17643CBC0D5BD44900F0A9FE /* PBXTargetDependency */,
 				17B7CF960F5A0A3700A47027 /* PBXTargetDependency */,
 			);
-			name = Cog;
+			name = SilverRocket;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Cog;
-			productReference = 1770424E0B8BC41800B86321 /* Cog.app */;
+			productReference = 1770424E0B8BC41800B86321 /* SilverRocket.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1644,7 +1644,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cog" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SilverRocket" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -1765,8 +1765,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Cog */,
-				3299F130166FA3DC0056C7BA /* CogTests */,
+				8D1107260486CEB800E47090 /* SilverRocket */,
+				3299F130166FA3DC0056C7BA /* SilverRocketTests */,
 			);
 		};
 /* End PBXProject section */
@@ -2364,7 +2364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "CogTests/CogTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SilverRocketTests;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2389,7 +2389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "CogTests/CogTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SilverRocketTests;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2424,7 +2424,7 @@
 					"-weak_framework",
 					CogAudio,
 				);
-				PRODUCT_NAME = Cog;
+				PRODUCT_NAME = SilverRocket;
 				SDKROOT = macosx10.9;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Audio\"/**";
 				WRAPPER_EXTENSION = app;
@@ -2458,7 +2458,7 @@
 					"-weak_framework",
 					CogAudio,
 				);
-				PRODUCT_NAME = Cog;
+				PRODUCT_NAME = SilverRocket;
 				SDKROOT = macosx10.9;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Audio\"/**";
 				WRAPPER_EXTENSION = app;
@@ -2494,7 +2494,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3299F141166FA3DC0056C7BA /* Build configuration list for PBXNativeTarget "CogTests" */ = {
+		3299F141166FA3DC0056C7BA /* Build configuration list for PBXNativeTarget "SilverRocketTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3299F142166FA3DC0056C7BA /* Debug */,
@@ -2503,7 +2503,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Cog" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "SilverRocket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -2512,7 +2512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cog" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SilverRocket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
