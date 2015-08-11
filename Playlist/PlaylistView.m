@@ -22,83 +22,24 @@
 - (void)awakeFromNib
 {
 	[[self menu] setAutoenablesItems:NO];
-	
+
     // Configure bindings to scale font size and row height
     NSControlSize s = NSSmallControlSize;
 	NSFont *f = [NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:s]];
-    // NSFont *bf = [[NSFontManager sharedFontManager] convertFont:f toHaveTrait:NSBoldFontMask];
-			 
+
 	for (NSTableColumn *col in [self tableColumns]) {
         [[col dataCell] setControlSize:s];
         [[col dataCell] setFont:f];
 	}
 
-	//Set up formatters
-	NSFormatter *secondsFormatter = [[SecondsFormatter alloc] init];
-	[[[self tableColumnWithIdentifier:@"length"] dataCell] setFormatter:secondsFormatter];
-	[secondsFormatter release];
-	
-	NSFormatter *indexFormatter = [[IndexFormatter alloc] init];
-	[[[self tableColumnWithIdentifier:@"index"] dataCell] setFormatter:indexFormatter];
-	[indexFormatter release];
-	
-	NSFormatter *blankZeroFormatter = [[BlankZeroFormatter alloc] init];
-	[[[self tableColumnWithIdentifier:@"track"] dataCell] setFormatter:blankZeroFormatter];
-	[[[self tableColumnWithIdentifier:@"year"] dataCell] setFormatter:blankZeroFormatter];
-	[blankZeroFormatter release];
-	//end setting up formatters
-
 	[self setVerticalMotionCanBeginDrag:YES];
-	
-	//Set up header context menu
-	headerContextMenu = [[NSMenu alloc] initWithTitle:@"Playlist Header Context Menu"];
-	
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"identifier" ascending:YES];
-	NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-	[sortDescriptor release];
-	
-	int visibleTableColumns = 0;
-	int menuIndex = 0;
-	for (NSTableColumn *col in [[self tableColumns] sortedArrayUsingDescriptors: sortDescriptors]) 
-	{
-		NSString *title;
-		if ([[col identifier]  isEqualToString:@"status"])
-		{
-			title = @"Status";
-		}
-		else if ([[col identifier] isEqualToString:@"index"])
-		{
-			title = @"Index";
-		}
-		else
-		{
-			title = [[col headerCell] title];
-		}
-		
-		NSMenuItem *contextMenuItem = [headerContextMenu insertItemWithTitle:title action:@selector(toggleColumn:) keyEquivalent:@"" atIndex:menuIndex];
-		
-		[contextMenuItem setTarget:self];
-		[contextMenuItem setRepresentedObject:col];
-		[contextMenuItem setState:([col isHidden] ? NSOffState : NSOnState)];
-
-		visibleTableColumns += ![col isHidden];
-		menuIndex++;
-	}
-	
-	if (visibleTableColumns == 0) {
-		for (NSTableColumn *col in [self tableColumns]) {
-			[col setHidden:NO];
-		}
-	}
-	
-	[[self headerView] setMenu:headerContextMenu];
 }
 
 
 - (IBAction)toggleColumn:(id)sender
 {
 	id tc = [sender representedObject];
-	
+
 	if ([sender state] == NSOffState)
 	{
 		[sender setState:NSOnState];
@@ -108,7 +49,7 @@
 	else
 	{
 		[sender setState:NSOffState];
-		
+
 		[tc setHidden: YES];
 	}
 }
@@ -131,7 +72,7 @@
 - (void)mouseDown:(NSEvent *)e
 {
 	[super mouseDown:e];
-	
+
 	if ([e type] == NSLeftMouseDown && [e clickCount] == 2 && [[self selectedRowIndexes] count] == 1)
 	{
 		[playbackController play:self];
@@ -146,7 +87,7 @@
 	NSPoint   menuPoint = [self convertPoint:[event locationInWindow] fromView:nil];
 	NSInteger iRow = [self rowAtPoint:menuPoint];
     NSMenu* tableViewMenu = [self menu];
-	
+
 	/* Update the table selection before showing menu
 		Preserves the selection if the row under the mouse is selected (to allow for
 																		multiple items to be selected), otherwise selects the row under the mouse */
@@ -170,7 +111,7 @@
 			[[tableViewMenu itemAtIndex:i] setEnabled:NO];
 		}
 	}
-	
+
 	return tableViewMenu;
 }
 
@@ -180,13 +121,13 @@
     NSString       *characters = [e characters];
 	unichar        c;
 
-	if ([characters length] != 1) 
+	if ([characters length] != 1)
 	{
 		[super keyDown:e];
-	
+
 		return;
 	}
-	
+
 	c = [characters characterAtIndex:0];
 	if (modifiers == 0 && (c == NSDeleteCharacter || c == NSBackspaceCharacter || c == NSDeleteFunctionKey))
 	{
@@ -201,8 +142,8 @@
 		[playbackController play:self];
 	}
 	// Escape
-	else if (modifiers == 0 && c == 0x1b) 
-	{ 
+	else if (modifiers == 0 && c == 0x1b)
+	{
 		[playlistController clearFilterPredicate:self];
 	}
 	else
@@ -234,22 +175,22 @@
 
 	if (action == @selector(undo:))
 	{
-		if ([[playlistController undoManager] canUndo]) 
+		if ([[playlistController undoManager] canUndo])
 			return YES;
 		else
 			return NO;
 	}
 	if (action == @selector(redo:))
 	{
-		if ([[playlistController undoManager] canRedo]) 
+		if ([[playlistController undoManager] canRedo])
 			return YES;
 		else
 			return NO;
 	}
-	
+
 	if (action == @selector(scrollToCurrentEntry:) && ([playbackController playbackStatus] == kCogStatusStopped))
 		return NO;
-	
+
 	return [super validateUserInterfaceItem:anItem];
 }
 
