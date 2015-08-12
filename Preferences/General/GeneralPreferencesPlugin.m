@@ -19,7 +19,6 @@
 			[plugin playlistPane],
 			[plugin hotKeyPane],
 			[plugin remotePane],
-			[plugin updatesPane],
 			[plugin outputPane],
             [plugin appearancePane],
 			nil];
@@ -38,11 +37,6 @@
 - (GeneralPreferencePane *)remotePane
 {
 	return [GeneralPreferencePane preferencePaneWithView:remoteView title:NSLocalizedStringFromTableInBundle(@"Remote", nil, [NSBundle bundleForClass:[self class]],  @"")  iconNamed:@"apple_remote"];
-}
-
-- (GeneralPreferencePane *)updatesPane
-{
-	return [GeneralPreferencePane preferencePaneWithView:updatesView title:NSLocalizedStringFromTableInBundle(@"Updates", nil, [NSBundle bundleForClass:[self class]], @"")  iconNamed:@"updates"];
 }
 
 - (GeneralPreferencePane *)playlistPane
