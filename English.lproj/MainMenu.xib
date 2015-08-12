@@ -691,7 +691,7 @@
 											<string key="NSFrameSize">{480, 283}</string>
 											<reference key="NSSuperview" ref="561123847"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="864291680"/>
+											<reference key="NSNextKeyView" ref="689304715"/>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											<bool key="NSControlAllowsExpansionToolTips">YES</bool>
@@ -1073,6 +1073,7 @@ AAAAAAAAA</bytes>
 									<string key="NSFrame">{{42, 17}, {16, 23}}</string>
 									<reference key="NSSuperview" ref="381323260"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<string key="NSControlAction">_doScroller:</string>
 									<reference key="NSControlTarget" ref="381323260"/>
@@ -1099,7 +1100,7 @@ AAAAAAAAA</bytes>
 							<string key="NSFrameSize">{480, 300}</string>
 							<reference key="NSSuperview" ref="955312553"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="561123847"/>
+							<reference key="NSNextKeyView" ref="864291680"/>
 							<int key="NSsFlags">133648</int>
 							<reference key="NSVScroller" ref="689304715"/>
 							<reference key="NSHScroller" ref="864291680"/>
@@ -1607,6 +1608,7 @@ AAAAAAAAA</bytes>
 					<string key="NSFrameSize">{480, 0}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
+					<reference key="NSNextKeyView"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 877}}</string>
@@ -2045,8 +2047,7 @@ AAAAAAAAA</bytes>
 								<object class="NSMenuItem" id="980719067">
 									<reference key="NSMenu" ref="687410139"/>
 									<string key="NSTitle">Play/Pause</string>
-									<string key="NSKeyEquiv">p</string>
-									<int key="NSKeyEquivModMask">1048576</int>
+									<string type="base64-UTF8" key="NSKeyEquiv">IA</string>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
@@ -2061,6 +2062,33 @@ AAAAAAAAA</bytes>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
 								<object class="NSMenuItem" id="80743157">
+									<reference key="NSMenu" ref="687410139"/>
+									<bool key="NSIsDisabled">YES</bool>
+									<bool key="NSIsSeparator">YES</bool>
+									<string key="NSTitle"/>
+									<string key="NSKeyEquiv"/>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="80764106"/>
+									<reference key="NSMixedImage" ref="510491962"/>
+								</object>
+								<object class="NSMenuItem" id="720404536">
+									<reference key="NSMenu" ref="687410139"/>
+									<string key="NSTitle">Next Song</string>
+									<string key="NSKeyEquiv"></string>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="80764106"/>
+									<reference key="NSMixedImage" ref="510491962"/>
+								</object>
+								<object class="NSMenuItem" id="530789502">
+									<reference key="NSMenu" ref="687410139"/>
+									<string key="NSTitle">Previous Song</string>
+									<string key="NSKeyEquiv"></string>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="80764106"/>
+									<reference key="NSMixedImage" ref="510491962"/>
+								</object>
+								<object class="NSMenuItem" id="289460496">
 									<reference key="NSMenu" ref="687410139"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -2095,7 +2123,7 @@ AAAAAAAAA</bytes>
 										<string key="NSString"/>
 									</object>
 								</object>
-								<object class="NSMenuItem" id="289460496">
+								<object class="NSMenuItem" id="727850874">
 									<reference key="NSMenu" ref="687410139"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -2106,25 +2134,23 @@ AAAAAAAAA</bytes>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
-								<object class="NSMenuItem" id="720404536">
+								<object class="NSMenuItem" id="315927916">
 									<reference key="NSMenu" ref="687410139"/>
-									<string key="NSTitle">Next Song</string>
-									<string key="NSKeyEquiv"></string>
-									<int key="NSKeyEquivModMask">1048576</int>
+									<string key="NSTitle">Volume Up</string>
+									<string key="NSKeyEquiv"></string>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
-								<object class="NSMenuItem" id="530789502">
+								<object class="NSMenuItem" id="579123543">
 									<reference key="NSMenu" ref="687410139"/>
-									<string key="NSTitle">Previous Song</string>
-									<string key="NSKeyEquiv"></string>
-									<int key="NSKeyEquivModMask">1048576</int>
+									<string key="NSTitle">Volume Down</string>
+									<string key="NSKeyEquiv"></string>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
-								<object class="NSMenuItem" id="727850874">
+								<object class="NSMenuItem" id="202860202">
 									<reference key="NSMenu" ref="687410139"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -2158,35 +2184,6 @@ AAAAAAAAA</bytes>
 									<object class="NSAttributedString" key="NSAttributedTitle">
 										<string key="NSString"/>
 									</object>
-								</object>
-								<object class="NSMenuItem" id="202860202">
-									<reference key="NSMenu" ref="687410139"/>
-									<bool key="NSIsDisabled">YES</bool>
-									<bool key="NSIsSeparator">YES</bool>
-									<string key="NSTitle"/>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="315927916">
-									<reference key="NSMenu" ref="687410139"/>
-									<string key="NSTitle">Volume Up</string>
-									<string key="NSKeyEquiv"></string>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="579123543">
-									<reference key="NSMenu" ref="687410139"/>
-									<string key="NSTitle">Volume Down</string>
-									<string key="NSKeyEquiv"></string>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
 								<object class="NSMenuItem" id="153375040">
 									<reference key="NSMenu" ref="687410139"/>
@@ -3019,6 +3016,7 @@ AAAAAAAAA</bytes>
 						<string key="NSFrame">{{6, 19}, {15, 129}}</string>
 						<reference key="NSSuperview" ref="109024969"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSliderCell" key="NSCell" id="744949030">
 							<int key="NSCellFlags">67371264</int>
@@ -5504,21 +5502,21 @@ AAAAAAAAA</bytes>
 						<reference key="object" ref="687410139"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="980719067"/>
-							<reference ref="530789502"/>
-							<reference ref="202860202"/>
 							<reference ref="80743157"/>
-							<reference ref="315927916"/>
-							<reference ref="579123543"/>
 							<reference ref="334356656"/>
 							<reference ref="536656870"/>
 							<reference ref="185601065"/>
-							<reference ref="289460496"/>
 							<reference ref="727850874"/>
 							<reference ref="829431373"/>
 							<reference ref="153375040"/>
 							<reference ref="726980136"/>
-							<reference ref="720404536"/>
 							<reference ref="900958697"/>
+							<reference ref="720404536"/>
+							<reference ref="530789502"/>
+							<reference ref="289460496"/>
+							<reference ref="315927916"/>
+							<reference ref="579123543"/>
+							<reference ref="202860202"/>
 							<reference ref="941302333"/>
 						</array>
 						<reference key="parent" ref="286714282"/>
