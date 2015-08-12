@@ -2052,15 +2052,6 @@ AAAAAAAAA</bytes>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
-								<object class="NSMenuItem" id="334356656">
-									<reference key="NSMenu" ref="687410139"/>
-									<string key="NSTitle">Stop</string>
-									<string key="NSKeyEquiv">.</string>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
 								<object class="NSMenuItem" id="80743157">
 									<reference key="NSMenu" ref="687410139"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -3919,14 +3910,6 @@ AAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">stop:</string>
-						<reference key="source" ref="936098491"/>
-						<reference key="destination" ref="334356656"/>
-					</object>
-					<int key="connectionID">1363</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">seek:</string>
 						<reference key="source" ref="936098491"/>
 						<reference key="destination" ref="505703107"/>
@@ -4232,30 +4215,6 @@ AAAAAAAAA</bytes>
 						</object>
 					</object>
 					<int key="connectionID">2070</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: content</string>
-						<reference key="source" ref="334356656"/>
-						<reference key="destination" ref="200345764"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="334356656"/>
-							<reference key="NSDestination" ref="200345764"/>
-							<string key="NSLabel">enabled: content</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">content</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSMultipleValuesPlaceholder"/>
-								<integer value="0" key="NSNoSelectionPlaceholder"/>
-								<integer value="0" key="NSNotApplicablePlaceholder"/>
-								<integer value="0" key="NSNullPlaceholder"/>
-								<integer value="1" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2099</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -5503,7 +5462,6 @@ AAAAAAAAA</bytes>
 						<array class="NSMutableArray" key="children">
 							<reference ref="980719067"/>
 							<reference ref="80743157"/>
-							<reference ref="334356656"/>
 							<reference ref="536656870"/>
 							<reference ref="185601065"/>
 							<reference ref="727850874"/>
@@ -5554,11 +5512,6 @@ AAAAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">1137</int>
 						<reference key="object" ref="579123543"/>
-						<reference key="parent" ref="687410139"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1362</int>
-						<reference key="object" ref="334356656"/>
 						<reference key="parent" ref="687410139"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -6761,7 +6714,6 @@ AAAAAAAAA</bytes>
 				<string key="1344.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="136.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1360.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1362.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1402.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1403.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1408.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
