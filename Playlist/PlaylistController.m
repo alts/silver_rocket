@@ -30,14 +30,6 @@
     [NSValueTransformer setValueTransformer:repeatNoneTransformer
                                     forName:@"RepeatNoneTransformer"];
 
-	NSValueTransformer *repeatOneTransformer = [[[RepeatModeTransformer alloc] initWithMode:RepeatOne] autorelease];
-    [NSValueTransformer setValueTransformer:repeatOneTransformer
-                                    forName:@"RepeatOneTransformer"];
-
-	NSValueTransformer *repeatAlbumTransformer = [[[RepeatModeTransformer alloc] initWithMode:RepeatAlbum] autorelease];
-    [NSValueTransformer setValueTransformer:repeatAlbumTransformer
-                                    forName:@"RepeatAlbumTransformer"];
-
 	NSValueTransformer *repeatAllTransformer = [[[RepeatModeTransformer alloc] initWithMode:RepeatAll] autorelease];
     [NSValueTransformer setValueTransformer:repeatAllTransformer
                                     forName:@"RepeatAllTransformer"];
@@ -355,12 +347,6 @@
 	RepeatMode repeat = [self repeat];
 
 	if (repeat == RepeatNone) {
-		[self setRepeat: RepeatOne];
-	}
-	else if (repeat == RepeatOne) {
-		[self setRepeat: RepeatAlbum];
-	}
-	else if (repeat == RepeatAlbum) {
 		[self setRepeat: RepeatAll];
 	}
 	else if (repeat == RepeatAll) {
@@ -439,10 +425,6 @@
 
 - (PlaylistEntry *)getNextEntry:(PlaylistEntry *)pe
 {
-	if ([self repeat] == RepeatOne) {
-		return pe;
-	}
-
 	if ([queueList count] > 0)
 	{
 
@@ -477,21 +459,6 @@
 			i = pe.index + 1;
 		}
 
-		if ([self repeat] == RepeatAlbum)
-		{
-			PlaylistEntry *next = [self entryAtIndex:i];
-
-			if ((i > [[self arrangedObjects] count]-1) || ([[next album] caseInsensitiveCompare:[pe album]]) || ([next album] == nil))
-			{
-				NSArray *filtered = [self filterPlaylistOnAlbum:[pe album]];
-				if ([pe album] == nil)
-					i--;
-				else
-					i = [[filtered objectAtIndex:0] index];
-			}
-
-		}
-
 		return [self entryAtIndex:i];
 	}
 }
@@ -505,10 +472,6 @@
 
 - (PlaylistEntry *)getPrevEntry:(PlaylistEntry *)pe
 {
-	if ([self repeat] == RepeatOne) {
-		return pe;
-	}
-
 	if ([self shuffle] != ShuffleOff)
 	{
 		return [self shuffledEntryAtIndex:(pe.shuffleIndex - 1)];

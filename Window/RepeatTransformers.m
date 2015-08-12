@@ -23,29 +23,29 @@
 	{
 		repeatMode = r;
 	}
-	
+
 	return self;
 }
 
 // Convert from RepeatMode to BOOL
 - (id)transformedValue:(id)value {
 	DLog(@"Transforming value: %@", value);
-	
+
     if (value == nil) return nil;
-	
+
 	RepeatMode mode = [value integerValue];
-	
+
 	if (repeatMode == mode) {
 		return [NSNumber numberWithBool:YES];
 	}
-	
+
 
 	return [NSNumber numberWithBool:NO];
 }
 
 - (id)reverseTransformedValue:(id)value {
     if (value == nil) return nil;
-	
+
 	BOOL enabled = [value boolValue];
 	if (enabled) {
 		return [NSNumber numberWithInt:repeatMode];
@@ -68,19 +68,13 @@
 // Convert from string to RepeatMode
 - (id)transformedValue:(id)value {
 	DLog(@"Transforming value: %@", value);
-	
+
     if (value == nil) return nil;
 
 	RepeatMode mode = [value integerValue];
-	
+
 	if (mode == RepeatNone) {
 		return [NSImage imageNamed:@"repeatModeOffTemplate"];
-	}
-	else if (mode == RepeatOne) {
-		return [NSImage imageNamed:@"repeatModeOneTemplate"];
-	}
-	else if (mode == RepeatAlbum) {
-		return [NSImage imageNamed:@"repeatModeAlbumTemplate"];
 	}
 	else if (mode == RepeatAll) {
 		return [NSImage imageNamed:@"repeatModeAllTemplate"];

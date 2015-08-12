@@ -17,8 +17,6 @@
 
 typedef enum {
 	RepeatNone = 0,
-	RepeatOne,
-	RepeatAlbum,
 	RepeatAll
 } RepeatMode;
 
