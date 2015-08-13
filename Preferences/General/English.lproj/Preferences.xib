@@ -285,44 +285,6 @@
 				</object>
 				<string key="NSExtension">NSResponder</string>
 			</object>
-			<object class="NSCustomView" id="220291964">
-				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">256</int>
-				<array class="NSMutableArray" key="NSSubviews">
-					<object class="NSButton" id="773252758">
-						<reference key="NSNextResponder" ref="220291964"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{18, 18}, {329, 18}}</string>
-						<reference key="NSSuperview" ref="220291964"/>
-						<reference key="NSWindow"/>
-						<bool key="NSEnabled">YES</bool>
-						<object class="NSButtonCell" key="NSCell" id="536089800">
-							<int key="NSCellFlags">67108864</int>
-							<int key="NSCellFlags2">0</int>
-							<string key="NSContents">Colorful dock icons</string>
-							<reference key="NSSupport" ref="838963571"/>
-							<reference key="NSControlView" ref="773252758"/>
-							<int key="NSButtonFlags">1211912448</int>
-							<int key="NSButtonFlags2">2</int>
-							<reference key="NSNormalImage" ref="91049675"/>
-							<reference key="NSAlternateImage" ref="892074019"/>
-							<string key="NSAlternateContents"/>
-							<string key="NSKeyEquivalent"/>
-							<int key="NSPeriodicDelay">200</int>
-							<int key="NSPeriodicInterval">25</int>
-						</object>
-						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-					</object>
-				</array>
-				<string key="NSFrameSize">{432, 54}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="773252758"/>
-				<object class="NSMutableString" key="NSClassName">
-					<characters key="NS.bytes">NSView</characters>
-				</object>
-				<string key="NSExtension">NSResponder</string>
-			</object>
 			<object class="NSUserDefaultsController" id="288214272">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
@@ -727,14 +689,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">appearanceView</string>
-						<reference key="source" ref="810127627"/>
-						<reference key="destination" ref="220291964"/>
-					</object>
-					<int key="connectionID">352</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">view</string>
 						<reference key="source" ref="888715797"/>
 						<reference key="destination" ref="935554649"/>
@@ -1060,22 +1014,6 @@
 						</object>
 					</object>
 					<int key="connectionID">328</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.colorfulDockIcons</string>
-						<reference key="source" ref="773252758"/>
-						<reference key="destination" ref="288214272"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="773252758"/>
-							<reference key="NSDestination" ref="288214272"/>
-							<string key="NSLabel">value: values.colorfulDockIcons</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.colorfulDockIcons</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">351</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1466,28 +1404,6 @@
 						<reference key="object" ref="816544512"/>
 						<reference key="parent" ref="806156422"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">347</int>
-						<reference key="object" ref="220291964"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="773252758"/>
-						</array>
-						<reference key="parent" ref="0"/>
-						<string key="objectName">AppearanceView</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">348</int>
-						<reference key="object" ref="773252758"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="536089800"/>
-						</array>
-						<reference key="parent" ref="220291964"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">349</int>
-						<reference key="object" ref="536089800"/>
-						<reference key="parent" ref="773252758"/>
-					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1537,9 +1453,6 @@
 				<string key="28.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="310.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="311.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="347.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="348.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="349.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="43.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="44.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="52.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>

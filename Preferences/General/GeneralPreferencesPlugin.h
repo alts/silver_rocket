@@ -19,16 +19,12 @@
 
 	IBOutlet NSView *playlistView;
 	IBOutlet NSView *remoteView;
-	IBOutlet NSView *updatesView;
-    IBOutlet NSView *appearanceView;
 }
 
 - (HotKeyPane *)hotKeyPane;
 - (OutputPane *)outputPane;
 
 - (GeneralPreferencePane *)remotePane;
-- (GeneralPreferencePane *)updatesPane;
 - (GeneralPreferencePane *)playlistPane;
-- (GeneralPreferencePane *)appearancePane;
 
 @end

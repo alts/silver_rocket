@@ -20,7 +20,6 @@
 			[plugin hotKeyPane],
 			[plugin remotePane],
 			[plugin outputPane],
-            [plugin appearancePane],
 			nil];
 }
 
@@ -42,11 +41,6 @@
 - (GeneralPreferencePane *)playlistPane
 {
 	return [GeneralPreferencePane preferencePaneWithView:playlistView title:NSLocalizedStringFromTableInBundle(@"Playlist", nil, [NSBundle bundleForClass:[self class]], @"")  iconNamed:@"playlist"];
-}
-
-- (GeneralPreferencePane *)appearancePane
-{
-	return [GeneralPreferencePane preferencePaneWithView:appearanceView title:NSLocalizedStringFromTableInBundle(@"Appearance", nil, [NSBundle bundleForClass:[self class]], @"")  iconNamed:@"appearance"];
 }
 
 @end
