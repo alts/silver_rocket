@@ -16,8 +16,6 @@
 @synthesize current;
 @synthesize removed;
 
-@synthesize stopAfter;
-
 @synthesize queued;
 @synthesize queuePosition;
 
@@ -69,12 +67,12 @@
 
 + (NSSet *)keyPathsForValuesAffectingStatus
 {
-	return [NSSet setWithObjects:@"current",@"queued", @"error", @"stopAfter", nil];
+	return [NSSet setWithObjects:@"current",@"queued", @"error", nil];
 }
 
 + (NSSet *)keyPathsForValuesAffectingStatusMessage
 {
-	return [NSSet setWithObjects:@"current", @"queued", @"queuePosition", @"error", @"errorMessage", @"stopAfter", nil];
+	return [NSSet setWithObjects:@"current", @"queued", @"queuePosition", @"error", @"errorMessage", nil];
 }
 
 - (NSString *)description
@@ -85,9 +83,9 @@
 - (void)dealloc
 {
 	self.errorMessage = nil;
-	
+
 	self.URL = nil;
-	
+
 	self.artist = nil;
 	self.album = nil;
 	self.title = nil;
@@ -95,9 +93,9 @@
 	self.year = nil;
 	self.track = nil;
 	self.albumArt = nil;
-	
+
 	self.endian = nil;
-	
+
 	[super dealloc];
 }
 
@@ -143,11 +141,7 @@
 @dynamic status;
 - (NSString *)status
 {
-	if (self.stopAfter)
-	{
-		return @"stopAfter";
-	}
-	else if (self.current)
+	if (self.current)
 	{
 		return @"playing";
 	}
@@ -159,18 +153,14 @@
 	{
 		return @"error";
 	}
-	
+
 	return nil;
 }
 
 @dynamic statusMessage;
 - (NSString *)statusMessage
 {
-	if (self.stopAfter)
-	{
-		return @"Stopping once finished...";
-	}
-	else if (self.current)
+	if (self.current)
 	{
 		return @"Playing...";
 	}
@@ -182,7 +172,7 @@
 	{
 		return errorMessage;
 	}
-	
+
 	return nil;
 }
 
@@ -201,7 +191,7 @@
         {
             [self setValuesForKeysWithDictionary:metadata];
         }
-	
+
         metadataLoaded = YES;
     }
 }

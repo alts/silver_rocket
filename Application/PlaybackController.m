@@ -331,12 +331,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 - (void)audioPlayer:(AudioPlayer *)player willEndStream:(id)userInfo
 {
 	PlaylistEntry *curEntry = (PlaylistEntry *)userInfo;
-	PlaylistEntry *pe;
-
-	if (curEntry.stopAfter)
-		pe = nil;
-	else
-		pe = [playlistController getNextEntry:curEntry];
+	PlaylistEntry *pe = [playlistController getNextEntry:curEntry];
 
 	[player setNextStream:[pe URL] withUserInfo:pe];
 }

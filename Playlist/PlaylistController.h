@@ -49,7 +49,6 @@ typedef enum {
 
 //Private Methods
 - (void)updatePlaylistIndexes;
-- (IBAction)stopAfterCurrent:(id)sender;
 
 
 //PUBLIC METHODS

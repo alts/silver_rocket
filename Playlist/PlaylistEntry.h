@@ -11,20 +11,18 @@
 @interface PlaylistEntry : NSObject {
 	int index;
 	int shuffleIndex;
-	
+
 	BOOL current;
 	BOOL removed;
-	
-	BOOL stopAfter;
-	
+
 	BOOL queued;
 	int queuePosition;
-	
+
 	BOOL error;
 	NSString *errorMessage;
-	
+
 	NSURL *URL;
-	
+
 	NSString *artist;
 	NSString *album;
 	NSString *title;
@@ -32,17 +30,17 @@
 	NSNumber *year;
 	NSNumber *track;
 	NSImage *albumArt;
-	
+
 	long long totalFrames;
 	int bitrate;
 	int channels;
 	int bitsPerSample;
 	float sampleRate;
-	
+
 	NSString *endian;
-	
+
 	BOOL seekable;
-	
+
 	BOOL metadataLoaded;
 }
 
@@ -66,8 +64,6 @@
 
 @property BOOL current;
 @property BOOL removed;
-
-@property BOOL stopAfter;
 
 @property BOOL queued;
 @property int queuePosition;

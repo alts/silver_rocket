@@ -1073,6 +1073,7 @@ AAAAAAAAA</bytes>
 									<string key="NSFrame">{{42, 17}, {16, 23}}</string>
 									<reference key="NSSuperview" ref="381323260"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<string key="NSControlAction">_doScroller:</string>
 									<reference key="NSControlTarget" ref="381323260"/>
@@ -1607,6 +1608,7 @@ AAAAAAAAA</bytes>
 					<string key="NSFrameSize">{480, 0}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
+					<reference key="NSNextKeyView"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 877}}</string>
@@ -2155,15 +2157,6 @@ AAAAAAAAA</bytes>
 									<string key="NSTitle">Fade In/Out</string>
 									<string key="NSKeyEquiv">P</string>
 									<int key="NSKeyEquivModMask">1179648</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="941302333">
-									<reference key="NSMenu" ref="687410139"/>
-									<string key="NSTitle">Stop After Current</string>
-									<string key="NSKeyEquiv">.</string>
-									<int key="NSKeyEquivModMask">1572864</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
@@ -2944,6 +2937,7 @@ AAAAAAAAA</bytes>
 						<string key="NSFrame">{{6, 19}, {15, 129}}</string>
 						<reference key="NSSuperview" ref="109024969"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSliderCell" key="NSCell" id="744949030">
 							<int key="NSCellFlags">67371264</int>
@@ -3410,14 +3404,6 @@ AAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">stopAfterCurrent:</string>
-						<reference key="source" ref="710316598"/>
-						<reference key="destination" ref="941302333"/>
-					</object>
-					<int key="connectionID">1896</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">toggleQueued:</string>
 						<reference key="source" ref="710316598"/>
 						<reference key="destination" ref="203290105"/>
@@ -3487,14 +3473,6 @@ AAAAAAAAA</bytes>
 						<reference key="destination" ref="816124546"/>
 					</object>
 					<int key="connectionID">2478</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">stopAfterCurrent:</string>
-						<reference key="source" ref="710316598"/>
-						<reference key="destination" ref="541158213"/>
-					</object>
-					<int key="connectionID">2484</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -5322,7 +5300,6 @@ AAAAAAAAA</bytes>
 							<reference ref="315927916"/>
 							<reference ref="579123543"/>
 							<reference ref="202860202"/>
-							<reference ref="941302333"/>
 						</array>
 						<reference key="parent" ref="286714282"/>
 					</object>
@@ -5766,11 +5743,6 @@ AAAAAAAAA</bytes>
 						<int key="objectID">1893</int>
 						<reference key="object" ref="203290105"/>
 						<reference key="parent" ref="952259328"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1895</int>
-						<reference key="object" ref="941302333"/>
-						<reference key="parent" ref="687410139"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1897</int>
@@ -6625,7 +6597,6 @@ AAAAAAAAA</bytes>
 				<string key="1869.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1885.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1893.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1895.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1897.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="196.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -7418,7 +7389,6 @@ AAAAAAAAA</bytes>
 						<string key="searchByAlbum:">id</string>
 						<string key="searchByArtist:">id</string>
 						<string key="showEntryInFinder:">id</string>
-						<string key="stopAfterCurrent:">id</string>
 						<string key="toggleQueued:">id</string>
 						<string key="toggleRepeat:">id</string>
 						<string key="toggleShuffle:">id</string>
@@ -7446,10 +7416,6 @@ AAAAAAAAA</bytes>
 						</object>
 						<object class="IBActionInfo" key="showEntryInFinder:">
 							<string key="name">showEntryInFinder:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="stopAfterCurrent:">
-							<string key="name">stopAfterCurrent:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="toggleQueued:">
@@ -7498,7 +7464,6 @@ AAAAAAAAA</bytes>
 						<string key="searchByAlbum:">id</string>
 						<string key="searchByArtist:">id</string>
 						<string key="showEntryInFinder:">id</string>
-						<string key="stopAfterCurrent:">id</string>
 						<string key="toggleQueued:">id</string>
 						<string key="toggleRepeat:">id</string>
 						<string key="toggleShuffle:">id</string>
@@ -7526,10 +7491,6 @@ AAAAAAAAA</bytes>
 						</object>
 						<object class="IBActionInfo" key="showEntryInFinder:">
 							<string key="name">showEntryInFinder:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="stopAfterCurrent:">
-							<string key="name">stopAfterCurrent:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="toggleQueued:">

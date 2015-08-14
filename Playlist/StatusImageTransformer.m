@@ -15,7 +15,6 @@
 @synthesize playImage;
 @synthesize queueImage;
 @synthesize errorImage;
-@synthesize stopAfterImage;
 
 + (Class)transformedValueClass { return [NSImage class]; }
 + (BOOL)allowsReverseTransformation { return NO; }
@@ -28,9 +27,8 @@
 		self.playImage = [NSImage imageNamed:@"playTemplate"];
 		self.queueImage = [NSImage imageNamed:@"NSAddTemplate"];
 		self.errorImage = [NSImage imageNamed:@"NSStopProgressTemplate"];
-		self.stopAfterImage = [NSImage imageNamed:@"stopTemplate"];
 	}
-	
+
 	return self;
 }
 
@@ -48,9 +46,6 @@
 	}
 	else if ([value isEqualToString:@"error"]) {
 		return self.errorImage;
-	}
-	else if ([value isEqualToString:@"stopAfter"]) {
-		return self.stopAfterImage;
 	}
 
 	return nil;

@@ -588,7 +588,6 @@
     }
 
 	currentEntry.current = NO;
-	currentEntry.stopAfter = NO;
 
 	pe.current = YES;
 
@@ -720,11 +719,6 @@
 	}
 }
 
-- (IBAction)stopAfterCurrent:(id)sender
-{
-	currentEntry.stopAfter = !currentEntry.stopAfter;
-}
-
 -(BOOL)validateMenuItem:(NSMenuItem*)menuItem
 {
 	SEL action = [menuItem action];
@@ -739,9 +733,6 @@
 	}
 
 	if (action == @selector(emptyQueueList:) && ([queueList count] < 1))
-		return NO;
-
-	if (action == @selector(stopAfterCurrent:) && currentEntry.stopAfter)
 		return NO;
 
 	// if nothing is selected, gray out these
