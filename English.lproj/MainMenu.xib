@@ -1073,7 +1073,6 @@ AAAAAAAAA</bytes>
 									<string key="NSFrame">{{42, 17}, {16, 23}}</string>
 									<reference key="NSSuperview" ref="381323260"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<string key="NSControlAction">_doScroller:</string>
 									<reference key="NSControlTarget" ref="381323260"/>
@@ -1608,7 +1607,6 @@ AAAAAAAAA</bytes>
 					<string key="NSFrameSize">{480, 0}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 877}}</string>
@@ -2142,41 +2140,6 @@ AAAAAAAAA</bytes>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
 								<object class="NSMenuItem" id="202860202">
-									<reference key="NSMenu" ref="687410139"/>
-									<bool key="NSIsDisabled">YES</bool>
-									<bool key="NSIsSeparator">YES</bool>
-									<string key="NSTitle"/>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="900958697">
-									<reference key="NSMenu" ref="687410139"/>
-									<string key="NSTitle">Next Album</string>
-									<string key="NSKeyEquiv"></string>
-									<int key="NSKeyEquivModMask">524288</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-									<object class="NSAttributedString" key="NSAttributedTitle">
-										<string key="NSString"/>
-									</object>
-								</object>
-								<object class="NSMenuItem" id="536656870">
-									<reference key="NSMenu" ref="687410139"/>
-									<string key="NSTitle">Previous Album</string>
-									<string key="NSKeyEquiv"></string>
-									<int key="NSKeyEquivModMask">524288</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-									<object class="NSAttributedString" key="NSAttributedTitle">
-										<string key="NSString"/>
-									</object>
-								</object>
-								<object class="NSMenuItem" id="153375040">
 									<reference key="NSMenu" ref="687410139"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -2981,7 +2944,6 @@ AAAAAAAAA</bytes>
 						<string key="NSFrame">{{6, 19}, {15, 129}}</string>
 						<reference key="NSSuperview" ref="109024969"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSliderCell" key="NSCell" id="744949030">
 							<int key="NSCellFlags">67371264</int>
@@ -3924,22 +3886,6 @@ AAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">skipToPreviousAlbum:</string>
-						<reference key="source" ref="936098491"/>
-						<reference key="destination" ref="536656870"/>
-					</object>
-					<int key="connectionID">1700</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">skipToNextAlbum:</string>
-						<reference key="source" ref="936098491"/>
-						<reference key="destination" ref="900958697"/>
-					</object>
-					<int key="connectionID">1702</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">volumeUp:</string>
 						<reference key="source" ref="936098491"/>
 						<reference key="destination" ref="315927916"/>
@@ -3969,22 +3915,6 @@ AAAAAAAAA</bytes>
 						<reference key="destination" ref="163997941"/>
 					</object>
 					<int key="connectionID">2387</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">skipToNextAlbum:</string>
-						<reference key="source" ref="936098491"/>
-						<reference key="destination" ref="29206285"/>
-					</object>
-					<int key="connectionID">2486</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">skipToPreviousAlbum:</string>
-						<reference key="source" ref="936098491"/>
-						<reference key="destination" ref="263603695"/>
-					</object>
-					<int key="connectionID">2488</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -5382,13 +5312,10 @@ AAAAAAAAA</bytes>
 						<array class="NSMutableArray" key="children">
 							<reference ref="980719067"/>
 							<reference ref="80743157"/>
-							<reference ref="536656870"/>
 							<reference ref="185601065"/>
 							<reference ref="727850874"/>
 							<reference ref="829431373"/>
-							<reference ref="153375040"/>
 							<reference ref="726980136"/>
-							<reference ref="900958697"/>
 							<reference ref="720404536"/>
 							<reference ref="530789502"/>
 							<reference ref="289460496"/>
@@ -5712,16 +5639,6 @@ AAAAAAAAA</bytes>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1699</int>
-						<reference key="object" ref="536656870"/>
-						<reference key="parent" ref="687410139"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1701</int>
-						<reference key="object" ref="900958697"/>
-						<reference key="parent" ref="687410139"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">1740</int>
 						<reference key="object" ref="1052715157"/>
 						<array class="NSMutableArray" key="children">
@@ -5843,11 +5760,6 @@ AAAAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">1885</int>
 						<reference key="object" ref="829431373"/>
-						<reference key="parent" ref="687410139"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1886</int>
-						<reference key="object" ref="153375040"/>
 						<reference key="parent" ref="687410139"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -6684,8 +6596,6 @@ AAAAAAAAA</bytes>
 				<string key="1685.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1689.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="169.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1699.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1701.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="171.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="172.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="173.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6714,7 +6624,6 @@ AAAAAAAAA</bytes>
 				<string key="1868.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1869.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1885.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1886.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1893.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1895.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1897.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -7299,8 +7208,6 @@ AAAAAAAAA</bytes>
 						<string key="prev:">id</string>
 						<string key="resume:">id</string>
 						<string key="seek:">id</string>
-						<string key="skipToNextAlbum:">id</string>
-						<string key="skipToPreviousAlbum:">id</string>
 						<string key="stop:">id</string>
 						<string key="volumeDown:">id</string>
 						<string key="volumeUp:">id</string>
@@ -7352,14 +7259,6 @@ AAAAAAAAA</bytes>
 						</object>
 						<object class="IBActionInfo" key="seek:">
 							<string key="name">seek:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="skipToNextAlbum:">
-							<string key="name">skipToNextAlbum:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="skipToPreviousAlbum:">
-							<string key="name">skipToPreviousAlbum:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="stop:">
@@ -7419,8 +7318,6 @@ AAAAAAAAA</bytes>
 						<string key="prev:">id</string>
 						<string key="resume:">id</string>
 						<string key="seek:">id</string>
-						<string key="skipToNextAlbum:">id</string>
-						<string key="skipToPreviousAlbum:">id</string>
 						<string key="stop:">id</string>
 						<string key="volumeDown:">id</string>
 						<string key="volumeUp:">id</string>
@@ -7472,14 +7369,6 @@ AAAAAAAAA</bytes>
 						</object>
 						<object class="IBActionInfo" key="seek:">
 							<string key="name">seek:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="skipToNextAlbum:">
-							<string key="name">skipToNextAlbum:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="skipToPreviousAlbum:">
-							<string key="name">skipToPreviousAlbum:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="stop:">

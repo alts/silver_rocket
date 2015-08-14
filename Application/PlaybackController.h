@@ -45,8 +45,6 @@ extern NSString *CogPlaybackDidStopNotficiation;
 
 - (IBAction)playPauseResume:(id)sender;
 - (IBAction)pauseResume:(id)sender;
-- (IBAction)skipToNextAlbum:(id)sender;
-- (IBAction)skipToPreviousAlbum:(id)sender;
 
 - (IBAction)play:(id)sender;
 - (IBAction)pause:(id)sender;

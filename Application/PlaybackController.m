@@ -31,15 +31,15 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 	if (self)
 	{
 		[self initDefaults];
-		
+
 		seekable = NO;
 		fading = NO;
-	
+
 		audioPlayer = [[AudioPlayer alloc] init];
 		[audioPlayer setDelegate:self];
 		[self setPlaybackStatus: kCogStatusStopped];
 	}
-	
+
 	return self;
 }
 
@@ -48,7 +48,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 	NSDictionary *defaultsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithDouble:100.0], @"volume",
 		nil];
-		
+
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultsDictionary];
 }
 
@@ -63,7 +63,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 
 	[self setSeekable:NO];
 }
-	
+
 - (IBAction)playPauseResume:(id)sender
 {
 	if (playbackStatus == kCogStatusStopped)
@@ -113,7 +113,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 - (IBAction)play:(id)sender
 {
 	if ([playlistView selectedRow] == -1)
-		[playlistView selectRow:0 byExtendingSelection:NO];	
+		[playlistView selectRow:0 byExtendingSelection:NO];
 
 	if ([playlistView selectedRow] > -1)
 		[self playEntryAtIndex:[playlistView selectedRow]];
@@ -126,12 +126,12 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 
 	DLog(@"PLAYLIST CONTROLLER: %@", [playlistController class]);
 	[playlistController setCurrentEntry:pe];
-	
+
 	[self setPosition:0.0];
 
 	if (pe == nil)
 		return;
-	
+
 	[audioPlayer play:[pe URL] withUserInfo:pe];
 }
 
@@ -154,7 +154,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 - (void)updatePosition:(id)sender
 {
 	double pos = [audioPlayer amountPlayed];
-	
+
 	[self setPosition:pos];
 }
 
@@ -163,7 +163,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 	double time = [sender doubleValue];
 
     [audioPlayer seekToTime:time];
-	
+
 }
 
 - (IBAction)eventSeekForward:(id)sender
@@ -174,8 +174,8 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 - (void)seekForward:(double)amount
 {
 	double seekTo = [audioPlayer amountPlayed] + amount;
-	
-	if (seekTo > [[[playlistController currentEntry] length] doubleValue]) 
+
+	if (seekTo > [[[playlistController currentEntry] length] doubleValue])
 	{
 		[self next:self];
 	}
@@ -194,8 +194,8 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 - (void)seekBackward:(double)amount
 {
 	double seekTo = [audioPlayer amountPlayed] - amount;
-	
-	if (seekTo < 0) 
+
+	if (seekTo < 0)
 		seekTo = 0;
 
 	[audioPlayer seekToTime:seekTo];
@@ -207,12 +207,12 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 {
 	NSImage *img = [NSImage imageNamed:name];
 //	[img retain];
-	
+
 	if (img == nil)
 	{
 		NSLog(@"Error loading image!");
 	}
-	
+
 	[playbackButtons setImage:img forSegment:1];
 }
 */
@@ -233,9 +233,9 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 	double volume = [audioPlayer volume];
 	double originalVolume = [[audioTimer userInfo] doubleValue];
 	double down = originalVolume/10;
-	
+
 	DLog(@"VOLUME IS %lf", volume);
-	
+
 	if (volume > 0.0001) //YAY! Roundoff error!
 	{
 		[audioPlayer volumeDown:down];
@@ -246,10 +246,10 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 		[audioPlayer setVolume:originalVolume];
 		[volumeSlider setDoubleValue: logarithmicToLinear(originalVolume)];
 		[audioTimer invalidate];
-		
+
 		fading = NO;
 	}
-	
+
 }
 
 - (void)audioFadeUp:(NSTimer *)audioTimer
@@ -257,10 +257,10 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 	double volume = [audioPlayer volume];
 	double originalVolume = [[audioTimer userInfo] doubleValue];
 	double up = originalVolume/10;
-	
+
 	DLog(@"VOLUME IS %lf", volume);
-	
-	if (volume < originalVolume) 
+
+	if (volume < originalVolume)
 	{
 		if ((volume + up) > originalVolume)
 			[audioPlayer volumeUp:(originalVolume - volume)];
@@ -271,16 +271,16 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 	{
 		[volumeSlider setDoubleValue: logarithmicToLinear(originalVolume)];
 		[audioTimer invalidate];
-		
+
 		fading = NO;
 	}
-	
+
 }
 
 - (IBAction)fade:(id)sender
 {
 	double time = 0.1;
-	
+
 	// we can not allow multiple fade timers to be registered
 	if (YES == fading)
 		return;
@@ -288,11 +288,11 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 
 	NSNumber  *originalVolume = [NSNumber numberWithDouble: [audioPlayer volume]];
 	NSTimer   *fadeTimer;
-	
+
 	if (playbackStatus == kCogStatusPlaying) {
 		fadeTimer = [NSTimer timerWithTimeInterval:time
 												 target:self
-											   selector:@selector(audioFadeDown:) 
+											   selector:@selector(audioFadeDown:)
 											   userInfo:originalVolume
 												repeats:YES];
 		[[NSRunLoop currentRunLoop] addTimer:fadeTimer forMode:NSRunLoopCommonModes];
@@ -302,7 +302,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 		[audioPlayer setVolume:0];
 		fadeTimer = [NSTimer timerWithTimeInterval:time
 													 target:self
-												   selector:@selector(audioFadeUp:) 
+												   selector:@selector(audioFadeUp:)
 												   userInfo:originalVolume
 													repeats:YES];
 		[[NSRunLoop currentRunLoop] addTimer:fadeTimer forMode:NSRunLoopCommonModes];
@@ -310,105 +310,11 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 	}
 }
 
-- (IBAction)skipToNextAlbum:(id)sender
-{
-    BOOL found = NO;
-	
-	int index = [[playlistController currentEntry] index];
-	NSString *origAlbum = [[playlistController currentEntry] album];
-	
-	int i;
-	NSString *curAlbum;
-	
-	PlaylistEntry *pe;
-
-	for (i = 1; i < [[playlistController arrangedObjects] count]; i++)
-	{
-		pe = [playlistController entryAtIndex:index + i];
-		if (pe == nil) 
-			break;
-		
-		curAlbum = [pe album];
-
-		// check for untagged files, and just play the first untagged one
-		// we come across
-		if (curAlbum == nil)
-		{
-			found = YES;
-			break;
-		}
-			
-		if ([curAlbum caseInsensitiveCompare:origAlbum] != NSOrderedSame)
-		{
-			found = YES;
-			break;
-		}
-	}
-
-	if (found)
-	{
-		[self playEntryAtIndex:i + index];
-	}
-}
-
-- (IBAction)skipToPreviousAlbum:(id)sender
-{
-	BOOL found = NO;
-	BOOL foundAlbum = NO;
-	
-	int index = [[playlistController currentEntry] index];
-	NSString *origAlbum = [[playlistController currentEntry] album];
-	NSString *curAlbum;
-	
-	int i;
-	
-	PlaylistEntry *pe;
-
-	for (i = 1; i < [[playlistController arrangedObjects] count]; i++)
-	{
-		pe = [playlistController entryAtIndex:index - i];
-		if (pe == nil) 
-			break;
-
-		curAlbum = [pe album];
-		if (curAlbum == nil)
-		{
-			found = YES;
-			break;
-		}
-		
-		if ([curAlbum caseInsensitiveCompare:origAlbum] != NSOrderedSame)
-		{
-			if (foundAlbum == NO)
-			{
-				foundAlbum = YES;
-				// now we need to move up to the first song in the album, so we'll
-				// go till we either find index 0, or the first song in the album
-				origAlbum = curAlbum;
-				continue;
-			}
-			else
-			{
-				found = YES; // terminate loop
-				break;
-			}
-		}
-	}
-	
-	if (found || foundAlbum)
-	{
-		if (foundAlbum == YES)
-			i--;
-		[self playEntryAtIndex:index - i];
-	}
-}
-
-
 - (IBAction)volumeDown:(id)sender
 {
 	double newVolume = [audioPlayer volumeDown:DEFAULT_VOLUME_DOWN];
 	[volumeSlider setDoubleValue:logarithmicToLinear(newVolume)];
-	
+
 	[[NSUserDefaults standardUserDefaults] setDouble:[audioPlayer volume] forKey:@"volume"];
 
 }
@@ -426,7 +332,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 {
 	PlaylistEntry *curEntry = (PlaylistEntry *)userInfo;
 	PlaylistEntry *pe;
-	
+
 	if (curEntry.stopAfter)
 		pe = nil;
 	else
@@ -438,11 +344,11 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 - (void)audioPlayer:(AudioPlayer *)player didBeginStream:(id)userInfo
 {
 	PlaylistEntry *pe = (PlaylistEntry *)userInfo;
-	
+
 	[playlistController setCurrentEntry:pe];
-	
+
 	[self setPosition:0];
-	
+
 	[[NSNotificationCenter defaultCenter] postNotificationName:CogPlaybackDidBeginNotficiation object:pe];
 }
 
@@ -456,7 +362,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 			[positionTimer invalidate];
 			positionTimer = NULL;
 		}
-		
+
 		if (status == kCogStatusStopped)
 		{
 			[self setPosition:0];
@@ -478,7 +384,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 
 		[[NSNotificationCenter defaultCenter] postNotificationName:CogPlaybackDidResumeNotficiation object:nil];
 	}
-	
+
 	if (status == kCogStatusStopped) {
 		DLog(@"DONE!");
 		[playlistController setCurrentEntry:nil];
@@ -488,7 +394,7 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 		DLog(@"PLAYING!");
 		[self setSeekable:YES];
 	}
-	
+
 	[self setPlaybackStatus:status];
 }
 
