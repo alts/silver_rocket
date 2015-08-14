@@ -33,7 +33,6 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 		[self initDefaults];
 
 		seekable = NO;
-		fading = NO;
 
 		audioPlayer = [[AudioPlayer alloc] init];
 		[audioPlayer setDelegate:self];
@@ -223,91 +222,6 @@ NSString *CogPlaybackDidStopNotficiation = @"CogPlaybackDidStopNotficiation";
 	[audioPlayer setVolume:linearToLogarithmic([sender doubleValue])];
 
 	[[NSUserDefaults standardUserDefaults] setDouble:[audioPlayer volume] forKey:@"volume"];
-}
-
-/* selector for NSTimer - gets passed the Timer object itself
- and the appropriate userInfo, which in this case is an NSNumber
- containing the current volume before we start fading. */
-- (void)audioFadeDown:(NSTimer *)audioTimer
-{
-	double volume = [audioPlayer volume];
-	double originalVolume = [[audioTimer userInfo] doubleValue];
-	double down = originalVolume/10;
-
-	DLog(@"VOLUME IS %lf", volume);
-
-	if (volume > 0.0001) //YAY! Roundoff error!
-	{
-		[audioPlayer volumeDown:down];
-	}
-	else  // volume is at 0 or below, we are ready to release the timer and move on
-	{
-		[audioPlayer pause];
-		[audioPlayer setVolume:originalVolume];
-		[volumeSlider setDoubleValue: logarithmicToLinear(originalVolume)];
-		[audioTimer invalidate];
-
-		fading = NO;
-	}
-
-}
-
-- (void)audioFadeUp:(NSTimer *)audioTimer
-{
-	double volume = [audioPlayer volume];
-	double originalVolume = [[audioTimer userInfo] doubleValue];
-	double up = originalVolume/10;
-
-	DLog(@"VOLUME IS %lf", volume);
-
-	if (volume < originalVolume)
-	{
-		if ((volume + up) > originalVolume)
-			[audioPlayer volumeUp:(originalVolume - volume)];
-		else
-			[audioPlayer volumeUp:up];
-	}
-	else  // volume is at 0 or below, we are ready to release the timer and move on
-	{
-		[volumeSlider setDoubleValue: logarithmicToLinear(originalVolume)];
-		[audioTimer invalidate];
-
-		fading = NO;
-	}
-
-}
-
-- (IBAction)fade:(id)sender
-{
-	double time = 0.1;
-
-	// we can not allow multiple fade timers to be registered
-	if (YES == fading)
-		return;
-	fading = YES;
-
-	NSNumber  *originalVolume = [NSNumber numberWithDouble: [audioPlayer volume]];
-	NSTimer   *fadeTimer;
-
-	if (playbackStatus == kCogStatusPlaying) {
-		fadeTimer = [NSTimer timerWithTimeInterval:time
-												 target:self
-											   selector:@selector(audioFadeDown:)
-											   userInfo:originalVolume
-												repeats:YES];
-		[[NSRunLoop currentRunLoop] addTimer:fadeTimer forMode:NSRunLoopCommonModes];
-	}
-	else
-	{
-		[audioPlayer setVolume:0];
-		fadeTimer = [NSTimer timerWithTimeInterval:time
-													 target:self
-												   selector:@selector(audioFadeUp:)
-												   userInfo:originalVolume
-													repeats:YES];
-		[[NSRunLoop currentRunLoop] addTimer:fadeTimer forMode:NSRunLoopCommonModes];
-		[self pauseResume:self];
-	}
 }
 
 - (IBAction)volumeDown:(id)sender

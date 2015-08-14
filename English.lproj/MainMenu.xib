@@ -1073,7 +1073,6 @@ AAAAAAAAA</bytes>
 									<string key="NSFrame">{{42, 17}, {16, 23}}</string>
 									<reference key="NSSuperview" ref="381323260"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<string key="NSControlAction">_doScroller:</string>
 									<reference key="NSControlTarget" ref="381323260"/>
@@ -1608,7 +1607,6 @@ AAAAAAAAA</bytes>
 					<string key="NSFrameSize">{480, 0}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 877}}</string>
@@ -2137,26 +2135,6 @@ AAAAAAAAA</bytes>
 									<reference key="NSMenu" ref="687410139"/>
 									<string key="NSTitle">Volume Down</string>
 									<string key="NSKeyEquiv"></string>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="202860202">
-									<reference key="NSMenu" ref="687410139"/>
-									<bool key="NSIsDisabled">YES</bool>
-									<bool key="NSIsSeparator">YES</bool>
-									<string key="NSTitle"/>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="829431373">
-									<reference key="NSMenu" ref="687410139"/>
-									<string key="NSTitle">Fade In/Out</string>
-									<string key="NSKeyEquiv">P</string>
-									<int key="NSKeyEquivModMask">1179648</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
@@ -2937,7 +2915,6 @@ AAAAAAAAA</bytes>
 						<string key="NSFrame">{{6, 19}, {15, 129}}</string>
 						<reference key="NSSuperview" ref="109024969"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSliderCell" key="NSCell" id="744949030">
 							<int key="NSCellFlags">67371264</int>
@@ -3880,14 +3857,6 @@ AAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">fade:</string>
-						<reference key="source" ref="936098491"/>
-						<reference key="destination" ref="829431373"/>
-					</object>
-					<int key="connectionID">1887</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">seek:</string>
 						<reference key="source" ref="936098491"/>
 						<reference key="destination" ref="163997941"/>
@@ -4481,29 +4450,6 @@ AAAAAAAAA</bytes>
 						</object>
 					</object>
 					<int key="connectionID">1805</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: content</string>
-						<reference key="source" ref="829431373"/>
-						<reference key="destination" ref="200345764"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="829431373"/>
-							<reference key="NSDestination" ref="200345764"/>
-							<string key="NSLabel">enabled: content</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">content</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSMultipleValuesPlaceholder"/>
-								<integer value="0" key="NSNoSelectionPlaceholder"/>
-								<integer value="0" key="NSNotApplicablePlaceholder"/>
-								<integer value="0" key="NSNullPlaceholder"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2105</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -5292,14 +5238,12 @@ AAAAAAAAA</bytes>
 							<reference ref="80743157"/>
 							<reference ref="185601065"/>
 							<reference ref="727850874"/>
-							<reference ref="829431373"/>
 							<reference ref="726980136"/>
 							<reference ref="720404536"/>
 							<reference ref="530789502"/>
 							<reference ref="289460496"/>
 							<reference ref="315927916"/>
 							<reference ref="579123543"/>
-							<reference ref="202860202"/>
 						</array>
 						<reference key="parent" ref="286714282"/>
 					</object>
@@ -5316,11 +5260,6 @@ AAAAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">423</int>
 						<reference key="object" ref="530789502"/>
-						<reference key="parent" ref="687410139"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">424</int>
-						<reference key="object" ref="202860202"/>
 						<reference key="parent" ref="687410139"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -5733,11 +5672,6 @@ AAAAAAAAA</bytes>
 						<int key="objectID">1869</int>
 						<reference key="object" ref="320432454"/>
 						<reference key="parent" ref="905547314"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1885</int>
-						<reference key="object" ref="829431373"/>
-						<reference key="parent" ref="687410139"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1893</int>
@@ -6595,7 +6529,6 @@ AAAAAAAAA</bytes>
 				<string key="1867.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1868.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1869.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1885.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1893.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1897.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6700,7 +6633,6 @@ AAAAAAAAA</bytes>
 				<string key="420.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="422.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="423.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="424.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="426.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="513.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -7170,7 +7102,6 @@ AAAAAAAAA</bytes>
 						<string key="changeVolume:">id</string>
 						<string key="eventSeekBackward:">id</string>
 						<string key="eventSeekForward:">id</string>
-						<string key="fade:">id</string>
 						<string key="next:">id</string>
 						<string key="pause:">id</string>
 						<string key="pauseResume:">id</string>
@@ -7194,10 +7125,6 @@ AAAAAAAAA</bytes>
 						</object>
 						<object class="IBActionInfo" key="eventSeekForward:">
 							<string key="name">eventSeekForward:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="fade:">
-							<string key="name">fade:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="next:">
@@ -7280,7 +7207,6 @@ AAAAAAAAA</bytes>
 						<string key="changeVolume:">id</string>
 						<string key="eventSeekBackward:">id</string>
 						<string key="eventSeekForward:">id</string>
-						<string key="fade:">id</string>
 						<string key="next:">id</string>
 						<string key="pause:">id</string>
 						<string key="pauseResume:">id</string>
@@ -7304,10 +7230,6 @@ AAAAAAAAA</bytes>
 						</object>
 						<object class="IBActionInfo" key="eventSeekForward:">
 							<string key="name">eventSeekForward:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="fade:">
-							<string key="name">fade:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="next:">

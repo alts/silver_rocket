@@ -34,7 +34,6 @@ extern NSString *CogPlaybackDidStopNotficiation;
 	int playbackStatus;
 	double position;
 	BOOL seekable;
-	BOOL fading;
  }
 
 @property int playbackStatus;
@@ -58,11 +57,8 @@ extern NSString *CogPlaybackDidStopNotficiation;
 - (void)seekForward:(double)sender;
 - (IBAction)eventSeekBackward:(id)sender;
 - (void)seekBackward:(double)amount;
-- (IBAction)fade:(id)sender;
 
 - (void)initDefaults;
-- (void)audioFadeDown:(NSTimer *)audioTimer;
-- (void)audioFadeUp:(NSTimer *)audioTimer;
 
 - (void)playEntryAtIndex:(int)i;
 - (void)playEntry:(PlaylistEntry *)pe;
