@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		172D72AD0B8926CA00D095BB /* apple_remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 172D72AC0B8926CA00D095BB /* apple_remote.png */; };
-		1766C7A80B912A71004A7AE4 /* lastfm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1766C7A70B912A71004A7AE4 /* lastfm.png */; };
 		178E386E0C3DA64500EE6711 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 178E386D0C3DA64500EE6711 /* InfoPlist.strings */; };
 		17C643380B8A77CC00C53518 /* OutputsArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C643360B8A77CC00C53518 /* OutputsArrayController.m */; };
 		17C6433F0B8A783F00C53518 /* OutputPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C6433E0B8A783F00C53518 /* OutputPane.m */; };
@@ -16,7 +15,6 @@
 		17C644330B8A791D00C53518 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C644310B8A791D00C53518 /* CoreAudio.framework */; };
 		17C7E5B00DCCC30A003CBCF7 /* playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C7E5AF0DCCC30A003CBCF7 /* playlist.png */; };
 		17E41DB80C130AA500AC744D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E41DB70C130AA500AC744D /* Localizable.strings */; };
-		17E78A7E0D68BE3C005C5A59 /* file_tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E78A7D0D68BE3C005C5A59 /* file_tree.png */; };
 		17E78B6A0D68C1E3005C5A59 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E78B680D68C1E3005C5A59 /* Preferences.xib */; };
 		3257BD6B15CE907D00A5FE05 /* appearance.png in Resources */ = {isa = PBXBuildFile; fileRef = 3257BD6A15CE907D00A5FE05 /* appearance.png */; };
 		32F1618C14E6BDC700D6AB2F /* NDHotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F1618614E6BCE300D6AB2F /* NDHotKey.framework */; };
@@ -25,7 +23,6 @@
 		8E07AA890AAC8EA200A4B32F /* GeneralPreferencePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E07AA830AAC8EA200A4B32F /* GeneralPreferencePane.m */; };
 		8E07AA8A0AAC8EA200A4B32F /* GeneralPreferencesPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E07AA850AAC8EA200A4B32F /* GeneralPreferencesPlugin.m */; };
 		8E07ABDD0AAC95BC00A4B32F /* hot_keys.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E07ABDB0AAC95BC00A4B32F /* hot_keys.png */; };
-		8E15A86C0B894768006DC802 /* updates.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E15A86B0B894768006DC802 /* updates.png */; };
 		8E6C123A0AACAEF200819171 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6C12390AACAEF200819171 /* Carbon.framework */; };
 		8E6C13A00AACBAB500819171 /* HotKeyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6C139F0AACBAB500819171 /* HotKeyControl.m */; };
 		99F1813F0DE01D7A00FD5FFB /* PlaylistBehaviorArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1813E0DE01D7A00FD5FFB /* PlaylistBehaviorArrayController.m */; };
@@ -54,7 +51,6 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		172D72AC0B8926CA00D095BB /* apple_remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple_remote.png; path = Icons/apple_remote.png; sourceTree = "<group>"; };
-		1766C7A70B912A71004A7AE4 /* lastfm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lastfm.png; path = Icons/lastfm.png; sourceTree = "<group>"; };
 		17C643360B8A77CC00C53518 /* OutputsArrayController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = OutputsArrayController.m; sourceTree = "<group>"; };
 		17C643370B8A77CC00C53518 /* OutputsArrayController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = OutputsArrayController.h; sourceTree = "<group>"; };
 		17C6433D0B8A783F00C53518 /* OutputPane.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = OutputPane.h; sourceTree = "<group>"; };
@@ -64,7 +60,6 @@
 		17C7E5AF0DCCC30A003CBCF7 /* playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playlist.png; path = Icons/playlist.png; sourceTree = "<group>"; };
 		17D1B3F60F6349CE00694C57 /* PreferencePanePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencePanePlugin.h; path = ../PreferencePanePlugin.h; sourceTree = SOURCE_ROOT; };
 		17E41DB50C130A9D00AC744D /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		17E78A7D0D68BE3C005C5A59 /* file_tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = file_tree.png; path = Icons/file_tree.png; sourceTree = "<group>"; };
 		17E78B690D68C1E3005C5A59 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		3257BD6A15CE907D00A5FE05 /* appearance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appearance.png; path = Icons/appearance.png; sourceTree = "<group>"; };
 		32DBCF630370AF2F00C91783 /* General_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = General_Prefix.pch; sourceTree = "<group>"; };
@@ -78,7 +73,6 @@
 		8E07AA840AAC8EA200A4B32F /* GeneralPreferencesPlugin.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = GeneralPreferencesPlugin.h; sourceTree = "<group>"; };
 		8E07AA850AAC8EA200A4B32F /* GeneralPreferencesPlugin.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GeneralPreferencesPlugin.m; sourceTree = "<group>"; };
 		8E07ABDB0AAC95BC00A4B32F /* hot_keys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hot_keys.png; path = Icons/hot_keys.png; sourceTree = "<group>"; };
-		8E15A86B0B894768006DC802 /* updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = updates.png; path = Icons/updates.png; sourceTree = "<group>"; };
 		8E6C12390AACAEF200819171 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8E6C139E0AACBAB500819171 /* HotKeyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyControl.h; sourceTree = "<group>"; };
 		8E6C139F0AACBAB500819171 /* HotKeyControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyControl.m; sourceTree = "<group>"; };
@@ -221,10 +215,7 @@
 			children = (
 				3257BD6A15CE907D00A5FE05 /* appearance.png */,
 				17C7E5AF0DCCC30A003CBCF7 /* playlist.png */,
-				17E78A7D0D68BE3C005C5A59 /* file_tree.png */,
-				1766C7A70B912A71004A7AE4 /* lastfm.png */,
 				17C643680B8A788000C53518 /* output.png */,
-				8E15A86B0B894768006DC802 /* updates.png */,
 				172D72AC0B8926CA00D095BB /* apple_remote.png */,
 				8E07ABDB0AAC95BC00A4B32F /* hot_keys.png */,
 			);
@@ -308,11 +299,8 @@
 				178E386E0C3DA64500EE6711 /* InfoPlist.strings in Resources */,
 				8E07ABDD0AAC95BC00A4B32F /* hot_keys.png in Resources */,
 				172D72AD0B8926CA00D095BB /* apple_remote.png in Resources */,
-				8E15A86C0B894768006DC802 /* updates.png in Resources */,
 				17C643690B8A788000C53518 /* output.png in Resources */,
-				1766C7A80B912A71004A7AE4 /* lastfm.png in Resources */,
 				17E41DB80C130AA500AC744D /* Localizable.strings in Resources */,
-				17E78A7E0D68BE3C005C5A59 /* file_tree.png in Resources */,
 				17E78B6A0D68C1E3005C5A59 /* Preferences.xib in Resources */,
 				17C7E5B00DCCC30A003CBCF7 /* playlist.png in Resources */,
 				3257BD6B15CE907D00A5FE05 /* appearance.png in Resources */,
