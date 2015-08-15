@@ -84,11 +84,9 @@
 							<string key="NSToolbarItemPaletteLabel">Position</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSlider" key="NSToolbarItemView" id="505703107">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">270</int>
 								<string key="NSFrame">{{0, 14}, {96, 21}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSliderCell" key="NSCell" id="543888159">
 									<int key="NSCellFlags">603979776</int>
@@ -125,11 +123,9 @@
 							<string key="NSToolbarItemPaletteLabel">Info Inspector</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="593720571">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{27, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="1048031545">
 									<int key="NSCellFlags">67108864</int>
@@ -173,11 +169,9 @@
 							<string key="NSToolbarItemPaletteLabel">Shuffle</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="865953109">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{8, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="141286620">
 									<int key="NSCellFlags">67108864</int>
@@ -217,11 +211,9 @@
 							<string key="NSToolbarItemPaletteLabel">Volume</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="805617126">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{9, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="980041866">
 									<int key="NSCellFlags">67108864</int>
@@ -261,11 +253,9 @@
 							<string key="NSToolbarItemPaletteLabel">Playback Control</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSegmentedControl" key="NSToolbarItemView" id="40234197">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{3, 14}, {92, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSegmentedCell" key="NSCell" id="477857375">
 									<int key="NSCellFlags">-2071986176</int>
@@ -329,11 +319,9 @@
 							<string key="NSToolbarItemPaletteLabel">Current Time</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSTextField" key="NSToolbarItemView" id="362320150">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{15, 14}, {46, 15}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSTextFieldCell" key="NSCell" id="511447813">
 									<int key="NSCellFlags">72351808</int>
@@ -388,11 +376,9 @@
 							<string key="NSToolbarItemPaletteLabel">Repeat</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="557152416">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{9, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="758905654">
 									<int key="NSCellFlags">67108864</int>
@@ -432,11 +418,9 @@
 							<string key="NSToolbarItemPaletteLabel">Mini Mode</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="1060302774">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{18, 14}, {28, 25}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="266967496">
 									<int key="NSCellFlags">67108864</int>
@@ -1008,6 +992,7 @@ AAAAAAAAA</bytes>
 									<string key="NSFrame">{{42, 17}, {16, 23}}</string>
 									<reference key="NSSuperview" ref="381323260"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<string key="NSControlAction">_doScroller:</string>
 									<reference key="NSControlTarget" ref="381323260"/>
@@ -1542,6 +1527,7 @@ AAAAAAAAA</bytes>
 					<string key="NSFrameSize">{480, 0}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
+					<reference key="NSNextKeyView"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 877}}</string>
@@ -2090,6 +2076,14 @@ AAAAAAAAA</bytes>
 						<object class="NSMenu" key="NSSubmenu" id="905547314">
 							<string key="NSTitle">Playlist</string>
 							<array class="NSMutableArray" key="NSMenuItems">
+								<object class="NSMenuItem" id="629480623">
+									<reference key="NSMenu" ref="905547314"/>
+									<string key="NSTitle">Remove</string>
+									<string type="base64-UTF8" key="NSKeyEquiv">CA</string>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="80764106"/>
+									<reference key="NSMixedImage" ref="510491962"/>
+								</object>
 								<object class="NSMenuItem" id="112724873">
 									<reference key="NSMenu" ref="905547314"/>
 									<string key="NSTitle">Remove All</string>
@@ -2106,14 +2100,6 @@ AAAAAAAAA</bytes>
 									<string key="NSTitle"/>
 									<string key="NSKeyEquiv"/>
 									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="629480623">
-									<reference key="NSMenu" ref="905547314"/>
-									<string key="NSTitle">Remove</string>
-									<string type="base64-UTF8" key="NSKeyEquiv">CA</string>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
@@ -2547,32 +2533,6 @@ AAAAAAAAA</bytes>
 			<object class="NSMenu" id="952259328">
 				<string key="NSTitle">Menu</string>
 				<array class="NSMutableArray" key="NSMenuItems">
-					<object class="NSMenuItem" id="351894471">
-						<reference key="NSMenu" ref="952259328"/>
-						<string key="NSTitle">Search for Artist</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80764106"/>
-						<reference key="NSMixedImage" ref="510491962"/>
-					</object>
-					<object class="NSMenuItem" id="565843521">
-						<reference key="NSMenu" ref="952259328"/>
-						<string key="NSTitle">Search for Album</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80764106"/>
-						<reference key="NSMixedImage" ref="510491962"/>
-					</object>
-					<object class="NSMenuItem" id="829578328">
-						<reference key="NSMenu" ref="952259328"/>
-						<bool key="NSIsDisabled">YES</bool>
-						<bool key="NSIsSeparator">YES</bool>
-						<string key="NSTitle"/>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80764106"/>
-						<reference key="NSMixedImage" ref="510491962"/>
-					</object>
 					<object class="NSMenuItem" id="927360553">
 						<reference key="NSMenu" ref="952259328"/>
 						<bool key="NSIsHidden">YES</bool>
@@ -2714,6 +2674,7 @@ AAAAAAAAA</bytes>
 						<string key="NSFrame">{{6, 19}, {15, 129}}</string>
 						<reference key="NSSuperview" ref="109024969"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSliderCell" key="NSCell" id="744949030">
 							<int key="NSCellFlags">67371264</int>
@@ -4106,52 +4067,6 @@ AAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: selection.artist</string>
-						<reference key="source" ref="351894471"/>
-						<reference key="destination" ref="1039052152"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="351894471"/>
-							<reference key="NSDestination" ref="1039052152"/>
-							<string key="NSLabel">enabled: selection.artist</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">selection.artist</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSMultipleValuesPlaceholder"/>
-								<integer value="0" key="NSNoSelectionPlaceholder"/>
-								<integer value="0" key="NSNotApplicablePlaceholder"/>
-								<integer value="0" key="NSNullPlaceholder"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2066</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: selection.album</string>
-						<reference key="source" ref="565843521"/>
-						<reference key="destination" ref="1039052152"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="565843521"/>
-							<reference key="NSDestination" ref="1039052152"/>
-							<string key="NSLabel">enabled: selection.album</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">selection.album</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSMultipleValuesPlaceholder"/>
-								<integer value="0" key="NSNoSelectionPlaceholder"/>
-								<integer value="0" key="NSNotApplicablePlaceholder"/>
-								<integer value="0" key="NSNullPlaceholder"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2067</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">title: content.display</string>
 						<reference key="source" ref="276041541"/>
 						<reference key="destination" ref="200345764"/>
@@ -4849,9 +4764,9 @@ AAAAAAAAA</bytes>
 							<reference ref="55030879"/>
 							<reference ref="112724873"/>
 							<reference ref="1052715157"/>
-							<reference ref="629480623"/>
 							<reference ref="446350962"/>
 							<reference ref="320432454"/>
+							<reference ref="629480623"/>
 							<reference ref="2708"/>
 						</array>
 						<reference key="parent" ref="795702409"/>
@@ -4958,9 +4873,6 @@ AAAAAAAAA</bytes>
 						<int key="objectID">1063</int>
 						<reference key="object" ref="952259328"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="351894471"/>
-							<reference ref="565843521"/>
-							<reference ref="829578328"/>
 							<reference ref="164362822"/>
 							<reference ref="566881962"/>
 							<reference ref="504111301"/>
@@ -5179,21 +5091,6 @@ AAAAAAAAA</bytes>
 						<reference key="object" ref="1039052152"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Playlist Selection Controller</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">2045</int>
-						<reference key="object" ref="351894471"/>
-						<reference key="parent" ref="952259328"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">2046</int>
-						<reference key="object" ref="565843521"/>
-						<reference key="parent" ref="952259328"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">2048</int>
-						<reference key="object" ref="829578328"/>
-						<reference key="parent" ref="952259328"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">2049</int>
@@ -5985,9 +5882,6 @@ AAAAAAAAA</bytes>
 				<reference key="2.IBNSViewMetadataGestureRecognizers" ref="0"/>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2020.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="2045.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="2046.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="2048.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2049.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="206.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="207.CustomClassName">PlaylistView</string>
