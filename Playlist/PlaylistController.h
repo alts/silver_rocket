@@ -74,8 +74,6 @@ typedef enum {
 - (IBAction)clearFilterPredicate:(id)sender;
 - (IBAction)clear:(id)sender;
 
-//- (IBAction)showTagEditor:(id)sender;
-
 // Spotlight
 - (IBAction)searchByArtist:(id)sender;
 - (IBAction)searchByAlbum:(id)sender;

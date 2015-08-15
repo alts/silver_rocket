@@ -649,19 +649,7 @@
 	if ([url isFileURL])
 		[ws selectFile:[url path] inFileViewerRootedAtPath:[url path]];
 }
-/*
-- (IBAction)showTagEditor:(id)sender
-{
-// call the editor & pass the url
-	if ([self selectionIndex] < 0)
-		return;
 
-	NSURL *url = [[[self selectedObjects] objectAtIndex:0] URL];
-	if ([url isFileURL])
-		[TagEditorController openTagEditor:url sender:sender];
-
-}
-*/
 - (IBAction)searchByArtist:(id)sender;
 {
     PlaylistEntry *entry = [[self arrangedObjects] objectAtIndex:[self selectionIndex]];
