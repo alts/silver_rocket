@@ -629,11 +629,6 @@
 	[self removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [[self arrangedObjects] count])]];
 }
 
-- (void)setFilterPredicate:(NSPredicate *)filterPredicate
-{
-	[super setFilterPredicate:filterPredicate];
-}
-
 - (IBAction)showEntryInFinder:(id)sender
 {
 	NSWorkspace* ws = [NSWorkspace sharedWorkspace];
