@@ -1,8 +1,3 @@
-"FeedbackFailedMessageText" = "Failed";
-"FeedbackFailedInformativeText" = "Feedback failed to send.";
-"FeedbackSuccessMessageText" = "Success";
-"FeedbackSuccessInformativeText" = "Feedback successfully sent!";
-
 "PlayButtonTooltip" = "Play";
 "StopButtonTooltip" = "Stop";
 "PrevButtonTooltip" = "Previous";
