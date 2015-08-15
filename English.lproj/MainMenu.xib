@@ -2389,21 +2389,6 @@ AAAAAAAAA</bytes>
 										</dictionary>
 									</object>
 								</object>
-								<object class="NSMenuItem" id="461973770">
-									<reference key="NSMenu" ref="905547314"/>
-									<string key="NSTitle">Show All Songs</string>
-									<string type="base64-UTF8" key="NSKeyEquiv">Gw</string>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-									<object class="NSAttributedString" key="NSAttributedTitle">
-										<string key="NSString">Show All Songs</string>
-										<dictionary key="NSAttributes">
-											<reference key="NSFont" ref="785064770"/>
-											<reference key="NSOriginalFont" ref="785064770"/>
-										</dictionary>
-									</object>
-								</object>
 							</array>
 						</object>
 					</object>
@@ -3296,14 +3281,6 @@ AAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">clearFilterPredicate:</string>
-						<reference key="source" ref="710316598"/>
-						<reference key="destination" ref="461973770"/>
-					</object>
-					<int key="connectionID">1430</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">clear:</string>
 						<reference key="source" ref="710316598"/>
 						<reference key="destination" ref="112724873"/>
@@ -3915,26 +3892,6 @@ AAAAAAAAA</bytes>
 						</object>
 					</object>
 					<int key="connectionID">2069</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: filterPredicate</string>
-						<reference key="source" ref="461973770"/>
-						<reference key="destination" ref="710316598"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="461973770"/>
-							<reference key="NSDestination" ref="710316598"/>
-							<string key="NSLabel">enabled: filterPredicate</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">filterPredicate</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSIsNotNil</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1434</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -5230,7 +5187,6 @@ AAAAAAAAA</bytes>
 						<array class="NSMutableArray" key="children">
 							<reference ref="109158246"/>
 							<reference ref="55030879"/>
-							<reference ref="461973770"/>
 							<reference ref="112724873"/>
 							<reference ref="1052715157"/>
 							<reference ref="1048148955"/>
@@ -5253,11 +5209,6 @@ AAAAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">1116</int>
 						<reference key="object" ref="55030879"/>
-						<reference key="parent" ref="905547314"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1132</int>
-						<reference key="object" ref="461973770"/>
 						<reference key="parent" ref="905547314"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -6333,7 +6284,6 @@ AAAAAAAAA</bytes>
 				<string key="1100.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="111.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1116.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1132.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1135.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1136.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1137.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -7224,7 +7174,6 @@ AAAAAAAAA</bytes>
 					<string key="superclassName">DNDArrayController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="clear:">id</string>
-						<string key="clearFilterPredicate:">id</string>
 						<string key="emptyQueueList:">id</string>
 						<string key="showEntryInFinder:">id</string>
 						<string key="toggleQueued:">id</string>
@@ -7234,10 +7183,6 @@ AAAAAAAAA</bytes>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="clear:">
 							<string key="name">clear:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="clearFilterPredicate:">
-							<string key="name">clearFilterPredicate:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="emptyQueueList:">
@@ -7289,7 +7234,6 @@ AAAAAAAAA</bytes>
 					<string key="className">PlaylistController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="clear:">id</string>
-						<string key="clearFilterPredicate:">id</string>
 						<string key="emptyQueueList:">id</string>
 						<string key="showEntryInFinder:">id</string>
 						<string key="toggleQueued:">id</string>
@@ -7299,10 +7243,6 @@ AAAAAAAAA</bytes>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="clear:">
 							<string key="name">clear:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="clearFilterPredicate:">
-							<string key="name">clearFilterPredicate:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="emptyQueueList:">

@@ -629,11 +629,6 @@
 	[self removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [[self arrangedObjects] count])]];
 }
 
-- (IBAction)clearFilterPredicate:(id)sender
-{
-	[self setFilterPredicate:nil];
-}
-
 - (void)setFilterPredicate:(NSPredicate *)filterPredicate
 {
 	[super setFilterPredicate:filterPredicate];

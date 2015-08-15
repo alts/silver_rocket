@@ -71,7 +71,6 @@ typedef enum {
 - (IBAction)sortByPath;
 
 - (IBAction)showEntryInFinder:(id)sender;
-- (IBAction)clearFilterPredicate:(id)sender;
 - (IBAction)clear:(id)sender;
 
 //FUN PLAYLIST MANAGEMENT STUFF!

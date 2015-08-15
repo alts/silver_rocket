@@ -141,11 +141,6 @@
 	{
 		[playbackController play:self];
 	}
-	// Escape
-	else if (modifiers == 0 && c == 0x1b)
-	{
-		[playlistController clearFilterPredicate:self];
-	}
 	else
 	{
 		[super keyDown:e];
