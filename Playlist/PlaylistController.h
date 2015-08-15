@@ -38,7 +38,6 @@ typedef enum {
 	IBOutlet PlaybackController *playbackController;
 
 	NSMutableArray *shuffleList;
-	NSMutableArray *queueList;
 
 	PlaylistEntry *currentEntry;
 
@@ -87,10 +86,5 @@ typedef enum {
 // Event inlets:
 - (void)willInsertURLs:(NSArray*)urls origin:(URLOrigin)origin;
 - (void)didInsertURLs:(NSArray*)urls origin:(URLOrigin)origin;
-
-// queue methods
-- (IBAction)toggleQueued:(id)sender;
-- (IBAction)emptyQueueList:(id)sender;
-- (NSMutableArray *)queueList;
 
 @end

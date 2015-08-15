@@ -85,7 +85,6 @@
 	if (self)
 	{
 		shuffleList = [[NSMutableArray alloc] init];
-		queueList = [[NSMutableArray alloc] init];
 
         undoManager = [[NSUndoManager alloc] init];
 
@@ -101,7 +100,6 @@
 - (void)dealloc
 {
 	[shuffleList release];
-	[queueList release];
 
     [undoManager release];
 
@@ -425,24 +423,6 @@
 
 - (PlaylistEntry *)getNextEntry:(PlaylistEntry *)pe
 {
-	if ([queueList count] > 0)
-	{
-
-		pe = [queueList objectAtIndex:0];
-		[queueList removeObjectAtIndex:0];
-		pe.queued = NO;
-		[pe setQueuePosition:-1];
-
-		int i;
-		for (i = 0; i < [queueList count]; i++)
-		{
-			PlaylistEntry *queueItem = [queueList objectAtIndex:i];
-			[queueItem setQueuePosition: i];
-		}
-
-		return pe;
-	}
-
 	if ([self shuffle] != ShuffleOff)
 	{
 		return [self shuffledEntryAtIndex:(pe.shuffleIndex + 1)];
@@ -640,67 +620,9 @@
 		[ws selectFile:[url path] inFileViewerRootedAtPath:[url path]];
 }
 
-- (NSMutableArray *)queueList
-{
-	return queueList;
-}
-
-- (IBAction)emptyQueueList:(id)sender
-{
-	for (PlaylistEntry *queueItem in queueList)
-	{
-		queueItem.queued = NO;
-		[queueItem setQueuePosition:-1];
-	}
-
-	[queueList removeAllObjects];
-}
-
-
-- (IBAction)toggleQueued:(id)sender
-{
-	for (PlaylistEntry *queueItem in [self selectedObjects])
-	{
-		if (queueItem.queued)
-		{
-			queueItem.queued = NO;
-			queueItem.queuePosition = -1;
-
-			[queueList removeObject:queueItem];
-		}
-		else
-		{
-			queueItem.queued = YES;
-			queueItem.queuePosition = [queueList count];
-
-			[queueList addObject:queueItem];
-		}
-
-		DLog(@"TOGGLE QUEUED: %i", queueItem.queued);
-	}
-
-	int i = 0;
-	for (PlaylistEntry *cur in queueList)
-	{
-		cur.queuePosition = i++;
-	}
-}
-
 -(BOOL)validateMenuItem:(NSMenuItem*)menuItem
 {
 	SEL action = [menuItem action];
-
-	if (action == @selector(removeFromQueue:))
-	{
-		for (PlaylistEntry *q in [self selectedObjects])
-			if (q.queuePosition >= 0)
-				return YES;
-
-		return NO;
-	}
-
-	if (action == @selector(emptyQueueList:) && ([queueList count] < 1))
-		return NO;
 
 	// if nothing is selected, gray out these
 	if ([[self selectedObjects] count] < 1)

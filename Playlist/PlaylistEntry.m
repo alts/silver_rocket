@@ -16,9 +16,6 @@
 @synthesize current;
 @synthesize removed;
 
-@synthesize queued;
-@synthesize queuePosition;
-
 @synthesize error;
 @synthesize errorMessage;
 
@@ -67,12 +64,12 @@
 
 + (NSSet *)keyPathsForValuesAffectingStatus
 {
-	return [NSSet setWithObjects:@"current",@"queued", @"error", nil];
+	return [NSSet setWithObjects:@"current", @"error", nil];
 }
 
 + (NSSet *)keyPathsForValuesAffectingStatusMessage
 {
-	return [NSSet setWithObjects:@"current", @"queued", @"queuePosition", @"error", @"errorMessage", nil];
+	return [NSSet setWithObjects:@"current", @"error", @"errorMessage", nil];
 }
 
 - (NSString *)description
@@ -145,10 +142,6 @@
 	{
 		return @"playing";
 	}
-	else if (self.queued)
-	{
-		return @"queued";
-	}
 	else if (self.error)
 	{
 		return @"error";
@@ -163,10 +156,6 @@
 	if (self.current)
 	{
 		return @"Playing...";
-	}
-	else if (self.queued)
-	{
-		return [NSString stringWithFormat:@"Queued: %i", self.queuePosition + 1];
 	}
 	else if (self.error)
 	{

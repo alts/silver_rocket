@@ -15,9 +15,6 @@
 	BOOL current;
 	BOOL removed;
 
-	BOOL queued;
-	int queuePosition;
-
 	BOOL error;
 	NSString *errorMessage;
 
@@ -64,9 +61,6 @@
 
 @property BOOL current;
 @property BOOL removed;
-
-@property BOOL queued;
-@property int queuePosition;
 
 @property BOOL error;
 @property(retain) NSString *errorMessage;

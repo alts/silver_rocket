@@ -2099,15 +2099,6 @@ AAAAAAAAA</bytes>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
-								<object class="NSMenuItem" id="1048148955">
-									<reference key="NSMenu" ref="905547314"/>
-									<string key="NSTitle">Remove All from Queue</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
 								<object class="NSMenuItem" id="55030879">
 									<reference key="NSMenu" ref="905547314"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -2131,35 +2122,6 @@ AAAAAAAAA</bytes>
 									<reference key="NSMenu" ref="905547314"/>
 									<string key="NSTitle">Show in Finder</string>
 									<string key="NSKeyEquiv">r</string>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="411588472">
-									<reference key="NSMenu" ref="905547314"/>
-									<bool key="NSIsDisabled">YES</bool>
-									<bool key="NSIsSeparator">YES</bool>
-									<string key="NSTitle"/>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="533401573">
-									<reference key="NSMenu" ref="905547314"/>
-									<string key="NSTitle">Add to Queue</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="939812695">
-									<reference key="NSMenu" ref="905547314"/>
-									<string key="NSTitle">Remove from Queue</string>
-									<string key="NSKeyEquiv"/>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="80764106"/>
@@ -2585,25 +2547,6 @@ AAAAAAAAA</bytes>
 			<object class="NSMenu" id="952259328">
 				<string key="NSTitle">Menu</string>
 				<array class="NSMutableArray" key="NSMenuItems">
-					<object class="NSMenuItem" id="203290105">
-						<reference key="NSMenu" ref="952259328"/>
-						<string key="NSTitle">Add to Queue</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSKeyEquivModMask">1048576</int>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80764106"/>
-						<reference key="NSMixedImage" ref="510491962"/>
-					</object>
-					<object class="NSMenuItem" id="173113127">
-						<reference key="NSMenu" ref="952259328"/>
-						<bool key="NSIsDisabled">YES</bool>
-						<bool key="NSIsSeparator">YES</bool>
-						<string key="NSTitle"/>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="80764106"/>
-						<reference key="NSMixedImage" ref="510491962"/>
-					</object>
 					<object class="NSMenuItem" id="351894471">
 						<reference key="NSMenu" ref="952259328"/>
 						<string key="NSTitle">Search for Artist</string>
@@ -3202,22 +3145,6 @@ AAAAAAAAA</bytes>
 						<reference key="destination" ref="557152416"/>
 					</object>
 					<int key="connectionID">1756</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">emptyQueueList:</string>
-						<reference key="source" ref="710316598"/>
-						<reference key="destination" ref="1048148955"/>
-					</object>
-					<int key="connectionID">1817</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">toggleQueued:</string>
-						<reference key="source" ref="710316598"/>
-						<reference key="destination" ref="203290105"/>
-					</object>
-					<int key="connectionID">1934</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4131,54 +4058,6 @@ AAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">title: selection.queued</string>
-						<reference key="source" ref="203290105"/>
-						<reference key="destination" ref="1039052152"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="203290105"/>
-							<reference key="NSDestination" ref="1039052152"/>
-							<string key="NSLabel">title: selection.queued</string>
-							<string key="NSBinding">title</string>
-							<string key="NSKeyPath">selection.queued</string>
-							<dictionary key="NSOptions">
-								<string key="NSMultipleValuesPlaceholder">Toggle Queued</string>
-								<string key="NSNoSelectionPlaceholder">Toggle Queued</string>
-								<string key="NSNotApplicablePlaceholder">Toggle Queued</string>
-								<string key="NSNullPlaceholder">Toggle Queued</string>
-								<integer value="1" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">ToggleQueueTitleTransformer</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2042</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: selection</string>
-						<reference key="source" ref="203290105"/>
-						<reference key="destination" ref="1039052152"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="203290105"/>
-							<reference key="NSDestination" ref="1039052152"/>
-							<string key="NSLabel">enabled: selection</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">selection</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSMultipleValuesPlaceholder"/>
-								<integer value="0" key="NSNoSelectionPlaceholder"/>
-								<integer value="0" key="NSNotApplicablePlaceholder"/>
-								<integer value="0" key="NSNullPlaceholder"/>
-								<integer value="1" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2068</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">contentObject: currentEntry</string>
 						<reference key="source" ref="200345764"/>
 						<reference key="destination" ref="710316598"/>
@@ -4970,12 +4849,8 @@ AAAAAAAAA</bytes>
 							<reference ref="55030879"/>
 							<reference ref="112724873"/>
 							<reference ref="1052715157"/>
-							<reference ref="1048148955"/>
 							<reference ref="629480623"/>
 							<reference ref="446350962"/>
-							<reference ref="411588472"/>
-							<reference ref="533401573"/>
-							<reference ref="939812695"/>
 							<reference ref="320432454"/>
 							<reference ref="2708"/>
 						</array>
@@ -5083,10 +4958,8 @@ AAAAAAAAA</bytes>
 						<int key="objectID">1063</int>
 						<reference key="object" ref="952259328"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="203290105"/>
 							<reference ref="351894471"/>
 							<reference ref="565843521"/>
-							<reference ref="173113127"/>
 							<reference ref="829578328"/>
 							<reference ref="164362822"/>
 							<reference ref="566881962"/>
@@ -5241,11 +5114,6 @@ AAAAAAAAA</bytes>
 						<reference key="parent" ref="649813002"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1791</int>
-						<reference key="object" ref="1048148955"/>
-						<reference key="parent" ref="905547314"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">1823</int>
 						<reference key="object" ref="315849423"/>
 						<reference key="parent" ref="805841408"/>
@@ -5296,29 +5164,9 @@ AAAAAAAAA</bytes>
 						<reference key="parent" ref="805841408"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1863</int>
-						<reference key="object" ref="411588472"/>
-						<reference key="parent" ref="905547314"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1864</int>
-						<reference key="object" ref="533401573"/>
-						<reference key="parent" ref="905547314"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1865</int>
-						<reference key="object" ref="939812695"/>
-						<reference key="parent" ref="905547314"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">1869</int>
 						<reference key="object" ref="320432454"/>
 						<reference key="parent" ref="905547314"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1893</int>
-						<reference key="object" ref="203290105"/>
-						<reference key="parent" ref="952259328"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1897</int>
@@ -5340,11 +5188,6 @@ AAAAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">2046</int>
 						<reference key="object" ref="565843521"/>
-						<reference key="parent" ref="952259328"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">2047</int>
-						<reference key="object" ref="173113127"/>
 						<reference key="parent" ref="952259328"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -6124,7 +5967,6 @@ AAAAAAAAA</bytes>
 				<string key="1741.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1742.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1749.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1791.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1798.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1801.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1823.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6136,11 +5978,7 @@ AAAAAAAAA</bytes>
 				<string key="1860.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1861.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1862.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1863.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1864.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1865.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1869.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1893.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1897.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="196.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6149,7 +5987,6 @@ AAAAAAAAA</bytes>
 				<string key="2020.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2045.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2046.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="2047.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2048.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2049.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="206.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6917,9 +6754,7 @@ AAAAAAAAA</bytes>
 					<string key="superclassName">DNDArrayController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="clear:">id</string>
-						<string key="emptyQueueList:">id</string>
 						<string key="showEntryInFinder:">id</string>
-						<string key="toggleQueued:">id</string>
 						<string key="toggleRepeat:">id</string>
 						<string key="toggleShuffle:">id</string>
 					</dictionary>
@@ -6928,16 +6763,8 @@ AAAAAAAAA</bytes>
 							<string key="name">clear:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="emptyQueueList:">
-							<string key="name">emptyQueueList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="showEntryInFinder:">
 							<string key="name">showEntryInFinder:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="toggleQueued:">
-							<string key="name">toggleQueued:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="toggleRepeat:">
@@ -6977,9 +6804,7 @@ AAAAAAAAA</bytes>
 					<string key="className">PlaylistController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="clear:">id</string>
-						<string key="emptyQueueList:">id</string>
 						<string key="showEntryInFinder:">id</string>
-						<string key="toggleQueued:">id</string>
 						<string key="toggleRepeat:">id</string>
 						<string key="toggleShuffle:">id</string>
 					</dictionary>
@@ -6988,16 +6813,8 @@ AAAAAAAAA</bytes>
 							<string key="name">clear:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="emptyQueueList:">
-							<string key="name">emptyQueueList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="showEntryInFinder:">
 							<string key="name">showEntryInFinder:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="toggleQueued:">
-							<string key="name">toggleQueued:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="toggleRepeat:">

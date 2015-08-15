@@ -294,7 +294,6 @@
 		pe.URL = url;
 		pe.index = index+i;
 		pe.title = [[url path] lastPathComponent];
-		pe.queuePosition = -1;
 		[entries addObject:pe];
 
 		[pe release];
