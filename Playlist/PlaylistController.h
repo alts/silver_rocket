@@ -75,7 +75,6 @@ typedef enum {
 - (IBAction)clear:(id)sender;
 
 // Spotlight
-- (IBAction)searchByArtist:(id)sender;
 - (IBAction)searchByAlbum:(id)sender;
 
 //FUN PLAYLIST MANAGEMENT STUFF!

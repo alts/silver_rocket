@@ -650,11 +650,6 @@
 		[ws selectFile:[url path] inFileViewerRootedAtPath:[url path]];
 }
 
-- (IBAction)searchByArtist:(id)sender;
-{
-    PlaylistEntry *entry = [[self arrangedObjects] objectAtIndex:[self selectionIndex]];
-    [spotlightWindowController searchForArtist:[entry artist]];
-}
 - (IBAction)searchByAlbum:(id)sender;
 {
     PlaylistEntry *entry = [[self arrangedObjects] objectAtIndex:[self selectionIndex]];
@@ -731,9 +726,6 @@
 			return NO;
 
 		if (action == @selector(addToQueue:))
-			return NO;
-
-		if (action == @selector(searchByArtist:))
 			return NO;
 
 		if (action == @selector(searchByAlbum:))

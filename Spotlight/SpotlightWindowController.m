@@ -29,17 +29,17 @@ static NSPredicate * musicOnlyPredicate = nil;
 {
 	musicOnlyPredicate = [[NSPredicate predicateWithFormat:
                         @"kMDItemContentTypeTree==\'public.audio\'"] retain];
-                                                    
+
     // Register value transformers
     NSValueTransformer *pausingQueryTransformer = [[[PausingQueryTransformer alloc]init]autorelease];
     [NSValueTransformer setValueTransformer:pausingQueryTransformer forName:@"PausingQueryTransformer"];
-    
+
     NSValueTransformer *authorToArtistTransformer = [[[AuthorToArtistTransformer alloc]init]autorelease];
     [NSValueTransformer setValueTransformer:authorToArtistTransformer forName:@"AuthorToArtistTransformer"];
-    
+
     NSValueTransformer *pathToURLTransformer = [[[PathToURLTransformer alloc]init]autorelease];
     [NSValueTransformer setValueTransformer:pathToURLTransformer forName:@"PathToURLTransformers"];
-    
+
     NSValueTransformer *stringToSearchScopeTransformer = [[[StringToSearchScopeTransformer alloc]init]autorelease];
     [NSValueTransformer setValueTransformer:stringToSearchScopeTransformer forName:@"StringToSearchScopeTransformer"];
 }
@@ -51,7 +51,7 @@ static NSPredicate * musicOnlyPredicate = nil;
     NSString * homeDir = @"~";
     homeDir = [homeDir stringByExpandingTildeInPath];
     homeDir = [[NSURL fileURLWithPath:homeDir isDirectory:YES] absoluteString];
-    NSDictionary *searchDefault = 
+    NSDictionary *searchDefault =
                         [NSDictionary dictionaryWithObject:homeDir
                                                     forKey:@"spotlightSearchPath"];
     [defaults registerDefaults:searchDefault];
@@ -73,17 +73,17 @@ static NSPredicate * musicOnlyPredicate = nil;
 																 ascending:YES
 																  selector:@selector(compareTrackNumbers:)] autorelease],
 									  nil];
-        
+
         // hook my query transformer up to me
         [PausingQueryTransformer setSearchController:self];
 
 		[self registerDefaults];
 
         // TODO: spotlightSearchPath is bound via IB, is the below needed?
-//		NSDictionary *bindOptions = 
+//		NSDictionary *bindOptions =
 //			[NSDictionary dictionaryWithObject:@"StringToSearchScopeTransformer"
 //										forKey:NSValueTransformerNameBindingOption];
-//        
+//
 //		[self.query     bind:@"searchScopes"
 //					toObject:[NSUserDefaultsController sharedUserDefaultsController]
 //				 withKeyPath:@"values.spotlightSearchPath"
@@ -112,9 +112,9 @@ static NSPredicate * musicOnlyPredicate = nil;
     if((searchPredicate = [self processSearchString]))
     {
         // spotlightPredicate, which is what will finally be used for the spotlight search
-        // is the union of the (potentially) compound searchPredicate and the static 
+        // is the union of the (potentially) compound searchPredicate and the static
         // musicOnlyPredicate
-    
+
         NSPredicate *spotlightPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:
                                            [NSArray arrayWithObjects: musicOnlyPredicate,
                                                                 searchPredicate,
@@ -138,7 +138,7 @@ static NSPredicate * musicOnlyPredicate = nil;
 - (NSPredicate *)processSearchString
 {
     NSMutableArray *subpredicates = [NSMutableArray arrayWithCapacity:10];
-    
+
     NSScanner *scanner = [NSScanner scannerWithString:self.searchString];
     BOOL exactString;
     NSString * scannedString;
@@ -150,23 +150,23 @@ static NSPredicate * musicOnlyPredicate = nil;
         {
             if ([scannedString length] < MINIMUM_SEARCH_STRING_LENGTH)
                 continue;
-                
+
             // We use NSMutableString because this string will get abused a bit
             // It potentially could be reading the entire search string
-            
+
             parsingString = [NSMutableString stringWithCapacity: [self.searchString length]];
             [parsingString setString: scannedString];
-            
-                
+
+
             if ([parsingString characterAtIndex:0] == '%')
             {
                 if ([parsingString length] < (MINIMUM_SEARCH_STRING_LENGTH + 2))
                     continue;
-                
+
                 if ([parsingString characterAtIndex:2] == '\"')
                 {
                     exactString = YES;
-                    // If the string does not end in a quotation mark and we're not at the end, 
+                    // If the string does not end in a quotation mark and we're not at the end,
                     // scan until we find one.
                     // Allows strings within quotation marks to include spaces
                     if ([parsingString characterAtIndex:([parsingString length] - 1)] != '\"' &&
@@ -181,52 +181,52 @@ static NSPredicate * musicOnlyPredicate = nil;
                         // pick off the quotation mark at the end
                         [parsingString deleteCharactersInRange:
                             NSMakeRange([parsingString length] - 1, 1)];
-                        
+
                     }
                     // eliminate beginning quotation mark
                     [parsingString deleteCharactersInRange: NSMakeRange(2, 1)];
                 }
-                    
+
                 // Search for artist
                 if([parsingString characterAtIndex:1] == 'a')
                 {
-                    [subpredicates addObject: 
+                    [subpredicates addObject:
                         [NSComparisonPredicate predicateForMdKey:@"kMDItemAuthors"
                                                       withString:[parsingString substringFromIndex:2]
                                                      exactString:exactString]];
                 }
-                
+
                 // Search for album
                 if([parsingString characterAtIndex:1] == 'l')
                 {
-                    [subpredicates addObject: 
+                    [subpredicates addObject:
                         [NSComparisonPredicate predicateForMdKey:@"kMDItemAlbum"
                                                       withString:[parsingString substringFromIndex:2]
                                                      exactString:exactString]];
                 }
-                
+
                 // Search for title
                 if([parsingString characterAtIndex:1] == 't')
                 {
-                    [subpredicates addObject: 
+                    [subpredicates addObject:
                         [NSComparisonPredicate predicateForMdKey:@"kMDItemTitle"
                                                       withString:[parsingString substringFromIndex:2]
                                                      exactString:exactString]];
                 }
-                
+
                 // Search for genre
                 if([parsingString characterAtIndex:1] == 'g')
                 {
-                    [subpredicates addObject: 
+                    [subpredicates addObject:
                         [NSComparisonPredicate predicateForMdKey:@"kMDItemMusicalGenre"
                                                       withString:[parsingString substringFromIndex:2]
                                                      exactString:exactString]];
                 }
-                
+
                 // Search for comment
                 if([parsingString characterAtIndex:1] == 'c')
                 {
-                    [subpredicates addObject: 
+                    [subpredicates addObject:
                         [NSComparisonPredicate predicateForMdKey:@"kMDItemComment"
                                                       withString:[parsingString substringFromIndex:2]
                                                      exactString:exactString]];
@@ -241,20 +241,14 @@ static NSPredicate * musicOnlyPredicate = nil;
             }
         }
     }
-    
+
     if ([subpredicates count] == 0)
         return nil;
     else if ([subpredicates count] == 1)
         return [subpredicates objectAtIndex: 0];
-    
+
     // Create a compound predicate from subPredicates
     return [NSCompoundPredicate andPredicateWithSubpredicates: subpredicates];
-}
-
-- (void)searchForArtist:(NSString *)artist
-{
-    [self showWindow:self];
-    self.searchString = [NSString stringWithFormat:@"%%a\"%@\"", artist];
 }
 
 - (void)searchForAlbum:(NSString *)album
@@ -277,21 +271,21 @@ static NSPredicate * musicOnlyPredicate = nil;
     tracks = playlistController.selectedObjects;
     if ([tracks count] == 0)
         tracks = playlistController.arrangedObjects;
-	
+
 	[playlistLoader willInsertURLs:[tracks valueForKey:@"URL"] origin:URLOriginExternal];
     [playlistLoader didInsertURLs:[playlistLoader addURLs:[tracks valueForKey:@"URL"] sort:NO] origin:URLOriginExternal];
 	[self.query enableUpdates];
 }
 
 // If pop-up styled NSPathControl is set to /a/b/c path, then selecting either 'a' or 'b'
-// from its pop-up menu won't do anything by default (while we'd like it to select /a and 
+// from its pop-up menu won't do anything by default (while we'd like it to select /a and
 // /a/b respectively). So here we set url of NSPathControl to be that of clicked cell.
 - (IBAction)pathComponentClicked:(id)sender
 {
     NSPathComponentCell *pcc = [sender clickedPathComponentCell];
     DLog(@"%@", pcc);
     [sender setURL:[pcc URL]];
-} 
+}
 
 #pragma mark NSMetadataQuery delegate methods
 
@@ -307,10 +301,10 @@ replacementObjectForResultObject:(NSMetadataItem*)result
 @synthesize query;
 
 @synthesize searchString;
-- (void)setSearchString:(NSString *)aString 
+- (void)setSearchString:(NSString *)aString
 {
 	// Make sure the string is changed
-    if (![searchString isEqualToString:aString]) 
+    if (![searchString isEqualToString:aString])
 	{
 		searchString = [aString copy];
         [self performSearch];
