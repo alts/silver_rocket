@@ -16,7 +16,6 @@
 	[NSBundle loadNibNamed:@"Preferences" owner:plugin];
 
 	return [NSArray arrayWithObjects:
-			[plugin playlistPane],
 			[plugin hotKeyPane],
 			[plugin remotePane],
 			[plugin outputPane],
@@ -36,11 +35,6 @@
 - (GeneralPreferencePane *)remotePane
 {
 	return [GeneralPreferencePane preferencePaneWithView:remoteView title:NSLocalizedStringFromTableInBundle(@"Remote", nil, [NSBundle bundleForClass:[self class]],  @"")  iconNamed:@"apple_remote"];
-}
-
-- (GeneralPreferencePane *)playlistPane
-{
-	return [GeneralPreferencePane preferencePaneWithView:playlistView title:NSLocalizedStringFromTableInBundle(@"Playlist", nil, [NSBundle bundleForClass:[self class]], @"")  iconNamed:@"playlist"];
 }
 
 @end

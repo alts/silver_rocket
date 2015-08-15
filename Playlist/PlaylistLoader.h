@@ -20,11 +20,9 @@ typedef enum {
 
 @interface PlaylistLoader : NSObject {
 	IBOutlet PlaylistController *playlistController;
-	
+
 	NSOperationQueue *queue;
 }
-
-- (void)initDefaults;
 
 // Clear playlist
 - (void)clear:(id)sender;

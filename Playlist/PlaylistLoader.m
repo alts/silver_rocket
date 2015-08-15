@@ -28,22 +28,11 @@
 	self = [super init];
 	if (self)
 	{
-		[self initDefaults];
-
 		queue = [[NSOperationQueue alloc] init];
 		[queue setMaxConcurrentOperationCount:1];
 	}
 
 	return self;
-}
-
-- (void)initDefaults
-{
-	NSDictionary *defaultsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-										[NSNumber numberWithBool:YES], @"readCueSheetsInFolders",
-										nil];
-
-	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultsDictionary];
 }
 
 - (void)dealloc
@@ -164,11 +153,7 @@
 		BOOL isDir;
 		if ( [manager fileExistsAtPath:absoluteSubpath isDirectory:&isDir] && isDir == NO)
 		{
-			if ([[absoluteSubpath pathExtension] caseInsensitiveCompare:@"cue"] != NSOrderedSame ||
-				[[NSUserDefaults standardUserDefaults] boolForKey:@"readCueSheetsInFolders"])
-			{
-				[urls addObject:[NSURL fileURLWithPath:absoluteSubpath]];
-			}
+			[urls addObject:[NSURL fileURLWithPath:absoluteSubpath]];
 		}
 	}
 
