@@ -27,8 +27,6 @@
 - (void)performSearch;
 - (NSPredicate *)processSearchString;
 
-- (void)searchForAlbum:(NSString *)album;
-
 @property(retain) NSMetadataQuery *query;
 @property(copy) NSString *searchString;
 

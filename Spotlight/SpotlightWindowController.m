@@ -251,12 +251,6 @@ static NSPredicate * musicOnlyPredicate = nil;
     return [NSCompoundPredicate andPredicateWithSubpredicates: subpredicates];
 }
 
-- (void)searchForAlbum:(NSString *)album
-{
-    [self showWindow:self];
-    self.searchString = [NSString stringWithFormat:@"%%l\"%@\"", album];
-}
-
 - (void)dealloc
 {
 	self.query = nil;

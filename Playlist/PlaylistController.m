@@ -650,12 +650,6 @@
 		[ws selectFile:[url path] inFileViewerRootedAtPath:[url path]];
 }
 
-- (IBAction)searchByAlbum:(id)sender;
-{
-    PlaylistEntry *entry = [[self arrangedObjects] objectAtIndex:[self selectionIndex]];
-    [spotlightWindowController searchForAlbum:[entry album]];
-}
-
 - (NSMutableArray *)queueList
 {
 	return queueList;
@@ -726,9 +720,6 @@
 			return NO;
 
 		if (action == @selector(addToQueue:))
-			return NO;
-
-		if (action == @selector(searchByAlbum:))
 			return NO;
 	}
 

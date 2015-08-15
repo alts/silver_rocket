@@ -2230,26 +2230,6 @@ AAAAAAAAA</bytes>
 									<reference key="NSOnImage" ref="80764106"/>
 									<reference key="NSMixedImage" ref="510491962"/>
 								</object>
-								<object class="NSMenuItem" id="707243013">
-									<reference key="NSMenu" ref="905547314"/>
-									<bool key="NSIsDisabled">YES</bool>
-									<bool key="NSIsSeparator">YES</bool>
-									<string key="NSTitle"/>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
-								<object class="NSMenuItem" id="344629379">
-									<reference key="NSMenu" ref="905547314"/>
-									<string key="NSTitle">Search for Songs from Album</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="80764106"/>
-									<reference key="NSMixedImage" ref="510491962"/>
-								</object>
 								<object class="NSMenuItem" id="320432454">
 									<reference key="NSMenu" ref="905547314"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -3356,27 +3336,11 @@ AAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">searchByAlbum:</string>
-						<reference key="source" ref="710316598"/>
-						<reference key="destination" ref="344629379"/>
-					</object>
-					<int key="connectionID">1878</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">toggleQueued:</string>
 						<reference key="source" ref="710316598"/>
 						<reference key="destination" ref="203290105"/>
 					</object>
 					<int key="connectionID">1934</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">searchByAlbum:</string>
-						<reference key="source" ref="710316598"/>
-						<reference key="destination" ref="565843521"/>
-					</object>
-					<int key="connectionID">2119</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -5275,8 +5239,6 @@ AAAAAAAAA</bytes>
 							<reference ref="411588472"/>
 							<reference ref="533401573"/>
 							<reference ref="939812695"/>
-							<reference ref="707243013"/>
-							<reference ref="344629379"/>
 							<reference ref="320432454"/>
 							<reference ref="1071718027"/>
 							<reference ref="2708"/>
@@ -5625,16 +5587,6 @@ AAAAAAAAA</bytes>
 					<object class="IBObjectRecord">
 						<int key="objectID">1865</int>
 						<reference key="object" ref="939812695"/>
-						<reference key="parent" ref="905547314"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1866</int>
-						<reference key="object" ref="707243013"/>
-						<reference key="parent" ref="905547314"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1868</int>
-						<reference key="object" ref="344629379"/>
 						<reference key="parent" ref="905547314"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -6494,8 +6446,6 @@ AAAAAAAAA</bytes>
 				<string key="1863.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1864.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1865.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1866.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1868.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1869.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1893.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1897.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -7276,7 +7226,6 @@ AAAAAAAAA</bytes>
 						<string key="clear:">id</string>
 						<string key="clearFilterPredicate:">id</string>
 						<string key="emptyQueueList:">id</string>
-						<string key="searchByAlbum:">id</string>
 						<string key="showEntryInFinder:">id</string>
 						<string key="toggleQueued:">id</string>
 						<string key="toggleRepeat:">id</string>
@@ -7293,10 +7242,6 @@ AAAAAAAAA</bytes>
 						</object>
 						<object class="IBActionInfo" key="emptyQueueList:">
 							<string key="name">emptyQueueList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="searchByAlbum:">
-							<string key="name">searchByAlbum:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showEntryInFinder:">
@@ -7346,7 +7291,6 @@ AAAAAAAAA</bytes>
 						<string key="clear:">id</string>
 						<string key="clearFilterPredicate:">id</string>
 						<string key="emptyQueueList:">id</string>
-						<string key="searchByAlbum:">id</string>
 						<string key="showEntryInFinder:">id</string>
 						<string key="toggleQueued:">id</string>
 						<string key="toggleRepeat:">id</string>
@@ -7363,10 +7307,6 @@ AAAAAAAAA</bytes>
 						</object>
 						<object class="IBActionInfo" key="emptyQueueList:">
 							<string key="name">emptyQueueList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="searchByAlbum:">
-							<string key="name">searchByAlbum:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showEntryInFinder:">
